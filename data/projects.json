@@ -1,0 +1,697 @@
+[
+  {
+    "id": "pran-frooto-citrus",
+    "featured": true,
+    "published": true,
+    "year": "2026",
+    "category": "Beverage Label",
+    "marketStatus": "In Supermarkets (Live)",
+    "originType": "export",
+    "countryFlag": "🇦🇪",
+    "targetMarket": "GCC & Middle East",
+    "targetMarketBn": "জিসিসি ও মধ্যপ্রাচ্য",
+    "exportRegion": "GCC / Middle East, UK & India",
+    "thumbnail": "/assets/img/frooto-market.jpg",
+    "coverImage": "/assets/img/frooto-mockup.jpg",
+    "gallery": [
+      "/assets/img/frooto-market.jpg",
+      "/assets/img/frooto-dieline.jpg",
+      "/assets/img/frooto-flat.jpg",
+      "/assets/img/frooto-mockup.jpg"
+    ],
+    "dielineSpecs": {
+      "type": "PET Bottle Wrap-Around Label (Roll-Fed)",
+      "typeBn": "PET বোতল র্যাপ-অ্যারাউন্ড রোল-ফেড লেবেল",
+      "dimensions": "198mm x 62mm (500ml Contoured Bottle)",
+      "dimensionsBn": "১৯৮ মিমি x ৬২ মিমি (৫০০ মিলি বোতল ডাইলাইন)",
+      "material": "38-Micron Transparent Pearlized BOPP Film",
+      "materialBn": "৩৮-মাইক্রন পার্লাইজড স্বচ্ছ BOPP ফিল্ম",
+      "printProcess": "8-Color Rotogravure with Reverse Printing",
+      "printProcessBn": "৮-কালার হাই-স্পিড রোটোগ্র্যাভিউর (রিভার্স প্রিন্ট)",
+      "specialFinishing": "Selective White Underprinting for Metallic Foil Highlights",
+      "specialFinishingBn": "মেটালিক ফয়েল এফেক্টের জন্য সিলেক্টিভ হোয়াইট আন্ডারপ্রিন্ট"
+    },
+    "en": {
+      "title": "PRAN Frooto — Citrus Blast RTD Packaging",
+      "client": "PRAN Beverages Ltd. · PRAN-RFL Group",
+      "summary": "High-speed roll-fed wrap-around label engineered for automated high-volume bottling lines. Balanced high shelf-contrast typography with BSTI & FDA nutrition standards.",
+      "role": "Senior Packaging Designer · SCT Design House",
+      "tools": "Dieline CAD · Illustrator · 3D Pack Render · Pre-Press Separations",
+      "brief": "Modernize the flagship citrus beverage packaging to capture Gen-Z impulse consumers while preserving brand equity in 140+ export markets.",
+      "problem": "Competitors crowded the chilled display coolers with loud neon graphics. The previous design suffered visual clutter and lacked strong silhouette recognition from 5 meters away.",
+      "thinking": "We established a bold 60/40 rule: 60% dedicated to vibrant, thirst-inducing citrus splash graphics and 40% reserved for razor-clean typography and brand lockup.",
+      "direction": "Bold angled typography, realistic splash vectors, and registered metallic gold accents under printed film.",
+      "solution": "A dynamic 360-degree wrap label that commands attention whether viewed from front, side, or top-down cooler racks.",
+      "production": "Calibrated cylinder engraving with minimum 1.5pt trapping tolerances to eliminate white-bleed on transparent BOPP.",
+      "result": "Rolled out across 12 bottling plants nationwide. Achieved 24% higher consumer pick-up in modern trade supermarkets within 60 days of launch."
+    },
+    "bn": {
+      "title": "প্রাণ ফ্রুটো — সিট্রাস ব্লাস্ট প্যাকেজিং",
+      "client": "প্রাণ বেভারেজ লিমিটেড · প্রাণ-আরএফএল গ্রুপ",
+      "summary": "অটোমেটেড হাই-স্পিড বোতলজাতকরণ লাইনের জন্য প্রস্তুতকৃত রোল-ফেড র্যাপ-অ্যারাউন্ড লেবেল। বিএসটিআই ও এফডিএ পুষ্টিগুণের মানদণ্ড রক্ষা করে তৈরি।",
+      "role": "সিনিয়র প্যাকেজিং ডিজাইনার",
+      "tools": "প্যাকেজিং ডাইলাইন · ইলাস্ট্রেটর · ৩ডি রেন্ডার",
+      "brief": "আন্তর্জাতিক ও দেশীয় বাজারে নতুন প্রজন্মের ক্রেতাদের আকৃষ্ট করতে প্যাকেজিং আধুনিকায়ন।",
+      "problem": "সুপারশপের চিলড কুলারে প্রতিদ্বন্দ্বী ব্র্যান্ডগুলোর ভিড়ে সহজে চোখে পড়ার মতো ভিজ্যুয়াল ডিসরাপশন নিশ্চিত করা।",
+      "thinking": "রঙের তীব্র বৈপরীত্য এবং শক্তিশালী টাইপোগ্রাফির মাধ্যমে ৫ মিটার দূর থেকেও দৃষ্টি আকর্ষণ করার কৌশল।",
+      "direction": "ডায়নামিক অ্যাঙ্গেল টাইপোগ্রাফি ও প্রাকৃতিক সিট্রাস সতেজতার নিখুঁত ভিজ্যুয়াল।",
+      "solution": "৩৬০-ডিগ্রি র্যাপ লেবেল যা বোতল যেভাবেই রাখা হোক না কেন ব্র্যান্ড স্পষ্ট দেখায়।",
+      "production": "স্বচ্ছ বিওপিপি ফিল্মে মেটালিক আন্ডারপ্রিন্ট সহ নিখুঁত সিলিন্ডার সেপারেশন।",
+      "result": "লঞ্চের প্রথম মাসেই দেশব্যাপী এবং মিডল ইস্টের সুপারমার্কেটে ব্যাপক গ্রহণযোগ্যতা।"
+    },
+    "journey": {
+      "en": [
+        {
+          "id": "step-1",
+          "type": "shelf",
+          "title": "01 / In-Hand Market Reality",
+          "date": "2026-02-15",
+          "image": "/assets/img/frooto-market.jpg",
+          "imageAlt": "Frooto real product in hand",
+          "description": "The finished 500ml contoured bottle held by a real consumer in market daylight. The pearlized BOPP substrate reflects natural ambient light for maximum thirst appeal."
+        },
+        {
+          "id": "step-2",
+          "type": "framework",
+          "title": "02 / Technical Dieline & Eye-Marks",
+          "date": "2026-01-20",
+          "image": "/assets/img/frooto-dieline.jpg",
+          "imageAlt": "Frooto dieline CAD layout",
+          "description": "Structural CAD blueprint detailing the 198mm x 62mm cut specifications, 4mm glue lap zone, bottle contour taper compensation, and high-contrast optical eye-mark bars for sensor alignment."
+        },
+        {
+          "id": "step-3",
+          "type": "design",
+          "title": "03 / Flat Production Artwork (CMYK + 2 Spot)",
+          "date": "2026-01-10",
+          "image": "/assets/img/frooto-flat.jpg",
+          "imageAlt": "Frooto flat vector artwork",
+          "description": "Flat vector artboard showing complete multi-lingual Arabic and English ingredient declarations, ISO-standard barcode vector placement, and registered matte varnish plates."
+        },
+        {
+          "id": "step-4",
+          "type": "final",
+          "title": "04 / Hyper-Realistic 3D Studio Mockup",
+          "date": "2026-01-05",
+          "image": "/assets/img/frooto-mockup.jpg",
+          "imageAlt": "Frooto 3D pack studio mockup",
+          "description": "Studio light-stage 3D render evaluating PET refractive index, condensation droplet shaders, and brand mark legibility under supermarket fluorescent lighting."
+        }
+      ],
+      "bn": [
+        {
+          "id": "step-1",
+          "type": "shelf",
+          "title": "০১ / বাজারের বাস্তব পণ্য",
+          "date": "২০২৬-০২-১৫",
+          "image": "/assets/img/frooto-market.jpg",
+          "imageAlt": "প্রাণ ফ্রুটো বাস্তব পণ্য",
+          "description": "বাজারে ক্রেতার হাতে ৫০০ মিলি বোতল। পার্লাইজড BOPP লেবেল স্বাভাবিক দিনের আলোতে প্রাকৃতিক উজ্জ্বলতা তৈরি করে এবং তৃষ্ণা জাগাতে ভূমিকা রাখে।"
+        },
+        {
+          "id": "step-2",
+          "type": "framework",
+          "title": "০২ / টেকনিক্যাল ডাই-লাইন ও আই-মার্ক",
+          "date": "২০২৬-০১-২০",
+          "image": "/assets/img/frooto-dieline.jpg",
+          "imageAlt": "ফ্রুটো ডাইলাইন ক্যাড লেআউট",
+          "description": "১৯৮ মিমি x ৬২ মিমি ডাইলাইন ক্যাড ব্লুপ্রিন্ট, ৪ মিমি গ্লু-ল্যাপ মার্জিন, বোতলের কার্ভ টেপার কমপেনসেশন এবং সেন্সর কাটিংয়ের জন্য হাই-কনট্রাস্ট অপটিক্যাল আই-মার্ক।"
+        },
+        {
+          "id": "step-3",
+          "type": "design",
+          "title": "০৩ / ফ্ল্যাট প্রোডাকশন আর্টবোর্ড (CMYK + ২ স্পট)",
+          "date": "২০২৬-০১-১০",
+          "image": "/assets/img/frooto-flat.jpg",
+          "imageAlt": "ফ্রুটো ফ্ল্যাট ভেক্টর আর্টওয়ার্ক",
+          "description": "ভেক্টর আর্টবোর্ডে আরবি, ইংরেজি ও বাংলা পুষ্টি উপাদান প্যানেল, আইএসও স্ট্যান্ডার্ড বারকোড এবং প্রেসের জন্য স্পট গ্লস বার্নিশ প্লেট আলাদা করা।"
+        },
+        {
+          "id": "step-4",
+          "type": "final",
+          "title": "০৪ / হাইপার-রিয়ালিস্টিক ৩ডি স্টুডিও মকআপ",
+          "date": "২০২৬-০১-০৫",
+          "image": "/assets/img/frooto-mockup.jpg",
+          "imageAlt": "ফ্রুটো ৩ডি প্যাক স্টুডিও মকআপ",
+          "description": "স্টুডিও লাইট-স্টেজে পিইটি বোতলের রিফ্র্যাকশন, কনডেনসেশন ড্রপলেট শেডার এবং সুপারশপের ফ্লুরোসেন্ট আলোতে ব্র্যান্ড লোগোর ভিজিবিলিটি ৩ডি সিমুলেশন।"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pran-potata-spicy",
+    "featured": true,
+    "published": true,
+    "year": "2026",
+    "category": "Food Packaging",
+    "marketStatus": "In Supermarkets (Live)",
+    "originType": "export",
+    "countryFlag": "🇲🇾",
+    "targetMarket": "Malaysia & 140+ Countries",
+    "targetMarketBn": "মালয়েশিয়া ও ১৪০+ দেশ",
+    "exportRegion": "Malaysia, GCC & 140+ Countries",
+    "thumbnail": "/assets/img/snack-market.jpg",
+    "coverImage": "/assets/img/snack-mockup.jpg",
+    "gallery": [
+      "/assets/img/snack-market.jpg",
+      "/assets/img/snack-dieline.jpg",
+      "/assets/img/snack-flat.jpg",
+      "/assets/img/snack-mockup.jpg"
+    ],
+    "dielineSpecs": {
+      "type": "Nitrogen-Flushed Pillow Pouch for Dry Snacks",
+      "typeBn": "নাইট্রোজেন-ফ্লাশড স্ন্যাক পিলো পাউচ",
+      "dimensions": "145mm x 215mm with 15mm Top/Bottom Fin Seals",
+      "dimensionsBn": "১৪৫ মিমি x ২১৫ মিমি (১৫ মিমি ফিন সিল মার্জিন)",
+      "material": "Triple Laminate: Matte BOPP / Metalized PET / Cast Polyethylene",
+      "materialBn": "ট্রিপল লেয়ার: ম্যাট BOPP / মেট-PET ফয়েল / কাস্ট PE",
+      "printProcess": "9-Color Electronic Rotogravure Printing",
+      "printProcessBn": "৯-কালার ইলেকট্রনিক রোটোগ্র্যাভিউর (CMYK + স্পট)",
+      "specialFinishing": "Registered Matte Lacquer with Gloss Window for Product Vignette",
+      "specialFinishingBn": "ট্যাকটাইল ম্যাট ল্যাকার ও গ্লস উইন্ডো ফিনিশ"
+    },
+    "en": {
+      "title": "PRAN Potata — Spicy Wave Snack Pouch",
+      "client": "PRAN Foods Ltd. · PRAN-RFL Group",
+      "summary": "High-barrier nitrogen-flushed snack pouch designed to protect crispness and oil integrity across international sea freight while dominating retail snack aisles.",
+      "role": "Packaging Art Director & Prepress Lead",
+      "tools": "Pouch CAD · Rotogravure Cylinders · Flexo Plate Proofing",
+      "brief": "Create a hyper-appetizing, energetic snack pouch that communicates authentic fiery spice and crispy potato texture at a glance.",
+      "problem": "Snack bags endure heavy crushing in logistics crates. Metallic inks often scuff, and heat seals can crack if ink film is printed across the seal margin.",
+      "thinking": "We engineered custom dieline borders that keep all critical seal margins 100% ink-free, guaranteeing zero package leaks during high-altitude transport.",
+      "direction": "Deep fiery reds paired with crisp golden yellow contrasts, macro food photography, and dynamic speed-line graphics.",
+      "solution": "A high-impact pouch with tactile matte finish that feels premium in the consumer hands.",
+      "production": "9-color rotogravure cylinders run at 160 meters/min on European Cerutti printing presses.",
+      "result": "Zero factory sealing rejections. Over 50 million packets distributed globally across South Asia, GCC, and Europe."
+    },
+    "bn": {
+      "title": "প্রাণ পোটাটা — স্পাইসি ওয়েভ স্ন্যাক পাউচ",
+      "client": "প্রাণ ফুডস লিমিটেড · প্রাণ-আরএফএল গ্রুপ",
+      "summary": "হাই-ব্যারিয়ার নাইট্রোজেন-ফ্লাশড স্ন্যাক পাউচ যা দীর্ঘ সমুদ্রপথে পণ্যের মচমচে ভাব অক্ষুণ্ণ রাখে এবং সুপারশপের শেলফে আলাদাভাবে নজরে আসে।",
+      "role": "প্যাকেজিং আর্ট ডিরেক্টর",
+      "tools": "পাউচ ডাইলাইন · রোটোগ্র্যাভিউর সিলিন্ডার",
+      "brief": "খাবারের সতেজতা ও মশলাদার স্বাদ ক্রেতার দৃষ্টিতে ফুটিয়ে তুলতে আকর্ষণীয় পাউচ ডিজাইন।",
+      "problem": "পরিবহনের সময় প্যাকেটের সিল যেন ফেটে না যায় এবং রঙ যেন দীর্ঘস্থায়ী থাকে তা নিশ্চিত করা।",
+      "thinking": "সিলিং মার্জিন সম্পূর্ণ কালি-মুক্ত রেখে জিরো-লিকেজ পাউচ আর্কিটেকচার তৈরি।",
+      "direction": "গভীর লাল ও সোনালী হলুদের বৈপরীত্যের সাথে ম্যাক্রো ফুড ফটোগ্রাফি।",
+      "solution": "ম্যাট ফিনিশযুক্ত প্রিমিয়াম পাউচ যা হাতে নিলেই বিশ্বমানের অনুভূতি দেয়।",
+      "production": "ইউরোপিয়ান প্রেসের জন্য ৯-কালার সিলিন্ডার সেপারেশন।",
+      "result": "আন্তর্জাতিক বাজারে ৫০ মিলিয়নেরও বেশি প্যাকেট সফলভাবে বিক্রিত।"
+    },
+    "journey": {
+      "en": [
+        {
+          "id": "step-1",
+          "type": "shelf",
+          "title": "01 / Supermarket Shelf & In-Hand",
+          "date": "2026-02-10",
+          "image": "/assets/img/snack-market.jpg",
+          "imageAlt": "Potata real pack held in hand",
+          "description": "The real-world snack pouch in consumer hands. Notice the crisp reflection of the matte-varnish laminate and uncompromised nitrogen inflation."
+        },
+        {
+          "id": "step-2",
+          "type": "framework",
+          "title": "02 / VFFS Pouch Dieline & Seal Tolerances",
+          "date": "2026-01-18",
+          "image": "/assets/img/snack-dieline.jpg",
+          "imageAlt": "Potata dieline CAD",
+          "description": "Vector dieline showing the 15mm fin seal safe zone, back-seam vertical overlap, and puncture-resistant corner radii."
+        },
+        {
+          "id": "step-3",
+          "type": "design",
+          "title": "03 / Full Artboard Graphic System",
+          "date": "2026-01-08",
+          "image": "/assets/img/snack-flat.jpg",
+          "imageAlt": "Potata flat artboard",
+          "description": "The unlocked flat artwork featuring multi-lingual nutrition facts, halal stamps, and high-resolution potato texture composites."
+        },
+        {
+          "id": "step-4",
+          "type": "final",
+          "title": "04 / 3D Gravity & Inflation Simulation",
+          "date": "2026-01-02",
+          "image": "/assets/img/snack-mockup.jpg",
+          "imageAlt": "Potata 3D pouch render",
+          "description": "Cloth-simulation 3D pack render showing realistic wrinkle creases and gas pressure under 28 degrees ambient temperature."
+        }
+      ],
+      "bn": [
+        {
+          "id": "step-1",
+          "type": "shelf",
+          "title": "০১ / সুপারমার্কেট শেলফ ও ক্রেতার হাত",
+          "date": "২০২৬-০২-১০",
+          "image": "/assets/img/potata-market.jpg",
+          "imageAlt": "পোটাটা বাস্তব পাউচ ক্রেতার হাতে",
+          "description": "সুপারশপের তাকে বাস্তব ক্রেতার হাতে চকচকে মেটালিক পাউচ। মেট-পিইটি ফয়েলের আলো প্রতিফলন স্ন্যাকসের প্রিমিয়াম কোয়ালিটি ফুটিয়ে তোলে।"
+        },
+        {
+          "id": "step-2",
+          "type": "framework",
+          "title": "০২ / VFFS পাউচ ডাইলাইন ও সিলিং প্যারামিটার",
+          "date": "২০২৬-০১-১৮",
+          "image": "/assets/img/potata-dieline.jpg",
+          "imageAlt": "পোটাটা পাউচ ডাইলাইন",
+          "description": "১৬০ মিমি x ২১০ মিমি পাউচের ক্যাড ডাইলাইন, ১৫ মিমি টপ ও বটম হিট-সিল জোনে কালি বাদ রাখা এবং নাইট্রোজেন গ্যাসে পাউচ ফুলে ওঠার এক্সপেনশন ক্যালকুলেশন।"
+        },
+        {
+          "id": "step-3",
+          "type": "design",
+          "title": "০৩ / হাই-ইমপ্যাক্ট CMYK কালার সেপারেশন",
+          "date": "২০২৬-০১-১২",
+          "image": "/assets/img/potata-flat.jpg",
+          "imageAlt": "পোটাটা ফ্ল্যাট আর্টওয়ার্ক",
+          "description": "রোটোগ্র্যাভিউর প্রেসে প্রতি মিনিটে ১৬০ মিটার গতিতে নির্ভুল প্রিন্ট নিশ্চিত করতে স্পাইসি আগুনের এফেক্ট এবং ক্রিস্প পটেটো বিস্কুটের হাই-রেজুলেশন সেপারেশন।"
+        },
+        {
+          "id": "step-4",
+          "type": "final",
+          "title": "০৪ / ৩ডি ভলিউমেট্রিক পাউচ রেন্ডার",
+          "date": "২০২৬-০১-০৪",
+          "image": "/assets/img/potata-mockup.jpg",
+          "imageAlt": "পোটাটা ৩ডি মকআপ",
+          "description": "নাইট্রোজেন ফ্লাশ গ্যাস সহ ৩ডি মেটালিক পাউচ রেন্ডার, যেখানে র‍্যান্ডম বলি ও ফয়েল রিফ্লেকশন দিয়ে বাস্তবের নিখুঁত রূপ ফুটিয়ে তোলা হয়েছে।"
+        }
+      ]
+    }
+  },
+  {
+    "id": "pran-royal-spices",
+    "featured": true,
+    "published": true,
+    "year": "2025",
+    "category": "Rigid Box & Sachet",
+    "marketStatus": "In Supermarkets (Live)",
+    "originType": "export",
+    "countryFlag": "🇬🇧",
+    "targetMarket": "UK, USA & Europe",
+    "targetMarketBn": "যুক্তরাজ্য, যুক্তরাষ্ট্র ও ইউরোপ",
+    "exportRegion": "UK, USA, Europe & Canada",
+    "thumbnail": "/assets/img/spice-market.jpg",
+    "coverImage": "/assets/img/spice-mockup.jpg",
+    "gallery": [
+      "/assets/img/spice-market.jpg",
+      "/assets/img/spice-dieline.jpg",
+      "/assets/img/spice-flat.jpg",
+      "/assets/img/spice-mockup.jpg"
+    ],
+    "dielineSpecs": {
+      "type": "Folding Carton Box with Internal Foil Barrier Sachet",
+      "typeBn": "রিজিড ফোল্ডিং কার্টন বক্স + ইন্টারনাল ফয়েল স্যাচেট",
+      "dimensions": "110mm x 155mm x 45mm (200g Spice Carton)",
+      "dimensionsBn": "১১০ মিমি x ১৫৫ মিমি x ৪৫ মিমি (২০০ গ্রাম কার্টন)",
+      "material": "350 GSM Virgin Bleached Sulfate (SBS) Board + Metalized Foil",
+      "materialBn": "৩৫০ জিএসএম ভার্জিন SBS বোর্ড + মেটালাইজড ফয়েল",
+      "printProcess": "6-Color Offset Lithography + Spot Pantone Metallic Gold",
+      "printProcessBn": "৬-কালার অফসেট লিথোগ্রাফি + মেটালিক প্যান্টোন গোল্ড",
+      "specialFinishing": "Embossed Brand Crest, Matte Lamination, Registered Gold Foil Stamping",
+      "specialFinishingBn": "হট-স্ট্যাম্প গোল্ড ফয়েল, মাল্টি-লেভেল এমবসিং ও ম্যাট লেমিনেশন"
+    },
+    "en": {
+      "title": "PRAN Royal Spices — Heritage Export Carton",
+      "client": "PRAN Agro Ltd. · PRAN-RFL Group",
+      "summary": "Export-grade luxury folding carton box designed for mainstream Western supermarket spice aisles. Features hot-stamp gold foil and multi-lingual compliance.",
+      "role": "Lead Packaging Designer",
+      "tools": "Carton Dieline · Embossing Plates · Offset Separation",
+      "brief": "Position Bangladeshi authentic ground spices as premium culinary ingredients in US, UK, and EU gourmet supermarkets.",
+      "problem": "Traditional ethnic food packaging is often cluttered and lacks minimalist luxury appeal needed to justify premium pricing.",
+      "thinking": "We adopted an architectural grid structure with gold foil accents, emphasizing harvest origins and culinary purity.",
+      "direction": "Deep botanical spice tones, elegant serif typography, and tactile embossed crests.",
+      "solution": "A carton box that feels like a collector piece on the kitchen counter.",
+      "production": "Precision laser-cut die rule board with creasing matrix calibrated to prevent board fiber cracking on 350 GSM stock.",
+      "result": "Secured national distribution in major UK supermarket chains and gourmet Asian markets across North America."
+    },
+    "bn": {
+      "title": "প্রাণ রয়্যাল স্পাইসেস — হেরিটেজ এক্সপোর্ট কার্টন",
+      "client": "প্রাণ এগ্রো লিমিটেড · প্রাণ-আরএফএল গ্রুপ",
+      "summary": "পশ্চিমা দেশের সুপারমার্কেটের জন্য তৈরি লাক্সারি ফোল্ডিং কার্টন বক্স। হট-স্ট্যাম্প গোল্ড ফয়েল ও বহুভাষিক রেগুলেশন সমৃদ্ধ।",
+      "role": "লিড প্যাকেজিং ডিজাইনার",
+      "tools": "কার্টন ডাইলাইন · অফসেট প্লেট মেকিং",
+      "brief": "আন্তর্জাতিক সুপারমার্কেটে প্রিমিয়াম ক্যাটাগরির মসলা হিসেবে নিজস্ব ব্র্যান্ড পরিচিতি তৈরি।",
+      "problem": "সাধারণ মশলার প্যাকেজিংয়ের চেয়ে প্রিমিয়াম ও আন্তর্জাতিক লুক নিশ্চিত করা।",
+      "thinking": "আর্কিটেকচারাল গ্রিড এবং হট ফয়েল স্ট্যাম্পিংয়ের মাধ্যমে আভিজাত্য ফুটিয়ে তোলা।",
+      "direction": "ডিপ মশলার প্রাকৃতিক রঙ এবং আভিজাত্যপূর্ণ সেরিফ ফন্টের মেলবন্ধন।",
+      "solution": "এমন একটি কার্টন যা রান্নাঘরের সেলফে শোভাবর্ধন করে।",
+      "production": "৩৫০ জিএসএম এসবিএস বোর্ডের জন্য নিখুঁত লেজার-কাট ডাইলাইন।",
+      "result": "ইউকে ও উত্তর আমেরিকার শীর্ষ সুপারমার্কেটে স্থায়ী সেলফ স্পেস অর্জন।"
+    },
+    "journey": {
+      "en": [
+        {
+          "id": "step-1",
+          "type": "shelf",
+          "title": "01 / Supermarket Spice Rack & In-Hand",
+          "date": "2025-11-20",
+          "image": "/assets/img/spice-market.jpg",
+          "imageAlt": "Royal spices in supermarket shelf",
+          "description": "The physical embossed box displayed in the international gourmet spice aisle. The matte lamination eliminates fluorescent light glare, keeping typography readable from all angles."
+        },
+        {
+          "id": "step-2",
+          "type": "framework",
+          "title": "02 / Folding Box Dieline & Crease Matrix",
+          "date": "2025-10-15",
+          "image": "/assets/img/spice-dieline.jpg",
+          "imageAlt": "Spices carton dieline",
+          "description": "Engineering drawing of the tuck-top auto-bottom carton dieline, showing crease depths, dust flaps, and glue tab angles for high-speed folding machines."
+        },
+        {
+          "id": "step-3",
+          "type": "design",
+          "title": "03 / Flat Offset Litho Artboard",
+          "date": "2025-10-01",
+          "image": "/assets/img/spice-flat.jpg",
+          "imageAlt": "Spices flat artboard",
+          "description": "Complete 6-color separation flat sheet showing Pantone 871 Metallic Gold plates and spot gloss UV mask layers."
+        },
+        {
+          "id": "step-4",
+          "type": "final",
+          "title": "04 / 3D Embossing & Foil Rendering",
+          "date": "2025-09-25",
+          "image": "/assets/img/spice-mockup.jpg",
+          "imageAlt": "Spices 3D luxury render",
+          "description": "Physically-based render (PBR) showcasing multi-level micro-embossing depth and micro-etched gold foil reflection."
+        }
+      ],
+      "bn": [
+        {
+          "id": "step-1",
+          "type": "shelf",
+          "title": "০১ / প্রিমিয়াম কিচেন ও সুপারশপ ডিসপ্লে",
+          "date": "২০২৬-০২-১২",
+          "image": "/assets/img/royal-market.jpg",
+          "imageAlt": "রয়্যাল স্পাইসেস কিচেন ডিসপ্লে",
+          "description": "রান্নাঘরের কাউন্টারে বাস্তব প্রিমিয়াম মসলার কার্টন। ক্লাসিক রয়্যাল গোল্ড ফয়েল ও এম্বসিং মধ্যবিত্ত ও প্রবাসীদের কাছে ঐতিহ্যের প্রতীক।"
+        },
+        {
+          "id": "step-2",
+          "type": "framework",
+          "title": "০২ / রিজিড কার্টন ডাইলাইন ও ক্রিজিং রুল",
+          "date": "২০২৬-০১-১৬",
+          "image": "/assets/img/royal-dieline.jpg",
+          "imageAlt": "রয়্যাল স্পাইসেস কার্টন ডাইলাইন",
+          "description": "৩৫০ জিএসএম ফুড-গ্রেড ডুপ্লেক্স বোর্ডের ডাই-কাটিং ব্লুপ্রিন্ট, অটোমেটেড কার্টনিং মেশিনের জন্য ক্রিজ লাইন টলারেন্স ও ব্লিড মার্জিন।"
+        },
+        {
+          "id": "step-3",
+          "type": "design",
+          "title": "০৩ / হেরিটেজ ভেক্টর আর্টওয়ার্ক ও আরবি লেবেল",
+          "date": "২০২৬-০১-০৮",
+          "image": "/assets/img/royal-flat.jpg",
+          "imageAlt": "রয়্যাল স্পাইসেস ফ্ল্যাট ভেক্টর",
+          "description": "জিসিসি ও ইউএস এক্সপোর্ট স্ট্যান্ডার্ড অনুযায়ী আরবি ও ইংরেজি পুষ্টিগুণ চার্ট, ঐতিহাসিক মোটিফ এবং গোল্ড মেটালিক প্লেট সেপারেশন।"
+        },
+        {
+          "id": "step-4",
+          "type": "final",
+          "title": "০৪ / ৩ডি ফয়েল স্ট্যাম্পিং ও এম্বস রেন্ডার",
+          "date": "২০২৬-০১-০২",
+          "image": "/assets/img/royal-mockup.jpg",
+          "imageAlt": "রয়্যাল স্পাইসেস ৩ডি মকআপ",
+          "description": "গোল্ড ফয়েল স্ট্যাম্পিং ও ম্যাট লেমিনেশনের উপর স্পট ইউভির স্পর্শকাতর অনুভূতির থ্রিডি লাইট সিমুলেশন।"
+        }
+      ]
+    }
+  },
+  {
+    "id": "riva-sparkling-beverage",
+    "featured": true,
+    "published": true,
+    "year": "2025",
+    "category": "Beverage Can",
+    "marketStatus": "In Supermarkets (Live)",
+    "originType": "local",
+    "countryFlag": "🇧🇩",
+    "targetMarket": "Bangladesh (Domestic)",
+    "targetMarketBn": "বাংলাদেশ (লোকাল মার্কেট)",
+    "exportRegion": "Bangladesh Domestic",
+    "thumbnail": "/assets/img/beverage-market.jpg",
+    "coverImage": "/assets/img/beverage-mockup.jpg",
+    "gallery": [
+      "/assets/img/beverage-market.jpg",
+      "/assets/img/beverage-dieline.jpg",
+      "/assets/img/beverage-flat.jpg",
+      "/assets/img/beverage-mockup.jpg"
+    ],
+    "dielineSpecs": {
+      "type": "250ml Sleek Aluminum Beverage Can",
+      "typeBn": "২৫০ মিলি স্লিক অ্যালুমিনিয়াম ক্যান",
+      "dimensions": "53mm Diameter x 134mm Height (Seamless Aluminum Can Body)",
+      "dimensionsBn": "৫৩ মিমি ডায়ামিটার x ১৩৪ মিমি উচ্চতা (সিলিন্ডার ক্যান বডি)",
+      "material": "Recyclable Aluminum Alloy 3104 with Interior Epoxy Barrier Lacquer",
+      "materialBn": "রিসাইক্লেবল অ্যালুমিনিয়াম অ্যালয় ৩১০৪ + ইন্টারনাল ইপক্সি কোটিং",
+      "printProcess": "Dry Offset 6-Color Can Decorator Printing",
+      "printProcessBn": "ড্রাই-অফসেট ৬-কালার হাই-স্পিড ক্যান প্রিন্টিং",
+      "specialFinishing": "Matte Tactile Finish with Exposed Aluminum Brushed Sheen",
+      "specialFinishingBn": "ট্যাকটাইল ম্যাট ফিনিশ + র মেটাল ব্রাশড অ্যালুমিনিয়াম শাইন"
+    },
+    "en": {
+      "title": "RIVA Sparkling Beverage — Sleek Can Identity",
+      "client": "PRAN Beverage Innovation Lab · PRAN-RFL Group",
+      "summary": "Modern aluminum can graphics engineered for high-speed dry-offset can printers running at 1,800 cans per minute. Features tactile matte lacquer on brushed metal.",
+      "role": "Packaging & Brand Identity Designer",
+      "tools": "Can Decorator CAD · Aluminum Curved Distortion Proofing",
+      "brief": "Launch an energetic, premium sparkling tonic in a modern 250ml sleek can format targeted at urban coffee shops and modern supermarkets.",
+      "problem": "Printing directly onto cylindrical aluminum causes ink smearing and color desaturation if graphic screens exceed 133 LPI.",
+      "thinking": "We engineered high-contrast solid vectors and intentional negative space that allows the natural silver metal to become part of the design.",
+      "direction": "Minimalist brutalist typography, electric neon accents, and cold metallic textures.",
+      "solution": "A can that looks razor-sharp in chilled grab-and-go refrigerator cases.",
+      "production": "Calibrated dry-offset separation curves accommodating pre-distorted print blankets on cylindrical Mandrel presses.",
+      "result": "Sold out first production run within 3 weeks. Expanded from Dhaka to all major metropolitan retail chains."
+    },
+    "bn": {
+      "title": "রিভা স্পার্কলিং বেভারেজ — স্লিক ক্যান প্যাকেজিং",
+      "client": "প্রাণ বেভারেজ ইনোভেশন ল্যাব · প্রাণ-আরএফএল গ্রুপ",
+      "summary": "হাই-স্পিড ড্রাই-অফসেট ক্যান প্রিন্টারের জন্য ডিজাইনকৃত ২৫০ মিলি অ্যালুমিনিয়াম ক্যান। ব্রাশড মেটালের উপর ট্যাকটাইল ম্যাট ফিনিশ।",
+      "role": "প্যাকেজিং ও ব্র্যান্ড ডিজাইনার",
+      "tools": "ক্যান ডাইলাইন · ড্রাই-অফসেট প্রিপ্রেস",
+      "brief": "তরুণ প্রজন্মের জন্য প্রিমিয়াম স্পার্কলিং বেভারেজের আধুনিক স্লিক ক্যান ডিজাইন।",
+      "problem": "সিলিন্ডার আকৃতির মেটালের উপর সরাসরি প্রিন্টিংয়ের টেকনিক্যাল সীমাবদ্ধতা কাটিয়ে শার্প ভিজ্যুয়াল তৈরি করা।",
+      "thinking": "নেগেটিভ স্পেস ব্যবহার করে আসল রূপালী মেটালকেই ডিজাইনের মূল ভিত্তি হিসেবে ব্যবহার।",
+      "direction": "মিনিমালিস্ট বোল্ড টাইপোগ্রাফি এবং ইলেকট্রিক নিয়ন কালারের বৈপরীত্য।",
+      "solution": "সুপারশপের কুলার কেসে ক্রেতার প্রথম নজরে পড়ার মতো ক্যান ডিজাইন।",
+      "production": "মিনিটে ১,৮০০ ক্যান প্রোডাকশন লাইনের জন্য কমপ্লায়েন্ট ডিজাইন।",
+      "result": "প্রথম প্রোডাকশন রান মাত্র ৩ সপ্তাহে দেশব্যাপী সম্পূর্ণ স্টক আউট।"
+    },
+    "journey": {
+      "en": [
+        {
+          "id": "step-1",
+          "type": "shelf",
+          "title": "01 / Real Can in Hand & Condensation",
+          "date": "2025-08-14",
+          "image": "/assets/img/beverage-market.jpg",
+          "imageAlt": "Riva can real photo",
+          "description": "Chilled 250ml can held in consumer hand. Notice the sharp legibility of the typography through real condensation droplets."
+        },
+        {
+          "id": "step-2",
+          "type": "framework",
+          "title": "02 / Curved Can Dieline & Neck Distortion",
+          "date": "2025-07-20",
+          "image": "/assets/img/beverage-dieline.jpg",
+          "imageAlt": "Riva can dieline",
+          "description": "Cylindrical wrap CAD dieline with pre-distorted optical curves compensating for the 211/202 neck-in taper."
+        },
+        {
+          "id": "step-3",
+          "type": "design",
+          "title": "03 / Dry-Offset 6-Color Artboard",
+          "date": "2025-07-10",
+          "image": "/assets/img/beverage-flat.jpg",
+          "imageAlt": "Riva flat artwork",
+          "description": "Flat artboard configured for spot color dry-offset printing on aluminum with transparent white ink base."
+        },
+        {
+          "id": "step-4",
+          "type": "final",
+          "title": "04 / 3D Aluminum Shader Render",
+          "date": "2025-07-02",
+          "image": "/assets/img/beverage-mockup.jpg",
+          "imageAlt": "Riva 3D can render",
+          "description": "3D studio render with anisotropic metal shaders demonstrating can shelf presence under retail spot illumination."
+        }
+      ],
+      "bn": [
+        {
+          "id": "step-1",
+          "type": "shelf",
+          "title": "০১ / ক্যাফে ও লাইফস্টাইল রিয়ালিটি",
+          "date": "২০২৬-০২-১৪",
+          "image": "/assets/img/riva-market.jpg",
+          "imageAlt": "রিভা বেভারেজ ক্যাফে টেবিল",
+          "description": "ক্যাফে টেবিলে আইস বাকেটে ২৫০ মিলি স্লিক অ্যালুমিনিয়াম ক্যান। কনডেনসেশন আর্দ্রতার বিন্দুগুলো পানীয়ের সতেজ অনুভূতি দেয়।"
+        },
+        {
+          "id": "step-2",
+          "type": "framework",
+          "title": "০২ / কার্ভড অ্যালুমিনিয়াম ক্যান সিলিন্ডার স্পেক্স",
+          "date": "২০২৬-০১-২২",
+          "image": "/assets/img/riva-dieline.jpg",
+          "imageAlt": "রিভা ক্যান ডাইলাইন",
+          "description": "ক্যান বডির ৫০ মিমি ব্যাসের ৩৬০-ডিগ্রি রোটেশন আর্টওয়ার্ক গ্রিড, মেটালিক বেস কোট এবং ড্রাই-অফসেট প্রিন্টিং ক্যালকুলেশন।"
+        },
+        {
+          "id": "step-3",
+          "type": "design",
+          "title": "০৩ / মিনিমালিস্ট নিয়ন ভেক্টর আর্ট",
+          "date": "২০২৬-০১-১৪",
+          "image": "/assets/img/riva-flat.jpg",
+          "imageAlt": "রিভা ভেক্টর আর্টওয়ার্ক",
+          "description": "কম্প্যাক্ট ক্যান সারফেসে পরিষ্কার ব্র্যান্ডিং, মিনিমালিস্ট কালার ও আন্তর্জাতিক বারকোড বিন্যাস।"
+        },
+        {
+          "id": "step-4",
+          "type": "final",
+          "title": "০৪ / মেটালিক রিফ্লেকশন ৩ডি রেন্ডার",
+          "date": "২০২৬-০১-০৭",
+          "image": "/assets/img/riva-mockup.jpg",
+          "imageAlt": "রিভা ৩ডি ক্যান রেন্ডার",
+          "description": "অ্যালুমিনিয়াম ক্যান বডির মেটালিক শাইনের ৩ডি রে-ট্রেসড রেন্ডারিং।"
+        }
+      ]
+    }
+  },
+  {
+    "id": "mono-botanical-care",
+    "featured": true,
+    "published": true,
+    "year": "2025",
+    "category": "Cosmetics & Personal Care",
+    "marketStatus": "In Retail Stores",
+    "originType": "local",
+    "countryFlag": "🇧🇩",
+    "targetMarket": "Bangladesh (Domestic)",
+    "targetMarketBn": "বাংলাদেশ (লোকাল মার্কেট)",
+    "exportRegion": "Domestic Retail",
+    "thumbnail": "/assets/img/cosmetic-market.jpg",
+    "coverImage": "/assets/img/cosmetic-mockup.jpg",
+    "gallery": [
+      "/assets/img/cosmetic-market.jpg",
+      "/assets/img/cosmetic-dieline.jpg",
+      "/assets/img/cosmetic-flat.jpg",
+      "/assets/img/cosmetic-mockup.jpg"
+    ],
+    "dielineSpecs": {
+      "type": "PET Bottle with Waterproof Pressure-Sensitive Synthetic Label",
+      "typeBn": "PET বোতল + ওয়াটারপ্রুফ সিন্থেটিক প্রেসার-সেনসিটিভ লেবেল",
+      "dimensions": "75mm x 140mm (Front & Back Label Set)",
+      "dimensionsBn": "৭৫ মিমি x ১৪০ মিমি (ফ্রন্ট ও ব্যাক লেবেল সেট)",
+      "material": "Waterproof Polypropylene (BOPP) with Permanent Acrylic Adhesive",
+      "materialBn": "ওয়াটারপ্রুফ সিন্থেটিক BOPP ফিল্ম + পার্মানেন্ট অ্যাক্রিলিক আঠা",
+      "printProcess": "UV Flexographic Printing with Tactile Screen Varnish",
+      "printProcessBn": "UV ফ্লেক্সোগ্রাফিক প্রিন্টিং + ট্যাকটাইল স্ক্রিন বার্নিশ",
+      "specialFinishing": "Matte Lamination with Silk-Screen Raised Spot Varnish",
+      "specialFinishingBn": "ম্যাট লেমিনেশন + সিল্ক-স্ক্রিন রেইজড স্পট ইউভি"
+    },
+    "en": {
+      "title": "MONO Botanical Care — Organic Personal Care",
+      "client": "RFL Consumer Products Division · PRAN-RFL Group",
+      "summary": "Waterproof synthetic label system engineered to withstand high humidity, water spray, and cosmetic oils in bathroom environments without edge lifting.",
+      "role": "Packaging & Brand Identity Designer",
+      "tools": "Label CAD · Screen Varnish · Flexo UV Proofing",
+      "brief": "Establish an organic, minimalist cosmetic identity for a new line of natural body wash and lotion dispensers.",
+      "problem": "Paper labels in wet showers wrinkle, bleed ink, and peel away. The packaging must retain 100% pristine beauty until the very last pump.",
+      "thinking": "We specified waterproof synthetic BOPP film paired with chemical-resistant UV curable inks and permanent acrylic adhesive.",
+      "direction": "Clean Swiss typography, serene earth-tone palettes, and tactile raised screen varnish over the brand emblem.",
+      "solution": "An understated, spa-quality bottle that looks effortless in contemporary modern bathrooms.",
+      "production": "Rotary screen printing for heavy tactile white ink opacity over amber tinted PET plastic.",
+      "result": "Expanded across 500+ premium departmental stores and online retail platforms nationwide."
+    },
+    "bn": {
+      "title": "মোনো বোটানিক্যাল কেয়ার — পার্সোনাল কেয়ার প্যাকেজিং",
+      "client": "আরএফএল কনজিউমার প্রোডাক্টস ডিভিশন · প্রাণ-আরএফএল গ্রুপ",
+      "summary": "ওয়াটারপ্রুফ সিন্থেটিক লেবেল সিস্টেম যা বাথরুমের অতিরিক্ত আর্দ্রতা ও পানিতেও নষ্ট হয় না। ইউভি ফ্লেক্সোগ্রাফিক প্রিন্ট সমৃদ্ধ।",
+      "role": "প্যাকেজিং ডিজাইনার",
+      "tools": "লেবেল ডাইলাইন · ইউভি ফ্লেক্সো",
+      "brief": "ন্যাচারাল বডি ওয়াশ ও লোশন ডিসপেনসারের জন্য অর্গানিক ও মিনিমালিস্ট লুক তৈরি।",
+      "problem": "পানিতে লেবেল ভিজে যাওয়া বা কোণা উঠে যাওয়ার সমস্যা সম্পূর্ণ রোধ করা।",
+      "thinking": "ওয়াটারপ্রুফ বিওপিপি ফিল্ম এবং পার্মানেন্ট অ্যাক্রিলিক আঠার সমন্বয়ে দীর্ঘস্থায়ী প্যাকেজিং।",
+      "direction": "ক্লিন সুইস টাইপোগ্রাফি এবং ট্যাকটাইল রেইজড স্পট ইউভি ফিনিশ।",
+      "solution": "স্পা-কোয়ালিটি বোতল যা বাথরুমের নান্দনিকতা বহুগুণ বাড়িয়ে দেয়।",
+      "production": "অ্যাম্বার পেট বোতলের উপর রোটারি স্ক্রিন প্রিন্টিং।",
+      "result": "দেশজুড়ে ৫০০+ প্রিমিয়াম সুপারশপ এবং অনলাইন প্ল্যাটফর্মে দারুণ সাফল্য।"
+    },
+    "journey": {
+      "en": [
+        {
+          "id": "step-1",
+          "type": "shelf",
+          "title": "01 / In-Hand Product in Real Bathroom Setting",
+          "date": "2025-06-15",
+          "image": "/assets/img/cosmetic-market.jpg",
+          "imageAlt": "Mono real bottle in hand",
+          "description": "The real product held in hand in natural shower lighting. The synthetic label remains completely flat and pristine despite high moisture."
+        },
+        {
+          "id": "step-2",
+          "type": "framework",
+          "title": "02 / Pressure-Sensitive Label Dieline",
+          "date": "2025-05-20",
+          "image": "/assets/img/cosmetic-dieline.jpg",
+          "imageAlt": "Mono dieline layout",
+          "description": "Technical CAD layout detailing front and back label gap tolerances, dispenser pump clearance, and automated applicator roll unwind direction."
+        },
+        {
+          "id": "step-3",
+          "type": "design",
+          "title": "03 / Minimalist Swiss Flat Artwork",
+          "date": "2025-05-10",
+          "image": "/assets/img/cosmetic-flat.jpg",
+          "imageAlt": "Mono flat artboard",
+          "description": "Flat vector artboard featuring crisp botanical illustrations, ingredient certification seals, and tactile screen varnish mask channels."
+        },
+        {
+          "id": "step-4",
+          "type": "final",
+          "title": "04 / 3D Amber Bottle & Pump Mockup",
+          "date": "2025-05-02",
+          "image": "/assets/img/cosmetic-mockup.jpg",
+          "imageAlt": "Mono 3D render",
+          "description": "Photorealistic 3D render evaluating amber PET translucency, liquid viscosity, and tactile matte label reflections."
+        }
+      ],
+      "bn": [
+        {
+          "id": "step-1",
+          "type": "shelf",
+          "title": "০১ / বিলাসবহুল ভ্যানিটি ডিসপ্লে",
+          "date": "২০২৬-০২-১৮",
+          "image": "/assets/img/mono-market.jpg",
+          "imageAlt": "মোনো কেয়ার ভ্যানিটি ডিসপ্লে",
+          "description": "বাস্তব বাথরুম ভ্যানিটিতে ১০০ মিলি অ্যাম্বার গ্লাস ড্রপার ও রিসাইকেলড ক্রাফট কার্টন। পরিবেশবান্ধব মিনিমালিজম।"
+        },
+        {
+          "id": "step-2",
+          "type": "framework",
+          "title": "০২ / ক্রাফট পেপার ডাইলাইন ও ড্রপার লেবেল",
+          "date": "২০২৬-০১-২৫",
+          "image": "/assets/img/mono-dieline.jpg",
+          "imageAlt": "মোনো ক্রাফট কার্টন ডাইলাইন",
+          "description": "শতভাগ রিসাইকেলড আনকোটেড ক্রাফট বোর্ডের ডাই-কাট স্পেসিফিকেশন ও জলরোধী ড্রপার লেবেল মেজারমেন্ট।"
+        },
+        {
+          "id": "step-3",
+          "type": "design",
+          "title": "০৩ / মনোটোন সোয়া-কালি আর্টবোর্ড",
+          "date": "২০২৬-০১-১৮",
+          "image": "/assets/img/mono-flat.jpg",
+          "imageAlt": "মোনো ভেক্টর লেআউট",
+          "description": "পরিবেশবান্ধব সয়া-বেসড কালির জন্য মনোটোন ভেক্টর গ্রাফিক্স ও সুনির্দিষ্ট টাইপোগ্রাফিক গ্রিড।"
+        },
+        {
+          "id": "step-4",
+          "type": "final",
+          "title": "০৪ / অ্যাম্বার গ্লাস ও ক্রাফট ৩ডি রেন্ডার",
+          "date": "২০২৬-০১-০৯",
+          "image": "/assets/img/mono-mockup.jpg",
+          "imageAlt": "মোনো ৩ডি প্রোডাক্ট রেন্ডার",
+          "description": "অ্যাম্বার বোতলের ভেতর তেলের ঘনত্ব ও টেক্সচার্ড আনকোটেড কাগজের ৩ডি রেন্ডার।"
+        }
+      ]
+    }
+  }
+]

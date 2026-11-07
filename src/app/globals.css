@@ -1,0 +1,507 @@
+@import url('https://fonts.googleapis.com/css2?family=Atma:wght@500;600;700&family=Caveat:wght@600;700&family=Dancing+Script:wght@700&family=Kaushan+Script&family=Satisfy&family=Anek+Bangla:wght@600;700;800;900&family=Baloo+Da+2:wght@600;700;800&family=Hind+Siliguri:wght@600;700;800&family=Noto+Sans+Bengali:wght@600;700;800;900&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap');
+
+@font-face {
+  font-family: 'Headline Bangla';
+  src: local('Headline Bangla'), local('HeadlineBangla'), local('Headline'), local('SutonnyHeadline'), local('SutonnyMJ Headline');
+  font-weight: 600 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Kalpurush';
+  src: url('/assets/fonts/Kalpurush.woff2') format('woff2');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-handwriting {
+  font-family: 'Caveat', 'Dancing Script', 'Atma', cursive, sans-serif;
+}
+
+.font-script {
+  font-family: 'Kaushan Script', 'Satisfy', 'Caveat', cursive, sans-serif;
+}
+
+.font-handwriting-bn {
+  font-family: 'Atma', 'Baloo Da 2', cursive, sans-serif;
+}
+
+@keyframes gentleBreathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.1;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 0.25;
+  }
+}
+
+.animate-gentle-breathe {
+  animation: gentleBreathe 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+:root {
+  --bg-dark: #08090c;
+  --bg-card: #10121a;
+  --bg-card-hover: #151824;
+  --border-subtle: #222634;
+  --border-glow: #383f56;
+  --text-main: #f3f4f8;
+  --text-muted: #8c93a8;
+  --neon-lime: #d4ff33;
+  --neon-blue: #3b82f6;
+  --neon-amber: #f59e0b;
+  --neon-rose: #f43f5e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-size: 14.5px;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  font-family: 'Plus Jakarta Sans', 'Hind Siliguri', -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========================================================
+   HEADLINE BANGLA & MODERN DISPLAY TYPOGRAPHY
+   ======================================================== */
+h1, h2, h3, h4, h5, h6,
+h1 *, h2 *, h3 *, h4 *, h5 *, h6 *,
+.font-heading, .font-heading *,
+.font-subheading, .font-subheading *,
+.font-project-title, .font-project-title *,
+.font-headline, .font-headline *,
+html[lang="bn"] h1, html[lang="bn"] h1 *,
+html[lang="bn"] h2, html[lang="bn"] h2 *,
+html[lang="bn"] h3, html[lang="bn"] h3 *,
+html[lang="bn"] h4, html[lang="bn"] h4 *,
+html[lang="bn"] h5, html[lang="bn"] h5 *,
+html[lang="bn"] h6, html[lang="bn"] h6 *,
+html[lang="bn"] .font-heading, html[lang="bn"] .font-heading *,
+html[lang="bn"] .font-subheading, html[lang="bn"] .font-subheading *,
+html[lang="bn"] .font-project-title, html[lang="bn"] .font-project-title *,
+html[lang="bn"] .font-headline, html[lang="bn"] .font-headline * {
+  font-family: 'Headline Bangla', 'Headline', 'Anek Bangla', 'Noto Sans Bengali', 'Baloo Da 2', 'Hind Siliguri', 'Shonar Bangla', 'Plus Jakarta Sans', sans-serif !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.012em;
+}
+
+/* Bangla mode: Body text, descriptions, details strictly use Kalpurush / SutonnyMJ aesthetic */
+html[lang="bn"] {
+  font-family: 'Kalpurush', 'SutonnyMJ', 'Nikosh', serif;
+}
+
+html[lang="bn"] body {
+  font-family: 'Kalpurush', 'SutonnyMJ', 'Nikosh', serif;
+}
+
+html[lang="bn"] p,
+html[lang="bn"] article,
+html[lang="bn"] section p,
+html[lang="bn"] blockquote,
+html[lang="bn"] li,
+html[lang="bn"] a:not(h1 *):not(h2 *):not(h3 *):not(h4 *):not(h5 *):not(h6 *):not(.font-heading *):not(.font-subheading *):not(.font-project-title *):not(.font-headline *):not(.font-heading):not(.font-subheading):not(.font-project-title):not(.font-headline),
+html[lang="bn"] button:not(h1 *):not(h2 *):not(h3 *):not(h4 *):not(h5 *):not(h6 *):not(.font-heading *):not(.font-subheading *):not(.font-heading):not(.font-subheading),
+html[lang="bn"] label,
+html[lang="bn"] input,
+html[lang="bn"] textarea,
+html[lang="bn"] select,
+html[lang="bn"] span:not(h1 *):not(h2 *):not(h3 *):not(h4 *):not(h5 *):not(h6 *):not(.font-heading *):not(.font-subheading *):not(.font-project-title *):not(.font-headline *):not(.font-heading):not(.font-subheading):not(.font-project-title):not(.font-headline):not(.force-latin-mono),
+html[lang="bn"] div:not(h1 *):not(h2 *):not(h3 *):not(h4 *):not(h5 *):not(h6 *):not(.font-heading *):not(.font-subheading *):not(.font-project-title *):not(.font-headline *):not(.font-heading):not(.font-subheading):not(.font-project-title):not(.font-headline):not(.force-latin-mono),
+html[lang="bn"] .font-body,
+html[lang="bn"] .font-kalpurush,
+.font-kalpurush {
+  font-family: 'Kalpurush', 'SutonnyMJ', 'Nikosh', 'SolaimanLipi', serif !important;
+  letter-spacing: 0.015em;
+  line-height: 1.68;
+}
+
+/* Mono codes preservation */
+html[lang="bn"] code,
+html[lang="bn"] pre,
+html[lang="bn"] .force-latin-mono {
+  font-family: 'DM Mono', monospace !important;
+}
+
+/* Smooth Cross-Fade Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.99);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.35s ease-out forwards;
+}
+
+/* Print Stylesheet for 1-Page PDF Spec Sheet */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body, html {
+    background-color: #ffffff !important;
+    color: #111111 !important;
+    font-size: 11pt !important;
+  }
+  * {
+    color: #111111 !important;
+    box-shadow: none !important;
+    border-color: #cccccc !important;
+  }
+}
+
+/* Ambient Radial Background Glows */
+.ambient-glow-top {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(212, 255, 51, 0.08) 0%, rgba(59, 130, 246, 0.06) 50%, transparent 80%);
+  pointer-events: none;
+  filter: blur(80px);
+  z-index: 0;
+}
+
+/* ========================================================
+   LIGHT MODE (DAY VERSION / লাইট মোড) STYLES
+   Ultra-Crisp, High-Contrast Editorial Architecture
+   ======================================================== */
+html[data-theme="light"],
+html.light,
+html[data-theme="light"] body,
+html.light body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .ambient-glow-top,
+html.light .ambient-glow-top {
+  opacity: 0.15;
+}
+
+/* Base page & header backgrounds */
+html[data-theme="light"] .bg-\[\#08090c\],
+html.light .bg-\[\#08090c\],
+html[data-theme="light"] .bg-\[\#08090c\]\/90,
+html.light .bg-\[\#08090c\]\/90,
+html[data-theme="light"] .bg-\[\#08090c\]\/85,
+html.light .bg-\[\#08090c\]\/85 {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Card & container backgrounds */
+html[data-theme="light"] .bg-\[\#10121a\],
+html.light .bg-\[\#10121a\],
+html[data-theme="light"] .bg-\[\#10121a\]\/90,
+html.light .bg-\[\#10121a\]\/90 {
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Grid card footers & panel backgrounds (CRITICAL FIX FOR INVISIBLE PRODUCT NAMES) */
+html[data-theme="light"] .bg-\[\#0c0e15\],
+html.light .bg-\[\#0c0e15\] {
+  background-color: #ffffff !important;
+}
+
+/* Inner nested panels & utility backgrounds */
+html[data-theme="light"] .bg-\[\#0b0d13\],
+html.light .bg-\[\#0b0d13\],
+html[data-theme="light"] .bg-\[\#0a0b10\],
+html.light .bg-\[\#0a0b10\],
+html[data-theme="light"] .bg-\[\#0a0b0f\],
+html.light .bg-\[\#0a0b0f\],
+html[data-theme="light"] .bg-\[\#090a0f\],
+html.light .bg-\[\#090a0f\],
+html[data-theme="light"] .bg-\[\#0d0e14\],
+html.light .bg-\[\#0d0e14\],
+html[data-theme="light"] .bg-\[\#0e1017\],
+html.light .bg-\[\#0e1017\],
+html[data-theme="light"] .bg-\[\#11131c\],
+html.light .bg-\[\#11131c\],
+html[data-theme="light"] .bg-\[\#141724\],
+html.light .bg-\[\#141724\],
+html[data-theme="light"] .bg-\[\#131622\],
+html.light .bg-\[\#131622\],
+html[data-theme="light"] .bg-\[\#171a25\],
+html.light .bg-\[\#171a25\],
+html[data-theme="light"] .bg-\[\#13151f\]\/50,
+html.light .bg-\[\#13151f\]\/50 {
+  background-color: #f8fafc !important;
+}
+
+/* Gradients in light mode */
+html[data-theme="light"] .from-\[\#181c29\].to-\[\#0c0e15\],
+html.light .from-\[\#181c29\].to-\[\#0c0e15\],
+html[data-theme="light"] .from-\[\#11131a\].to-\[\#0a0b0f\],
+html.light .from-\[\#11131a\].to-\[\#0a0b0f\] {
+  background-image: none !important;
+  background-color: #ffffff !important;
+}
+
+html[data-theme="light"] .from-\[\#171a25\].to-\[\#11131c\],
+html.light .from-\[\#171a25\].to-\[\#11131c\] {
+  background-image: none !important;
+  background-color: #f8fafc !important;
+}
+
+/* Borders in light mode */
+html[data-theme="light"] .border-\[\#222634\],
+html.light .border-\[\#222634\],
+html[data-theme="light"] .border-\[\#1e2230\],
+html.light .border-\[\#1e2230\],
+html[data-theme="light"] .border-\[\#1e2333\],
+html.light .border-\[\#1e2333\],
+html[data-theme="light"] .border-\[\#1c202c\],
+html.light .border-\[\#1c202c\],
+html[data-theme="light"] .border-\[\#1a1e2b\],
+html.light .border-\[\#1a1e2b\],
+html[data-theme="light"] .border-\[\#1f2433\],
+html.light .border-\[\#1f2433\],
+html[data-theme="light"] .border-\[\#2a3044\],
+html.light .border-\[\#2a3044\],
+html[data-theme="light"] .border-\[\#222738\],
+html.light .border-\[\#222738\],
+html[data-theme="light"] .border-\[\#2b3145\],
+html.light .border-\[\#2b3145\],
+html[data-theme="light"] .border-\[\#232738\],
+html.light .border-\[\#232738\],
+html[data-theme="light"] .border-\[\#1b1f2e\],
+html.light .border-\[\#1b1f2e\],
+html[data-theme="light"] .border-\[\#383f56\],
+html.light .border-\[\#383f56\],
+html[data-theme="light"] .border-\[\#3d4560\],
+html.light .border-\[\#3d4560\] {
+  border-color: #e2e8f0 !important;
+}
+
+/* Hover borders */
+html[data-theme="light"] .hover\:border-\[\#d4ff33\]:hover,
+html.light .hover\:border-\[\#d4ff33\]:hover,
+html[data-theme="light"] .group:hover .group-hover\:border-\[\#d4ff33\],
+html.light .group:hover .group-hover\:border-\[\#d4ff33\] {
+  border-color: #047857 !important;
+}
+
+/* ========================================================
+   TEXT COLORS & CONTRAST IN LIGHT MODE
+   ======================================================== */
+
+/* High-contrast headings and primary titles */
+html[data-theme="light"] .text-\[\#f3f4f8\],
+html.light .text-\[\#f3f4f8\],
+html[data-theme="light"] .text-white,
+html.light .text-white {
+  color: #0f172a !important;
+}
+
+/* High-contrast body copy */
+html[data-theme="light"] .text-\[\#cbd5e1\],
+html.light .text-\[\#cbd5e1\],
+html[data-theme="light"] .text-\[\#c5cde0\],
+html.light .text-\[\#c5cde0\],
+html[data-theme="light"] .text-\[\#d0d6e8\],
+html.light .text-\[\#d0d6e8\],
+html[data-theme="light"] .text-\[\#a4acc4\],
+html.light .text-\[\#a4acc4\] {
+  color: #334155 !important;
+}
+
+/* Muted metadata */
+html[data-theme="light"] .text-\[\#8c93a8\],
+html.light .text-\[\#8c93a8\],
+html[data-theme="light"] .text-\[\#6b7280\],
+html.light .text-\[\#6b7280\],
+html[data-theme="light"] .text-\[\#555b70\],
+html.light .text-\[\#555b70\] {
+  color: #64748b !important;
+}
+
+/* ========================================================
+   ACCENT COLOR ARCHITECTURE: #d4ff33 FIX FOR DAY MODE
+   Replaces unreadable neon yellow with rich, crisp Emerald
+   ======================================================== */
+
+/* Accent text color in light mode: Crisp deep emerald */
+html[data-theme="light"] .text-\[\#d4ff33\],
+html.light .text-\[\#d4ff33\] {
+  color: #047857 !important;
+  font-weight: 700 !important;
+}
+
+/* Hover accents */
+html[data-theme="light"] .hover\:text-\[\#d4ff33\]:hover,
+html.light .hover\:text-\[\#d4ff33\]:hover,
+html[data-theme="light"] .group:hover .group-hover\:text-\[\#d4ff33\],
+html.light .group:hover .group-hover\:text-\[\#d4ff33\] {
+  color: #047857 !important;
+}
+
+/* Exception: Text inside black photo overlay remains pure white */
+html[data-theme="light"] .bg-gradient-to-t .text-\[\#d4ff33\],
+html.light .bg-gradient-to-t .text-\[\#d4ff33\],
+html[data-theme="light"] .bg-black .text-\[\#d4ff33\],
+html.light .bg-black .text-\[\#d4ff33\] {
+  color: #ffffff !important;
+}
+
+/* Hero Headline Gradient text in Light Mode: Emerald to Ocean Blue */
+html[data-theme="light"] h1 .bg-gradient-to-r,
+html.light h1 .bg-gradient-to-r,
+html[data-theme="light"] .bg-gradient-to-r.from-\[\#d4ff33\],
+html.light .bg-gradient-to-r.from-\[\#d4ff33\] {
+  background-image: linear-gradient(135deg, #047857 0%, #0284c7 50%, #4338ca 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+/* Primary buttons with bg-[#d4ff33] become luxury dark slate in light mode */
+html[data-theme="light"] button.bg-\[\#d4ff33\],
+html.light button.bg-\[\#d4ff33\],
+html[data-theme="light"] a.bg-\[\#d4ff33\],
+html.light a.bg-\[\#d4ff33\] {
+  background-color: #0f172a !important;
+  color: #ffffff !important;
+  border-color: #0f172a !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.18) !important;
+}
+
+html[data-theme="light"] button.bg-\[\#d4ff33\]:hover,
+html.light button.bg-\[\#d4ff33\]:hover,
+html[data-theme="light"] a.bg-\[\#d4ff33\]:hover,
+html.light a.bg-\[\#d4ff33\]:hover {
+  background-color: #047857 !important;
+  color: #ffffff !important;
+  border-color: #047857 !important;
+}
+
+/* Badges with bg-[#d4ff33] (like 'বাজারে সক্রিয়') in Light Mode */
+html[data-theme="light"] span.bg-\[\#d4ff33\],
+html.light span.bg-\[\#d4ff33\] {
+  background-color: #ecfdf5 !important;
+  color: #047857 !important;
+  border: 1px solid #a7f3d0 !important;
+}
+
+/* Subtle lime badges & tints (bg-[#d4ff33]/10, /15, /30) */
+html[data-theme="light"] .bg-\[\#d4ff33\]\/10,
+html.light .bg-\[\#d4ff33\]\/10,
+html[data-theme="light"] .bg-\[\#d4ff33\]\/15,
+html.light .bg-\[\#d4ff33\]\/15 {
+  background-color: #ecfdf5 !important;
+  border-color: #a7f3d0 !important;
+  color: #047857 !important;
+}
+
+html[data-theme="light"] .bg-\[\#d4ff33\]\/10 span,
+html.light .bg-\[\#d4ff33\]\/10 span,
+html[data-theme="light"] .bg-\[\#d4ff33\]\/15 span,
+html.light .bg-\[\#d4ff33\]\/15 span {
+  color: #047857 !important;
+}
+
+/* Inactive category pills in light mode */
+html[data-theme="light"] #feed button.bg-\[\#11131c\],
+html.light #feed button.bg-\[\#11131c\] {
+  background-color: #ffffff !important;
+  color: #475569 !important;
+  border-color: #e2e8f0 !important;
+}
+
+html[data-theme="light"] #feed button.bg-\[\#11131c\]:hover,
+html.light #feed button.bg-\[\#11131c\]:hover {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Form inputs in light mode */
+html[data-theme="light"] input,
+html.light input,
+html[data-theme="light"] select,
+html.light select,
+html[data-theme="light"] textarea,
+html.light textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Custom Scrollbars in light mode */
+html[data-theme="light"] ::-webkit-scrollbar-track,
+html.light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+html[data-theme="light"] ::-webkit-scrollbar-thumb,
+html.light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #08090c;
+}
+::-webkit-scrollbar-thumb {
+  background: #252a3a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d4ff33;
+}
+
+/* ---------------- MARQUEE ANIMATION ---------------- */
+@keyframes marqueeScroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 32s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (max-width: 640px) {
+  .animate-marquee {
+    animation-duration: 22s;
+  }
+}

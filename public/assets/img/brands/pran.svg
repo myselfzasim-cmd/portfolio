@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80">
+  <defs>
+    <linearGradient id="pranRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#991b1b"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Badge -->
+  <rect x="2" y="2" width="236" height="76" rx="14" fill="#180a0a" stroke="#dc2626" stroke-width="2"/>
+  
+  <!-- Classic PRAN Oval Emblem -->
+  <g transform="translate(14, 16)">
+    <ellipse cx="23" cy="23" rx="22" ry="19" fill="url(#pranRed)" stroke="#ffffff" stroke-width="1.5"/>
+    <text x="23" y="30" font-family="'Arial Black', Impact, sans-serif" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle" font-style="italic">PRAN</text>
+    <!-- Green Leaf on top -->
+    <path d="M23 4 C 28 0, 32 6, 30 11 C 26 12, 23 9, 23 4 Z" fill="#22c55e"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="68" y="38" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="24" font-weight="900" fill="#ffffff" letter-spacing="1">PRAN GROUP</text>
+  <text x="69" y="55" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="9.5" font-weight="700" fill="#f87171" letter-spacing="2">FOODS &amp; BEVERAGES · 140+ COUNTRIES</text>
+</svg>

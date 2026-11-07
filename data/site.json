@@ -1,0 +1,212 @@
+{
+  "en": {
+    "name": "Zasim Uddin",
+    "shortName": "ZASIM",
+    "role": "Graphic Designer",
+    "specialty": "Packaging · Branding · Visual Systems",
+    "heroKicker": "Packaging / Branding / Production",
+    "heroTitle": "Design for the shelf. Designed for the real world.",
+    "heroBody": "Packaging, branding and production-ready visual systems built from the first brief to the final piece on shelf.",
+    "availability": "Available for selected freelance & full-time opportunities",
+    "heroPrimary": "Explore selected work",
+    "heroSecondary": "Let’s work together",
+    "workTitle": "Work that lives in the real world.",
+    "workIntro": "A curated set of packaging, branding, label and visual-system explorations.",
+    "aboutTitle": "A designer between idea and production.",
+    "aboutBody": "I work where brand thinking, packaging and production meet — making visuals that feel distinctive and still work in the real world.",
+    "aboutBody2": "My approach is simple: strong hierarchy, clear visual systems, practical production thinking and enough personality to make the pack memorable.",
+    "skills": [
+      "Packaging Design",
+      "Label & Sticker Systems",
+      "Brand & Product Identity",
+      "Production Artwork",
+      "Mockup & Presentation",
+      "Showroom / Visual Branding"
+    ],
+    "stats": [
+      {
+        "value": "360°",
+        "label": "Brief → artwork → output"
+      },
+      {
+        "value": "02",
+        "label": "Core languages: EN / BN"
+      },
+      {
+        "value": "01+",
+        "label": "Year in packaging team"
+      }
+    ],
+    "processTitle": "How I work",
+    "processIntro": "The work gets better when the thinking, production and presentation are connected.",
+    "process": [
+      [
+        "01",
+        "FRAME",
+        "Understand the brief, audience, product and production constraints."
+      ],
+      [
+        "02",
+        "BUILD",
+        "Create the visual system: hierarchy, type, color, image and structure."
+      ],
+      [
+        "03",
+        "TEST",
+        "Mock up the design, check the dieline and refine the details that matter."
+      ],
+      [
+        "04",
+        "DELIVER",
+        "Prepare clean, production-ready artwork and a presentation that sells the idea."
+      ]
+    ],
+    "experienceTitle": "Credentials",
+    "experienceCompany": "SCT Design House · PRAN-RFL Group",
+    "experienceRole": "Graphic Designer · Packaging Team",
+    "experienceBody": "Hands-on work across food and non-food product packaging, labels, stickers, branding, showroom graphics and print-ready production artwork.",
+    "educationTitle": "Education",
+    "educationDegree": "B.A. (Honours) & M.S.S. in Political Science",
+    "educationSchool": "Rajshahi College",
+    "educationBody": "Academic training in structure, research, writing and communication.",
+    "contactTitle": "LET'S MAKE IT VISIBLE.",
+    "contactBody": "For packaging, branding, labels, showroom branding or visual-system projects, get in touch.",
+    "email": "hello@example.com",
+    "location": "Bangladesh",
+    "resume": "assets/files/resume.pdf",
+    "footer": "Designed with intent. Built to be edited later.",
+    "social": {
+      "linkedin": "",
+      "behance": "",
+      "whatsapp": "+8801723005886"
+    },
+    "nav": {
+      "work": "Work",
+      "about": "About",
+      "process": "Process",
+      "experience": "Experience",
+      "contact": "Contact"
+    },
+    "labels": {
+      "brief": "The brief",
+      "problem": "The problem",
+      "thinking": "The thinking",
+      "direction": "Design direction",
+      "solution": "The solution",
+      "production": "Production & die-line",
+      "mockup": "Mockup / presentation",
+      "feedback": "Client feedback",
+      "result": "Final result",
+      "gallery": "Visual archive",
+      "next": "Next project",
+      "back": "Back to work",
+      "role": "Role",
+      "tools": "Focus"
+    }
+  },
+  "bn": {
+    "name": "জসিম উদ্দিন",
+    "shortName": "জসিম",
+    "role": "গ্রাফিক ডিজাইনার",
+    "specialty": "প্যাকেজিং · ব্র্যান্ডিং · ভিজ্যুয়াল সিস্টেম",
+    "heroKicker": "Packaging / Branding / Production",
+    "heroTitle": "শেলফের জন্য ডিজাইন। বাস্তব দুনিয়ার জন্য ডিজাইন।",
+    "heroBody": "প্রথম ব্রিফ থেকে শেলফে থাকা ফাইনাল পণ্য পর্যন্ত packaging, branding ও production-ready visual system নিয়ে কাজ করি।",
+    "availability": "Selected freelance ও full-time সুযোগের জন্য available",
+    "heroPrimary": "Selected work দেখুন",
+    "heroSecondary": "একসাথে কাজ করি",
+    "workTitle": "যে design বাস্তব দুনিয়ায় বেঁচে থাকে।",
+    "workIntro": "Packaging, branding, label ও visual-system-এর নির্বাচিত কাজের একটি curated collection.",
+    "aboutTitle": "আইডিয়া আর production-এর মাঝখানে একজন ডিজাইনার।",
+    "aboutBody": "ব্র্যান্ড, প্যাকেজিং ও production-এর সংযোগস্থলে কাজ করি—যাতে design আলাদা দেখায় এবং বাস্তবেও কাজ করে।",
+    "aboutBody2": "আমার approach সহজ: strong hierarchy, clear visual system, practical production thinking এবং এমন personality যা product-কে মনে রাখার মতো করে।",
+    "skills": [
+      "Packaging Design",
+      "Label & Sticker Systems",
+      "Brand & Product Identity",
+      "Production Artwork",
+      "Mockup & Presentation",
+      "Showroom / Visual Branding"
+    ],
+    "stats": [
+      {
+        "value": "360°",
+        "label": "Brief → artwork → output"
+      },
+      {
+        "value": "EN / BN",
+        "label": "দুই ভাষার portfolio"
+      },
+      {
+        "value": "01+",
+        "label": "Packaging team experience"
+      }
+    ],
+    "processTitle": "আমি কীভাবে কাজ করি",
+    "processIntro": "Thinking, production এবং presentation একসাথে রাখলেই কাজ আরও শক্তিশালী হয়।",
+    "process": [
+      [
+        "01",
+        "FRAME",
+        "Brief, audience, product এবং production constraint বুঝি।"
+      ],
+      [
+        "02",
+        "BUILD",
+        "Hierarchy, type, color, image ও structure দিয়ে visual system তৈরি করি।"
+      ],
+      [
+        "03",
+        "TEST",
+        "Mockup ও dieline check করে প্রয়োজনীয় detail refine করি।"
+      ],
+      [
+        "04",
+        "DELIVER",
+        "Clean production-ready artwork এবং presentation-ready output দিই।"
+      ]
+    ],
+    "experienceTitle": "Credentials",
+    "experienceCompany": "SCT Design House · PRAN-RFL Group",
+    "experienceRole": "Graphic Designer · Packaging Team",
+    "experienceBody": "Food ও non-food product packaging, label, sticker, branding, showroom graphics ও production artwork নিয়ে hands-on কাজ।",
+    "educationTitle": "Education",
+    "educationDegree": "B.A. (Honours) & M.S.S. in Political Science",
+    "educationSchool": "Rajshahi College",
+    "educationBody": "Structure, research, writing ও communication-এর academic foundation.",
+    "contactTitle": "চলো এটাকে দৃশ্যমান করি।",
+    "contactBody": "Packaging, branding, label, showroom branding বা visual-system project নিয়ে যোগাযোগ করতে পারো।",
+    "email": "hello@example.com",
+    "location": "Bangladesh",
+    "resume": "assets/files/resume.pdf",
+    "footer": "Intent দিয়ে design. পরে সহজে edit করার মতো করে build করা।",
+    "social": {
+      "linkedin": "",
+      "behance": "",
+      "whatsapp": "+8801723005886"
+    },
+    "nav": {
+      "work": "কাজ",
+      "about": "আমার কথা",
+      "process": "প্রক্রিয়া",
+      "experience": "অভিজ্ঞতা",
+      "contact": "যোগাযোগ"
+    },
+    "labels": {
+      "brief": "Brief",
+      "problem": "Problem",
+      "thinking": "Thinking",
+      "direction": "Design direction",
+      "solution": "Solution",
+      "production": "Production & die-line",
+      "mockup": "Mockup / presentation",
+      "feedback": "Client feedback",
+      "result": "Final result",
+      "gallery": "Visual archive",
+      "next": "পরের প্রজেক্ট",
+      "back": "কাজে ফিরুন",
+      "role": "Role",
+      "tools": "Focus"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80">
+  <defs>
+    <linearGradient id="shineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="100%" stop-color="#eab308"/>
+    </linearGradient>
+  </defs>
+  <!-- Background Badge -->
+  <rect x="2" y="2" width="236" height="76" rx="14" fill="#0f0e1f" stroke="url(#shineGrad)" stroke-width="2"/>
+  
+  <!-- Diamond / Sparkle Icon -->
+  <g transform="translate(14, 16)">
+    <rect x="2" y="2" width="44" height="44" rx="12" fill="url(#shineGrad)"/>
+    <!-- Diamond Sheen -->
+    <path d="M24 10 L36 22 L24 38 L12 22 Z" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M16 22 L32 22 M24 10 L24 38" stroke="#ffffff" stroke-width="1.5" stroke-opacity="0.8"/>
+    <!-- Small star -->
+    <path d="M38 12 L40 16 L44 18 L40 20 L38 24 L36 20 L32 18 L36 16 Z" fill="url(#goldGrad)"/>
+  </g>
+
+  <!-- Typography -->
+  <text x="68" y="38" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="22" font-weight="900" fill="#ffffff" letter-spacing="1.5">SHINE</text>
+  <text x="144" y="38" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="800" fill="url(#goldGrad)" letter-spacing="1">PREMIUM</text>
+  <text x="69" y="55" font-family="'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="9" font-weight="700" fill="#c084fc" letter-spacing="2">HOME CARE &amp; SANITARY · RFL</text>
+</svg>

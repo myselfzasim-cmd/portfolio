@@ -1,0 +1,10 @@
+<svg viewBox="0 0 1600 900" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#EDEAE0"/>
+  <rect x="60" y="60" width="1480" height="780" fill="none" stroke="#C9A227" stroke-width="2" stroke-dasharray="8 8"/>
+  <line x1="0" y1="450" x2="40" y2="450" stroke="#14213D" stroke-width="2"/>
+  <line x1="1560" y1="450" x2="1600" y2="450" stroke="#14213D" stroke-width="2"/>
+  <line x1="800" y1="0" x2="800" y2="40" stroke="#14213D" stroke-width="2"/>
+  <line x1="800" y1="860" x2="800" y2="900" stroke="#14213D" stroke-width="2"/>
+  <text x="800" y="460" font-family="IBM Plex Mono, monospace" font-size="28" fill="#5B6472" text-anchor="middle">COVER IMAGE PLACEHOLDER</text>
+  <text x="800" y="498" font-family="IBM Plex Mono, monospace" font-size="18" fill="#9A9486" text-anchor="middle">replace via /editor.html or GitHub</text>
+</svg>

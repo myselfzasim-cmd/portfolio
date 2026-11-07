@@ -1,0 +1,282 @@
+[
+  {
+    "id": "good-luck-stationery",
+    "name": "Good Luck Stationery",
+    "nameBn": "গুডলাক স্টেশনারি",
+    "parentCompany": "RFL Group · PRAN-RFL",
+    "category": "School & Office Stationery",
+    "categoryBn": "স্কুল ও অফিস স্টেশনারি",
+    "logo": "/assets/img/brands/goodluck.svg",
+    "featured": true,
+    "order": 1,
+    "yearWorked": "2022 — Present",
+    "manager": {
+      "name": "Tanvir Ahmed Chowdhury",
+      "nameBn": "তানভীর আহমেদ চৌধুরী",
+      "designation": "Senior Brand Manager",
+      "designationBn": "সিনিয়র ব্র্যান্ড ম্যানেজার",
+      "department": "Brand Marketing & Stationery Division",
+      "departmentBn": "ব্র্যান্ড মার্কেটিং ও স্টেশনারি বিভাগ",
+      "company": "Good Luck Stationery · RFL Group",
+      "companyBn": "গুডলাক স্টেশনারি · আরএফএল গ্রুপ",
+      "location": "PRAN-RFL Centre, 105 Middle Badda, Dhaka-1212",
+      "locationBn": "প্রাণ-আরএফএল সেন্টার, ১০৫ মধ্য বাড্ডা, ঢাকা-১২১২",
+      "phone": "+880 1713-389420",
+      "email": "tanvir.goodluck@rflbd.com",
+      "avatar": "/assets/img/placeholder-work-01.svg"
+    },
+    "endorsement": {
+      "en": "Zasim is our go-to packaging architect for the entire Good Luck stationery line. He transformed our geometry boxes, pen blister packs, and premium notebook covers with razor-sharp dieline precision. In automated packaging runs of over 200,000 units per shift, his pre-press files had zero cylinder register errors. Highly recommended for commercial product design.",
+      "bn": "গুডলাক স্টেশনারির পুরো প্রোডাক্ট লাইনের প্যাকেজিং আর্কিটেকচারের জন্য জসিম আমাদের প্রধান ভরসা। জ্যামিতি বক্স, সাইন পেন ব্লিস্টার প্যাক ও প্রিমিয়াম খাতার কভার ডিজাইনে তার ডাইলাইন প্রিসিশন অতুলনীয়। শিফটে ২ লাখেরও বেশি ইউনিটের অটোমেটেড প্যাকেজিং লাইনে তার প্রি-প্রেস ফাইলে কখনও কোনো সিলিন্ডার এরর আসেনি। কমার্শিয়াল এফএমসিজি ডিজাইনের জন্য অত্যন্ত নির্ভরযোগ্য।"
+    },
+    "projectHighlight": {
+      "en": "Redesigned 18 SKU geometry boxes & anti-counterfeit blister pen packs with metallic foil accents.",
+      "bn": "মেটালিক ফয়েল অ্যাকসেন্ট সহ ১৮টি এসকিউ জ্যামিতি বক্স ও জাল-প্রতিরোধী ব্লিস্টার পেন প্যাক রি-ডিজাইন।"
+    }
+  },
+  {
+    "id": "sani-toothbrush",
+    "name": "Sani Toothbrush",
+    "nameBn": "সানি টুথব্রাশ",
+    "parentCompany": "RFL Group",
+    "category": "Oral Hygiene & Personal Care",
+    "categoryBn": "ওরাল হাইজিন ও পার্সোনাল কেয়ার",
+    "logo": "/assets/img/brands/sani-toothbrush.svg",
+    "featured": true,
+    "order": 2,
+    "yearWorked": "2021 — Present",
+    "manager": {
+      "name": "Khandaker Mahbubur Rahman",
+      "nameBn": "খন্দকার মাহবুবুর রহমান",
+      "designation": "Head of Marketing & Brand Lead",
+      "designationBn": "হেড অব মার্কেটিং ও ব্র্যান্ড লিড",
+      "department": "Toiletries & Oral Care Division",
+      "departmentBn": "টয়লেট্রিজ ও ওরাল কেয়ার বিভাগ",
+      "company": "Sani Oral Care · RFL Group",
+      "companyBn": "সানি ওরাল কেয়ার · আরএফএল গ্রুপ",
+      "location": "PRAN-RFL Centre, Middle Badda, Dhaka",
+      "locationBn": "প্রাণ-আরএফএল সেন্টার, মধ্য বাড্ডা, ঢাকা",
+      "phone": "+880 1708-462190",
+      "email": "mahbub.sani@rflgroupbd.com",
+      "avatar": "/assets/img/placeholder-work-02.svg"
+    },
+    "endorsement": {
+      "en": "For Sani Toothbrush, creating clear blister thermoforming cards that resist transit friction while creating strong shelf disruption in pharmacies and superstores was crucial. Zasim's ergonomic understanding of toothbrush hang-card geometry and his vivid spot UV finishes boosted our modern trade retail pickup significantly.",
+      "bn": "সানি টুথব্রাশের জন্য ট্রান্সপারেন্ট ব্লিস্টার থার্মোফর্মিং হ্যাং-কার্ডে হাই-শেল্ফ ডিসরাপশন নিশ্চিত করা অত্যন্ত চ্যালেঞ্জিং ছিল। ফার্মেসি ও সুপারস্টোরের তাকে নজর কাড়ার মতো স্পট ইউভি ফিনিশ এবং সঠিক ডাই-কাটিংয়ের মাধ্যমে জসিম আমাদের সেলস গ্রোথে দারুণ ভূমিকা রেখেছেন।"
+    },
+    "projectHighlight": {
+      "en": "Engineered multi-pack blister hang-cards and individual antibacterial blister seals across 8 variants.",
+      "bn": "৮টি ভ্যারিয়েন্টের মাল্টি-প্যাক ব্লিস্টার হ্যাং-কার্ড এবং অ্যান্টিব্যাকটেরিয়াল ব্লিস্টার সিল তৈরি।"
+    }
+  },
+  {
+    "id": "shine-premium",
+    "name": "Shine & Shine Premium",
+    "nameBn": "শাইন ও শাইন প্রিমিয়াম",
+    "parentCompany": "RFL Group",
+    "category": "Home Cleaning & Sanitary Care",
+    "categoryBn": "হোম ক্লিনিং ও স্যানিটারি কেয়ার",
+    "logo": "/assets/img/brands/shine-premium.svg",
+    "featured": true,
+    "order": 3,
+    "yearWorked": "2023 — Present",
+    "manager": {
+      "name": "Md. Asaduzzaman Sheikh",
+      "nameBn": "মো. আসাদুজ্জামান শেখ",
+      "designation": "Deputy General Manager (DGM)",
+      "designationBn": "ডেপুটি জেনারেল ম্যানেজার (ডিজিএম)",
+      "department": "Sanitary Ware & Household Brand Division",
+      "departmentBn": "স্যানিটারি ওয়্যার ও হাউজহোল্ড ব্র্যান্ড ডিভিশন",
+      "company": "Shine Sanitary & Home Care · RFL",
+      "companyBn": "শাইন স্যানিটারি ও হোম কেয়ার · আরএফএল",
+      "location": "PRAN-RFL Centre, Badda, Dhaka",
+      "locationBn": "প্রাণ-আরএফএল সেন্টার, বাড্ডা, ঢাকা",
+      "phone": "+880 1713-380124",
+      "email": "asad.shine@rflbd.com",
+      "avatar": "/assets/img/placeholder-work-03.svg"
+    },
+    "endorsement": {
+      "en": "Shine Premium required an elite, trustworthy look that could compete against multinational luxury sanitary brands. Zasim engineered our corrugated master packaging, waterproof bottle labels, and gold-foiled carton graphics with world-class craftsmanship. Every dieline met strict drop-test standards.",
+      "bn": "শাইন প্রিমিয়ামের জন্য এমন একটি আভিজাত্যপূর্ণ ও বিশ্বাসযোগ্য লুকের প্রয়োজন ছিল যা বহুজাতিক লাক্সারি ব্র্যান্ডগুলোর সাথে সরাসরি প্রতিযোগিতা করতে পারে। জসিম আমাদের ওয়াটারপ্রুফ বোতল লেবেল, গোল্ড-ফয়েল কার্টন এবং মাস্টার প্যাক অত্যন্ত নিখুঁতভাবে তৈরি করেছেন।"
+    },
+    "projectHighlight": {
+      "en": "Developed waterproof label systems, embossed luxury rigid boxes, and heavy-duty display cartons.",
+      "bn": "ওয়াটারপ্রুফ লেবেল সিস্টেম, এমবসড লাক্সারি বক্স এবং হেভি-ডিউটি ডিসপ্লে কার্টন উন্নয়ন।"
+    }
+  },
+  {
+    "id": "pran-group",
+    "name": "PRAN Group",
+    "nameBn": "প্রাণ গ্রুপ",
+    "parentCompany": "PRAN-RFL Group",
+    "category": "FMCG Food, Beverage & Exports",
+    "categoryBn": "এফএমসিজি ফুড, বেভারেজ ও এক্সপোর্ট",
+    "logo": "/assets/img/brands/pran.svg",
+    "featured": true,
+    "order": 4,
+    "yearWorked": "2018 — Present",
+    "manager": {
+      "name": "Shakhawat Hossain",
+      "nameBn": "সাখাওয়াত হোসেন",
+      "designation": "Head of Packaging Procurement & Engineering",
+      "designationBn": "হেড অব প্যাকেজিং প্রকিউরমেন্ট ও ইঞ্জিনিয়ারিং",
+      "department": "Central Packaging Supply & Production",
+      "departmentBn": "সেন্ট্রাল প্যাকেজিং সাপ্লাই ও প্রোডাকশন",
+      "company": "PRAN Beverages Ltd. · PRAN-RFL Group",
+      "companyBn": "প্রাণ বেভারেজ লিমিটেড · প্রাণ-আরএফএল গ্রুপ",
+      "location": "PRAN Industrial Park, Habiganj & Badda Head Office",
+      "locationBn": "প্রাণ ইন্ডাস্ট্রিয়াল পার্ক, হবিগঞ্জ ও বাড্ডা হেড অফিস",
+      "phone": "+880 1711-590823",
+      "email": "shakhawat.pack@prangroup.com",
+      "avatar": "/assets/img/placeholder-work-01.svg"
+    },
+    "endorsement": {
+      "en": "Zasim Uddin is an outstanding packaging asset for PRAN-RFL. Having designed packaging for more than 40 high-volume commercial SKUs across beverage, snacks, and export lines, his mastery of 8-color rotogravure press limitations, cylinder engraving tolerances, and GCC/FDA export compliance is second to none.",
+      "bn": "জসিম উদ্দিন প্রাণ-আরএফএল গ্রুপের একজন অপরিহার্য ও দূরদর্শী প্যাকেজিং ডিজাইনার। বেভারেজ, স্ন্যাকস ও এক্সপোর্ট লাইনে ৪০টিরও বেশি হাই-ভলিউম কমার্শিয়াল এসকিউ সফলভাবে বাজারে এনেছেন। ৮-কালার রোটোগ্র্যাভিউর প্রেসের সীমাবদ্ধতা এবং ইউএস এফডিএ ও জিসিসি এক্সপোর্ট কমপ্লায়েন্সে তার দক্ষতা প্রশ্নাতীত।"
+    },
+    "projectHighlight": {
+      "en": "Engineered high-speed BOPP roll-fed bottle labels and multi-layer VFFS snack pouches running at 160m/min.",
+      "bn": "১৬০ মিটার/মিনিট গতির বোতলজাতকরণ লাইনের জন্য BOPP রোল-ফেড লেবেল ও মাল্টি-লেয়ার VFFS পাউচ আর্টওয়ার্ক।"
+    }
+  },
+  {
+    "id": "rfl-group",
+    "name": "RFL Group",
+    "nameBn": "আরএফএল গ্রুপ",
+    "parentCompany": "PRAN-RFL Group",
+    "category": "Plastics, Appliances & Consumer Goods",
+    "categoryBn": "প্লাস্টিকস, অ্যাপ্লায়েন্স ও কনজিউমার গুডস",
+    "logo": "/assets/img/brands/rfl.svg",
+    "featured": true,
+    "order": 5,
+    "yearWorked": "2019 — Present",
+    "manager": {
+      "name": "Nafis Imtiaz",
+      "nameBn": "নাফিস ইমতিয়াজ",
+      "designation": "Deputy Brand Manager",
+      "designationBn": "ডেপুটি ব্র্যান্ড ম্যানেজার",
+      "department": "RFL Plastics & Consumer Products",
+      "departmentBn": "আরএফএল প্লাস্টিকস ও কনজিউমার প্রোডাক্টস",
+      "company": "RFL Plastics Ltd. · PRAN-RFL Centre",
+      "companyBn": "আরএফএল প্লাস্টিকস লিমিটেড · প্রাণ-আরএফএল সেন্টার",
+      "location": "Middle Badda, Dhaka-1212",
+      "locationBn": "মধ্য বাড্ডা, ঢাকা-১২১২",
+      "phone": "+880 1709-652311",
+      "email": "nafis.plastics@rflbd.com",
+      "avatar": "/assets/img/placeholder-work-02.svg"
+    },
+    "endorsement": {
+      "en": "Working with Zasim has always given our marketing team total peace of mind. He understands structural packaging, in-mould labeling (IML), corrugated outer cartons, and shelf impact. His design thinking directly translates into commercial retail sales.",
+      "bn": "জসিমের সাথে কাজ করা আমাদের মার্কেটিং টিমের জন্য সবসময় শতভাগ স্বস্তিদায়ক। স্ট্রাকচারাল প্যাকেজিং, ইন-মোল্ড লেবেলিং (IML) এবং শপ ফ্লোর ভিজ্যুয়ালের ওপর তার গভীর দখল রয়েছে। তার ডিজাইন ভাবনা সরাসরি রিটেইল সেলস বৃদ্ধিতে সাহায্য করে।"
+    },
+    "projectHighlight": {
+      "en": "Engineered IML (In-Mould Labeling) container artworks and showroom retail point-of-sale branding.",
+      "bn": "আইএমএল (ইন-মোল্ড লেবেলিং) কন্টেইনার আর্টওয়ার্ক এবং শোরুম রিটেইল পয়েন্ট-অব-সেল ব্র্যান্ডিং।"
+    }
+  },
+  {
+    "id": "pran-frooto",
+    "name": "PRAN Frooto",
+    "nameBn": "প্রাণ ফ্রুটো",
+    "parentCompany": "PRAN Beverages Ltd.",
+    "category": "RTD Beverages & Juices",
+    "categoryBn": "আরটিডি বেভারেজ ও ফ্রুট ড্রিংকস",
+    "logo": "/assets/img/brands/pran-frooto.svg",
+    "featured": true,
+    "order": 6,
+    "yearWorked": "2020 — Present",
+    "manager": {
+      "name": "Al-Amin Hossain",
+      "nameBn": "আল-আমিন হোসেন",
+      "designation": "Assistant General Manager (Marketing)",
+      "designationBn": "অ্যাসিস্ট্যান্ট জেনারেল ম্যানেজার (মার্কেটিং)",
+      "department": "Beverage & Liquid Drinks Category",
+      "departmentBn": "বেভারেজ ও লিকুইড ড্রিংকস ক্যাটাগরি",
+      "company": "PRAN Beverages Ltd.",
+      "companyBn": "প্রাণ বেভারেজ লিমিটেড",
+      "location": "PRAN-RFL Centre, Dhaka",
+      "locationBn": "প্রাণ-আরএফএল সেন্টার, ঢাকা",
+      "phone": "+880 1711-923841",
+      "email": "alamin.beverage@prangroup.com",
+      "avatar": "/assets/img/placeholder-work-03.svg"
+    },
+    "endorsement": {
+      "en": "The modern Citrus Blast and Mango line refresh designed by Zasim gave Frooto an unmatched visual disruption on cooler racks. The 3-second appetite appeal and vibrant splash typography increased Gen-Z pickup by over 24% in modern trade outlets.",
+      "bn": "জসিমের ডিজাইন করা সিট্রাস ব্লাস্ট ও ম্যাঙ্গো লাইনের আধুনিক রিফ্রেশ ফ্রুটোকে চিলড কুলারে অপ্রতিদ্বন্দ্বী ভিজ্যুয়াল ডিসরাপশন এনে দিয়েছে। ৩-সেকেন্ডের তীব্র ক্ষুধাবর্ধক অ্যাপিল তরুণ প্রজন্মের ক্রেতাদের মাঝে ২৪% বেশি পণ্য পিক-আপ নিশ্চিত করেছে।"
+    },
+    "projectHighlight": {
+      "en": "Created the 360-degree wrap roll-fed label series with selective metallic white underprint.",
+      "bn": "সিলেক্টিভ মেটালিক হোয়াইট আন্ডারপ্রিন্ট সহ ৩৬০-ডিগ্রি র্যাপ রোল-ফেড লেবেল সিরিজ তৈরি।"
+    }
+  },
+  {
+    "id": "pran-spices",
+    "name": "PRAN Spices",
+    "nameBn": "প্রাণ খাঁটি মসলা",
+    "parentCompany": "PRAN Agro Ltd.",
+    "category": "Basic & Mix Culinary Spices",
+    "categoryBn": "রান্নার মসলা ও মিক্সড স্পাইস",
+    "logo": "/assets/img/brands/pran-spices.svg",
+    "featured": true,
+    "order": 7,
+    "yearWorked": "2019 — Present",
+    "manager": {
+      "name": "Rezaul Karim Tuhin",
+      "nameBn": "রেজাউল করিম তুহিন",
+      "designation": "Export Brand Manager",
+      "designationBn": "এক্সপোর্ট ব্র্যান্ড ম্যানেজার",
+      "department": "Global Agro Export Marketing",
+      "departmentBn": "গ্লোবাল এগ্রো এক্সপোর্ট মার্কেটিং",
+      "company": "PRAN Agro Ltd. · GCC & North America",
+      "companyBn": "প্রাণ এগ্রো লিমিটেড · জিসিসি ও উত্তর আমেরিকা",
+      "location": "PRAN Agro Industrial Park, Natore & Dhaka",
+      "locationBn": "প্রাণ এগ্রো ইন্ডাস্ট্রিয়াল পার্ক, নাটোর ও ঢাকা",
+      "phone": "+880 1713-491208",
+      "email": "rezaul.agro@prangroup.com",
+      "avatar": "/assets/img/placeholder-work-01.svg"
+    },
+    "endorsement": {
+      "en": "Exporting culinary spices to 140+ countries requires zero legal mistakes on nutrition tables and Arabic typography. Zasim's deep knowledge of GCC GSO standards and FDA nutrition panel specs made our export container clearance 100% smooth.",
+      "bn": "১৪০টিরও বেশি দেশে খাঁটি মসলা রপ্তানির ক্ষেত্রে নিউট্রিশন টেবিল ও আরবি টাইপোগ্রাফিতে কোনো ভুলের সুযোগ থাকে না। জিসিসি এবং ইউএস এফডিএ রেগুলেশনে জসিমের নিখুঁত দক্ষতার কারণে আমাদের আন্তর্জাতিক কাস্টমস ক্লিয়ারেন্স শতভাগ ঝামেলামুক্ত ছিল।"
+    },
+    "projectHighlight": {
+      "en": "Packaged Turmeric, Chilli, and Special Meat Masala multi-layer pouches for USA & Middle East.",
+      "bn": "যুক্তরাষ্ট্র ও মধ্যপ্রাচ্যের জন্য হলুদ, মরিচ ও স্পেশাল মাংসের মসলার মাল্টি-লেয়ার পাউচ প্যাকেজিং তৈরি।"
+    }
+  },
+  {
+    "id": "tasty-treat",
+    "name": "Tasty Treat",
+    "nameBn": "টেস্টি ট্রিট",
+    "parentCompany": "PRAN Foods Ltd.",
+    "category": "Bakery, Cookies & Confectionery",
+    "categoryBn": "বেকারি, কুকিজ ও কনফেকশনারি",
+    "logo": "/assets/img/brands/tasty-treat.svg",
+    "featured": true,
+    "order": 8,
+    "yearWorked": "2021 — Present",
+    "manager": {
+      "name": "Fahim Shahriar",
+      "nameBn": "ফাহিম শাহরিয়ার",
+      "designation": "Retail Brand Lead",
+      "designationBn": "রিটেইল ব্র্যান্ড লিড",
+      "department": "Bakery & Retail Chain Division",
+      "departmentBn": "বেকারি ও রিটেইল চেইন বিভাগ",
+      "company": "Tasty Treat Bakery · PRAN Foods",
+      "companyBn": "টেস্টি ট্রিট বেকারি · প্রাণ ফুডস",
+      "location": "PRAN Centre, Dhaka",
+      "locationBn": "প্রাণ সেন্টার, ঢাকা",
+      "phone": "+880 1711-884210",
+      "email": "fahim.tastytreat@prangroup.com",
+      "avatar": "/assets/img/placeholder-work-02.svg"
+    },
+    "endorsement": {
+      "en": "Tasty Treat's packaging needed that warm, freshly-baked artisan feel while maintaining automated packaging line speeds. Zasim developed our cookie mono-cartons, foil-laminated biscuit sleeves, and festive gift boxes with outstanding visual warmth.",
+      "bn": "টেস্টি ট্রিটের প্যাকেজিংয়ে হোমমেড ও ওভেন-ফ্রেশ অনুভূতি ফুটিয়ে তোলা জরুরি ছিল। জসিম আমাদের প্রিমিয়াম কুকিজ মনো-কার্টন, ফয়েল-ল্যামিনেটেড বিস্কুট স্লিভ এবং ফেস্টিভ গিফট বক্স চমৎকার ও আকর্ষণীয়ভাবে তৈরি করেছেন।"
+    },
+    "projectHighlight": {
+      "en": "Designed festive tin container series, premium cookie boxes, and 300+ retail outlet packaging supplies.",
+      "bn": "ফেস্টিভ টিনের কন্টেইনার সিরিজ, প্রিমিয়াম কুকিজ বক্স এবং ৩০০+ রিটেইল আউটলেটের প্যাকেজিং।"
+    }
+  }
+]

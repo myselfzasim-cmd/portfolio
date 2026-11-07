@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+<rect width="1400" height="900" fill="#f4f1ea"/>
+<rect x="45" y="45" width="1310" height="810" fill="#0b0b0a"/>
+<circle cx="1270" cy="130" r="52" fill="#ffd06a"/>
+<text x="95" y="125" fill="#f4f1ea" font-family="monospace" font-size="18">DEMO CASE / 04</text>
+<text x="95" y="285" fill="#f4f1ea" font-family="Arial,sans-serif" font-size="88" font-weight="900" letter-spacing="-4">FEEDBACK</text>
+<text x="98" y="325" fill="#8f948e" font-family="monospace" font-size="16" letter-spacing="2">CLIENT REVIEW</text>
+<rect x="95" y="390" width="1210" height="250" fill="#ffd06a" opacity=".95"/>
+<g transform="translate(520,360) rotate(-5)">
+  <rect width="320" height="430" rx="18" fill="#fffdf8"/>
+  <rect x="28" y="34" width="264" height="65" fill="#0b0b0a"/>
+  <text x="48" y="76" fill="#fffdf8" font-family="Arial" font-size="24" font-weight="800">PULSE Snack System</text>
+  <circle cx="160" cy="215" r="78" fill="#ffd06a"/>
+  <rect x="35" y="330" width="250" height="8" fill="#0b0b0a" opacity=".16"/>
+  <rect x="35" y="352" width="180" height="8" fill="#0b0b0a" opacity=".16"/>
+</g>
+<path d="M95 730 H1305" stroke="#f4f1ea" opacity=".2"/>
+<text x="95" y="790" fill="#caff39" font-family="monospace" font-size="14">BRIEF → FRAMEWORK → DESIGN → FEEDBACK → FINAL</text>
+</svg>

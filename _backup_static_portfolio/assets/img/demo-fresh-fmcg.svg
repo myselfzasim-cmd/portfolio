@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900">
+<rect width="1200" height="900" fill="#f4f1ea"/>
+<rect x="70" y="70" width="1060" height="760" fill="#0b0b0a"/>
+<rect x="90" y="90" width="140" height="34" rx="17" fill="#e6ff61"/>
+<text x="110" y="112" fill="#0b0b0a" font-family="monospace" font-size="14" font-weight="700">DEMO / 06</text>
+<rect x="230" y="210" width="740" height="380" rx="18" fill="#e6ff61" transform="rotate(-3 600 400)"/>
+<rect x="390" y="185" width="380" height="500" rx="26" fill="#f4f1ea" transform="rotate(7 580 430)"/>
+<rect x="432" y="230" width="296" height="320" fill="#fffdf8"/>
+<text x="458" y="300" fill="#0b0b0a" font-family="Arial,sans-serif" font-size="28" font-weight="800">FRESH</text>
+<text x="458" y="340" fill="#6b6a64" font-family="monospace" font-size="13">VISUAL SYSTEM / 2026</text>
+<circle cx="620" cy="440" r="70" fill="#e6ff61"/>
+<path d="M160 730 H1040" stroke="#fffdf8" opacity=".25"/>
+<text x="90" y="785" fill="#fffdf8" font-family="monospace" font-size="12">PACKAGING / BRANDING / PRODUCTION</text>
+</svg>
