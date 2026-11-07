@@ -146,183 +146,312 @@ export default function HomeClient({ initialProjects = [], initialBrands = [] }:
       {/* Ambient Top Glow */}
       <div className="ambient-glow-top" />
 
-      {/* 1. PERMANENTLY FROZEN TOP HEADER BAR (Visual Icons on Mobile, Full Labels on Desktop) */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#08090c]/90 backdrop-blur-xl border-b border-[#1f2433] px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between shadow-2xl shadow-black/80">
-        {/* Brand Lockup: Far Left with Home Icon */}
-        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-          <Link
-            href="/"
-            onClick={(e) => {
-              if (typeof window !== "undefined" && window.location.pathname === "/") {
-                e.preventDefault();
-                setViewMode("split");
-                window.scrollTo({ top: 0, behavior: "smooth" });
-              }
-            }}
-            title={lang === "bn" ? "হোম পেজে যান" : "Go to Home"}
-            className="flex items-center gap-2 group shrink-0 cursor-pointer"
-          >
-            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-tr from-[#111] via-[#1e2333] to-[#d4ff33] p-[1.5px] shadow-lg group-hover:scale-110 transition-transform flex items-center justify-center shrink-0">
-              <div className="w-full h-full rounded-full bg-[#08090c] flex items-center justify-center text-[#d4ff33] group-hover:bg-[#d4ff33] group-hover:text-black transition-colors">
-                <Home className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              </div>
+      {/* 1. PERMANENTLY FROZEN TOP HEADER BAR (Mobile 2-Tier: Profile-First on Top + Balanced 4-Col Navigation Below; Desktop 1-Row) */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#08090c]/95 backdrop-blur-2xl border-b border-[#1f2433] shadow-2xl shadow-black/80">
+        {/* MOBILE 2-TIER VIEW (< md): Profile-First Hierarchy, 100% Screen Fitted with Zero Horizontal Overflow */}
+        <div className="flex flex-col md:hidden w-full px-3 pt-2 pb-1.5 gap-1.5">
+          {/* TIER 1: Profile Photo FIRST (as requested by user), Signature, Theme & Lang toggles */}
+          <div className="flex items-center justify-between w-full">
+            {/* Left: Designer Profile Avatar (FIRST) + Name */}
+            <div className="flex items-center gap-2 min-w-0">
+              <button
+                type="button"
+                onClick={() => setIsProfileOpen(true)}
+                title={lang === "bn" ? "ডিজাইনার প্রোফাইল ও বায়োডাটা" : "Designer Profile & Bio"}
+                aria-label="Designer Profile"
+                className="relative w-9 h-9 rounded-full overflow-hidden border-2 border-[#d4ff33] p-[1px] transition-transform active:scale-95 shadow-md shadow-[#d4ff33]/30 shrink-0 cursor-pointer"
+              >
+                <div className="relative w-full h-full rounded-full overflow-hidden bg-black">
+                  <Image
+                    src="/assets/img/headshot.jpg"
+                    alt="Zasim Uddin"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </button>
+
+              <Link
+                href="/"
+                onClick={(e) => {
+                  if (typeof window !== "undefined" && window.location.pathname === "/") {
+                    e.preventDefault();
+                    setViewMode("split");
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  }
+                }}
+                className="flex flex-col justify-center min-w-0 cursor-pointer"
+              >
+                <span className="font-handwriting text-xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#d4ff33] via-[#f1f5f9] to-[#38bdf8] leading-none">
+                  ThirstyPoet
+                </span>
+                <span className="font-mono text-[9px] text-[#8c93a8] tracking-wider uppercase font-semibold font-kalpurush truncate mt-0.5">
+                  {lang === "bn" ? "জসিম উদ্দিন · প্যাকেজিং ডিজাইনার" : "Zasim Uddin · Designer"}
+                </span>
+              </Link>
             </div>
-            <div className="flex flex-col justify-center min-w-0">
-              <span className="font-handwriting text-lg sm:text-2xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#d4ff33] via-[#f1f5f9] to-[#38bdf8] group-hover:drop-shadow-[0_2px_12px_rgba(212,255,51,0.5)] transition-all leading-none">
-                ThirstyPoet
-              </span>
-              <span className="font-mono text-[9px] text-[#8c93a8] tracking-wider uppercase font-semibold font-kalpurush hidden md:block truncate mt-0.5">
-                {lang === "bn"
-                  ? "প্যাকেজিং ডিজাইনার · প্রাণ-আরএফএল গ্রুপ"
-                  : "PACKAGING DESIGNER · PRAN-RFL GROUP"}
-              </span>
+
+            {/* Right: Theme Toggle & Language Toggle */}
+            <div className="flex items-center gap-1.5 shrink-0">
+              <button
+                type="button"
+                onClick={toggleTheme}
+                title={
+                  theme === "dark"
+                    ? (lang === "bn" ? "লাইট / ডে মোড" : "Switch to Day Mode")
+                    : (lang === "bn" ? "ডার্ক / নাইট মোড" : "Switch to Night Mode")
+                }
+                aria-label="Toggle Theme"
+                className="p-2 border border-[#222634] active:border-[#d4ff33] bg-[#0e1017] text-[#8c93a8] active:text-[#d4ff33] rounded-xl transition-all cursor-pointer shadow-inner flex items-center justify-center shrink-0"
+              >
+                {theme === "dark" ? (
+                  <Sun className="w-4 h-4 text-[#fbbf24]" />
+                ) : (
+                  <Moon className="w-4 h-4 text-[#38bdf8]" />
+                )}
+              </button>
+
+              <button
+                type="button"
+                onClick={() => setLang(lang === "bn" ? "en" : "bn")}
+                title={lang === "bn" ? "Switch to English" : "বাংলা ভাষায় পরিবর্তন করুন"}
+                aria-label="Toggle Language"
+                className="p-1.5 px-2.5 rounded-xl border border-[#222634] bg-[#0e1017] active:border-[#d4ff33] text-[#d4ff33] font-bold text-[11px] flex items-center gap-1 cursor-pointer font-mono shadow-inner shrink-0"
+              >
+                <Languages className="w-3.5 h-3.5" />
+                <span>{lang === "bn" ? "বাং" : "EN"}</span>
+              </button>
             </div>
-          </Link>
-        </div>
-
-        {/* Center / Right controls: Pure Visual Icons on Mobile */}
-        <div className="flex items-center gap-1 sm:gap-2 font-mono text-xs shrink-0">
-          {/* Action: All Projects / View Toggle (Grid / Split) */}
-          <button
-            type="button"
-            onClick={viewMode === "split" ? handleAllProjectsClick : handleShowcaseClick}
-            title={
-              viewMode === "split"
-                ? (lang === "bn" ? "সকল প্রজেক্ট গ্রিড ভিউ" : "All Projects Grid View")
-                : (lang === "bn" ? "বিস্তারিত শোকেস ভিউ" : "Detailed Showcase View")
-            }
-            aria-label={viewMode === "split" ? "All Projects" : "Showcase"}
-            className="p-2 sm:px-3 sm:py-1.5 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] hover:bg-[#141724] text-[#f3f4f8] hover:text-[#d4ff33] rounded-xl transition-all flex items-center gap-1.5 text-[11px] font-bold font-kalpurush shadow-md cursor-pointer group"
-          >
-            {viewMode === "split" ? (
-              <>
-                <LayoutGrid className="w-4 h-4 shrink-0 text-[#d4ff33] group-hover:scale-110 transition-transform" />
-                <span className="hidden md:inline">{lang === "bn" ? "অল প্রজেক্ট" : "All Projects"}</span>
-              </>
-            ) : (
-              <>
-                <Layers className="w-4 h-4 shrink-0 text-[#38bdf8] group-hover:scale-110 transition-transform" />
-                <span className="hidden md:inline">{lang === "bn" ? "শোকেস" : "Showcase"}</span>
-              </>
-            )}
-          </button>
-
-          {/* Brands Tab (Icon on Mobile) */}
-          <Link
-            href="/brands"
-            title={lang === "bn" ? "ব্র্যান্ডসমূহ (৩৩০+ কমার্শিয়াল ব্র্যান্ড)" : "330+ Commercial Brands"}
-            aria-label="Brands"
-            className="p-2 sm:px-3 sm:py-1.5 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] hover:bg-[#141724] text-[#f3f4f8] hover:text-[#d4ff33] rounded-xl transition-all flex items-center gap-1.5 text-[11px] font-bold shadow-md cursor-pointer group"
-          >
-            <Layers className="w-4 h-4 text-[#d4ff33] group-hover:scale-110 transition-transform" />
-            <span className="hidden md:inline">{lang === "bn" ? "ব্র্যান্ডসমূহ" : "Brands"}</span>
-          </Link>
-
-          {/* Photo Gallery Tab (Camera Icon on Mobile) */}
-          <Link
-            href="/gallery"
-            title={lang === "bn" ? "ফটো গ্যালারি ও কাজের মুহূর্ত" : "Photo Gallery & Archives"}
-            aria-label="Photo Gallery"
-            className="p-2 sm:px-3 sm:py-1.5 border border-[#222634] hover:border-[#38bdf8] bg-[#0e1017] hover:bg-[#141724] text-[#f3f4f8] hover:text-[#38bdf8] rounded-xl transition-all flex items-center gap-1.5 text-[11px] font-bold shadow-md cursor-pointer group"
-          >
-            <Camera className="w-4 h-4 text-[#38bdf8] group-hover:scale-110 transition-transform" />
-            <span className="hidden md:inline">{lang === "bn" ? "ফটো গ্যালারি" : "Photo Gallery"}</span>
-          </Link>
-
-          {/* Quick Estimator Trigger (Calculator Icon on Mobile) */}
-          <button
-            type="button"
-            onClick={() => setIsEstimatorOpen(true)}
-            title={lang === "bn" ? "প্রজেক্ট কোটেশন ও এস্টিমেটর" : "Packaging Cost Estimator"}
-            aria-label="Packaging Estimator"
-            className="p-2 sm:px-3 sm:py-1.5 bg-[#171a25] hover:bg-[#d4ff33] text-[#f3f4f8] hover:text-black border border-[#2b3145] hover:border-[#d4ff33] text-[11px] font-bold uppercase tracking-wider rounded-xl transition-all shadow-md font-kalpurush cursor-pointer flex items-center gap-1.5"
-          >
-            <Calculator className="w-4 h-4 text-[#fbbf24] group-hover:text-black shrink-0" />
-            <span className="hidden lg:inline">{lang === "bn" ? "এস্টিমেটর" : "Estimator"}</span>
-          </button>
-
-          {/* Day / Night Theme Toggle (Pure Icon) */}
-          <button
-            type="button"
-            onClick={toggleTheme}
-            title={
-              theme === "dark"
-                ? (lang === "bn" ? "লাইট / ডে মোড" : "Switch to Day Mode")
-                : (lang === "bn" ? "ডার্ক / নাইট মোড" : "Switch to Night Mode")
-            }
-            aria-label="Toggle Theme"
-            className="p-2 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] text-[#8c93a8] hover:text-[#d4ff33] rounded-xl transition-all cursor-pointer shadow-inner flex items-center justify-center shrink-0"
-          >
-            {theme === "dark" ? (
-              <Sun className="w-4 h-4 text-[#fbbf24] hover:rotate-45 transition-transform" />
-            ) : (
-              <Moon className="w-4 h-4 text-[#38bdf8] hover:-rotate-45 transition-transform" />
-            )}
-          </button>
-
-          {/* Language Toggle: Mobile Icon Badge, Desktop Segmented */}
-          {/* Mobile Single Tap Language Toggle */}
-          <button
-            type="button"
-            onClick={() => setLang(lang === "bn" ? "en" : "bn")}
-            title={lang === "bn" ? "Switch to English" : "বাংলা ভাষায় পরিবর্তন করুন"}
-            aria-label="Toggle Language"
-            className="sm:hidden p-1.5 px-2 rounded-xl border border-[#222634] bg-[#0e1017] hover:border-[#d4ff33] text-[#d4ff33] font-bold text-[10px] flex items-center gap-1 cursor-pointer font-mono shadow-inner shrink-0"
-          >
-            <Languages className="w-3.5 h-3.5" />
-            <span>{lang === "bn" ? "বাং" : "EN"}</span>
-          </button>
-
-          {/* Desktop Dual Segmented Toggle */}
-          <div className="hidden sm:flex border border-[#222634] rounded-xl overflow-hidden p-0.5 bg-[#0e1017] text-xs font-mono shadow-inner shrink-0">
-            <button
-              type="button"
-              onClick={() => setLang("en")}
-              aria-label="Switch to English"
-              className={`px-2.5 py-1 font-bold rounded-lg transition-all cursor-pointer ${
-                lang === "en"
-                  ? "bg-[#d4ff33] text-black font-black shadow-md"
-                  : "text-[#8c93a8] hover:text-white"
-              }`}
-            >
-              EN
-            </button>
-            <button
-              type="button"
-              onClick={() => setLang("bn")}
-              aria-label="বাংলা ভাষায় রূপান্তর করুন"
-              className={`px-2.5 py-1 font-bold rounded-lg transition-all font-kalpurush cursor-pointer ${
-                lang === "bn"
-                  ? "bg-[#d4ff33] text-black font-black shadow-md"
-                  : "text-[#8c93a8] hover:text-white"
-              }`}
-            >
-              বাং
-            </button>
           </div>
 
-          {/* Designer Profile Avatar Trigger */}
-          <button
-            type="button"
-            onClick={() => setIsProfileOpen(true)}
-            title={lang === "bn" ? "ডিজাইনার প্রোফাইল ও বায়োডাটা" : "Designer Profile & Bio-Data"}
-            aria-label="Designer Profile"
-            className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border-2 border-[#d4ff33]/50 hover:border-[#d4ff33] p-[1px] transition-all hover:scale-105 cursor-pointer shadow-lg shadow-[#d4ff33]/15 group shrink-0"
-          >
-            <div className="relative w-full h-full rounded-full overflow-hidden bg-black">
-              <Image
-                src="/assets/img/headshot.jpg"
-                alt="Zasim Uddin"
-                fill
-                className="object-cover"
-              />
+          {/* TIER 2: 4-Column Balanced Navigation Bar (100% Mobile Screen Width, Zero Horizontal Overflow) */}
+          <div className="grid grid-cols-4 gap-1.5 w-full pt-0.5">
+            {/* 1. Projects View Toggle */}
+            <button
+              type="button"
+              onClick={viewMode === "split" ? handleAllProjectsClick : handleShowcaseClick}
+              title={
+                viewMode === "split"
+                  ? (lang === "bn" ? "সকল প্রজেক্ট গ্রিড" : "All Projects Grid")
+                  : (lang === "bn" ? "শোকেস ভিউ" : "Showcase View")
+              }
+              aria-label={viewMode === "split" ? "All Projects" : "Showcase"}
+              className="py-1.5 px-1 border border-[#222634] active:border-[#d4ff33] bg-[#0e1017] active:bg-[#141724] text-[#f3f4f8] rounded-xl transition-all flex items-center justify-center gap-1 text-[11px] font-bold font-kalpurush shadow-md cursor-pointer"
+            >
+              {viewMode === "split" ? (
+                <>
+                  <LayoutGrid className="w-3.5 h-3.5 text-[#d4ff33] shrink-0" />
+                  <span className="truncate">{lang === "bn" ? "প্রজেক্ট" : "Projects"}</span>
+                </>
+              ) : (
+                <>
+                  <Layers className="w-3.5 h-3.5 text-[#38bdf8] shrink-0" />
+                  <span className="truncate">{lang === "bn" ? "শোকেস" : "Showcase"}</span>
+                </>
+              )}
+            </button>
+
+            {/* 2. Brands Tab */}
+            <Link
+              href="/brands"
+              title={lang === "bn" ? "৩৩০+ ব্র্যান্ডস" : "330+ Brands"}
+              aria-label="Brands"
+              className="py-1.5 px-1 border border-[#222634] active:border-[#d4ff33] bg-[#0e1017] active:bg-[#141724] text-[#f3f4f8] rounded-xl transition-all flex items-center justify-center gap-1 text-[11px] font-bold font-kalpurush shadow-md cursor-pointer"
+            >
+              <Layers className="w-3.5 h-3.5 text-[#d4ff33] shrink-0" />
+              <span className="truncate">{lang === "bn" ? "ব্র্যান্ডস" : "Brands"}</span>
+            </Link>
+
+            {/* 3. Photo Gallery Tab */}
+            <Link
+              href="/gallery"
+              title={lang === "bn" ? "ফটো গ্যালারি" : "Photo Gallery"}
+              aria-label="Photo Gallery"
+              className="py-1.5 px-1 border border-[#222634] active:border-[#38bdf8] bg-[#0e1017] active:bg-[#141724] text-[#f3f4f8] rounded-xl transition-all flex items-center justify-center gap-1 text-[11px] font-bold font-kalpurush shadow-md cursor-pointer"
+            >
+              <Camera className="w-3.5 h-3.5 text-[#38bdf8] shrink-0" />
+              <span className="truncate">{lang === "bn" ? "গ্যালারি" : "Gallery"}</span>
+            </Link>
+
+            {/* 4. Estimator Trigger */}
+            <button
+              type="button"
+              onClick={() => setIsEstimatorOpen(true)}
+              title={lang === "bn" ? "কোটেশন এস্টিমেটর" : "Cost Estimator"}
+              aria-label="Packaging Estimator"
+              className="py-1.5 px-1 bg-[#171a25] active:bg-[#d4ff33] text-[#f3f4f8] active:text-black border border-[#2b3145] text-[11px] font-bold rounded-xl transition-all shadow-md font-kalpurush cursor-pointer flex items-center justify-center gap-1"
+            >
+              <Calculator className="w-3.5 h-3.5 text-[#fbbf24] shrink-0" />
+              <span className="truncate">{lang === "bn" ? "কোটেশন" : "Quote"}</span>
+            </button>
+          </div>
+        </div>
+
+        {/* DESKTOP SINGLE ROW VIEW (>= md) */}
+        <div className="hidden md:flex items-center justify-between h-16 px-6 lg:px-8 w-full">
+          {/* Brand Lockup: Far Left with Home Icon */}
+          <div className="flex items-center gap-3 min-w-0">
+            <Link
+              href="/"
+              onClick={(e) => {
+                if (typeof window !== "undefined" && window.location.pathname === "/") {
+                  e.preventDefault();
+                  setViewMode("split");
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }
+              }}
+              title={lang === "bn" ? "হোম পেজে যান" : "Go to Home"}
+              className="flex items-center gap-2 group shrink-0 cursor-pointer"
+            >
+              <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#111] via-[#1e2333] to-[#d4ff33] p-[1.5px] shadow-lg group-hover:scale-110 transition-transform flex items-center justify-center shrink-0">
+                <div className="w-full h-full rounded-full bg-[#08090c] flex items-center justify-center text-[#d4ff33] group-hover:bg-[#d4ff33] group-hover:text-black transition-colors">
+                  <Home className="w-4 h-4" />
+                </div>
+              </div>
+              <div className="flex flex-col justify-center min-w-0">
+                <span className="font-handwriting text-2xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#d4ff33] via-[#f1f5f9] to-[#38bdf8] group-hover:drop-shadow-[0_2px_12px_rgba(212,255,51,0.5)] transition-all leading-none">
+                  ThirstyPoet
+                </span>
+                <span className="font-mono text-[9px] text-[#8c93a8] tracking-wider uppercase font-semibold font-kalpurush truncate mt-0.5">
+                  {lang === "bn"
+                    ? "প্যাকেজিং ডিজাইনার · প্রাণ-আরএফএল গ্রুপ"
+                    : "PACKAGING DESIGNER · PRAN-RFL GROUP"}
+                </span>
+              </div>
+            </Link>
+          </div>
+
+          {/* Desktop Right controls */}
+          <div className="flex items-center gap-2 font-mono text-xs shrink-0">
+            {/* Action: All Projects / View Toggle (Grid / Split) */}
+            <button
+              type="button"
+              onClick={viewMode === "split" ? handleAllProjectsClick : handleShowcaseClick}
+              title={
+                viewMode === "split"
+                  ? (lang === "bn" ? "সকল প্রজেক্ট গ্রিড ভিউ" : "All Projects Grid View")
+                  : (lang === "bn" ? "বিস্তারিত শোকেস ভিউ" : "Detailed Showcase View")
+              }
+              aria-label={viewMode === "split" ? "All Projects" : "Showcase"}
+              className="px-3 py-1.5 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] hover:bg-[#141724] text-[#f3f4f8] hover:text-[#d4ff33] rounded-xl transition-all flex items-center gap-1.5 text-[11px] font-bold font-kalpurush shadow-md cursor-pointer group"
+            >
+              {viewMode === "split" ? (
+                <>
+                  <LayoutGrid className="w-4 h-4 shrink-0 text-[#d4ff33] group-hover:scale-110 transition-transform" />
+                  <span>{lang === "bn" ? "অল প্রজেক্ট" : "All Projects"}</span>
+                </>
+              ) : (
+                <>
+                  <Layers className="w-4 h-4 shrink-0 text-[#38bdf8] group-hover:scale-110 transition-transform" />
+                  <span>{lang === "bn" ? "শোকেস" : "Showcase"}</span>
+                </>
+              )}
+            </button>
+
+            {/* Brands Tab */}
+            <Link
+              href="/brands"
+              title={lang === "bn" ? "ব্র্যান্ডসমূহ (৩৩০+ কমার্শিয়াল ব্র্যান্ড)" : "330+ Commercial Brands"}
+              aria-label="Brands"
+              className="px-3 py-1.5 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] hover:bg-[#141724] text-[#f3f4f8] hover:text-[#d4ff33] rounded-xl transition-all flex items-center gap-1.5 text-[11px] font-bold shadow-md cursor-pointer group"
+            >
+              <Layers className="w-4 h-4 text-[#d4ff33] group-hover:scale-110 transition-transform" />
+              <span>{lang === "bn" ? "ব্র্যান্ডসমূহ" : "Brands"}</span>
+            </Link>
+
+            {/* Photo Gallery Tab */}
+            <Link
+              href="/gallery"
+              title={lang === "bn" ? "ফটো গ্যালারি ও কাজের মুহূর্ত" : "Photo Gallery & Archives"}
+              aria-label="Photo Gallery"
+              className="px-3 py-1.5 border border-[#222634] hover:border-[#38bdf8] bg-[#0e1017] hover:bg-[#141724] text-[#f3f4f8] hover:text-[#38bdf8] rounded-xl transition-all flex items-center gap-1.5 text-[11px] font-bold shadow-md cursor-pointer group"
+            >
+              <Camera className="w-4 h-4 text-[#38bdf8] group-hover:scale-110 transition-transform" />
+              <span>{lang === "bn" ? "ফটো গ্যালারি" : "Photo Gallery"}</span>
+            </Link>
+
+            {/* Quick Estimator Trigger */}
+            <button
+              type="button"
+              onClick={() => setIsEstimatorOpen(true)}
+              title={lang === "bn" ? "প্রজেক্ট কোটেশন ও এস্টিমেটর" : "Packaging Cost Estimator"}
+              aria-label="Packaging Estimator"
+              className="px-3 py-1.5 bg-[#171a25] hover:bg-[#d4ff33] text-[#f3f4f8] hover:text-black border border-[#2b3145] hover:border-[#d4ff33] text-[11px] font-bold uppercase tracking-wider rounded-xl transition-all shadow-md font-kalpurush cursor-pointer flex items-center gap-1.5"
+            >
+              <Calculator className="w-4 h-4 text-[#fbbf24] group-hover:text-black shrink-0" />
+              <span className="hidden lg:inline">{lang === "bn" ? "এস্টিমেটর" : "Estimator"}</span>
+            </button>
+
+            {/* Day / Night Theme Toggle */}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              title={
+                theme === "dark"
+                  ? (lang === "bn" ? "লাইট / ডে মোড" : "Switch to Day Mode")
+                  : (lang === "bn" ? "ডার্ক / নাইট মোড" : "Switch to Night Mode")
+              }
+              aria-label="Toggle Theme"
+              className="p-2 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] text-[#8c93a8] hover:text-[#d4ff33] rounded-xl transition-all cursor-pointer shadow-inner flex items-center justify-center shrink-0"
+            >
+              {theme === "dark" ? (
+                <Sun className="w-4 h-4 text-[#fbbf24] hover:rotate-45 transition-transform" />
+              ) : (
+                <Moon className="w-4 h-4 text-[#38bdf8] hover:-rotate-45 transition-transform" />
+              )}
+            </button>
+
+            {/* Desktop Dual Segmented Toggle */}
+            <div className="flex border border-[#222634] rounded-xl overflow-hidden p-0.5 bg-[#0e1017] text-xs font-mono shadow-inner shrink-0">
+              <button
+                type="button"
+                onClick={() => setLang("en")}
+                aria-label="Switch to English"
+                className={`px-2.5 py-1 font-bold rounded-lg transition-all cursor-pointer ${
+                  lang === "en"
+                    ? "bg-[#d4ff33] text-black font-black shadow-md"
+                    : "text-[#8c93a8] hover:text-white"
+                }`}
+              >
+                EN
+              </button>
+              <button
+                type="button"
+                onClick={() => setLang("bn")}
+                aria-label="বাংলা ভাষায় রূপান্তর করুন"
+                className={`px-2.5 py-1 font-bold rounded-lg transition-all font-kalpurush cursor-pointer ${
+                  lang === "bn"
+                    ? "bg-[#d4ff33] text-black font-black shadow-md"
+                    : "text-[#8c93a8] hover:text-white"
+                }`}
+              >
+                বাং
+              </button>
             </div>
-          </button>
+
+            {/* Designer Profile Avatar Trigger */}
+            <button
+              type="button"
+              onClick={() => setIsProfileOpen(true)}
+              title={lang === "bn" ? "ডিজাইনার প্রোফাইল ও বায়োডাটা" : "Designer Profile & Bio-Data"}
+              aria-label="Designer Profile"
+              className="relative w-9 h-9 rounded-full overflow-hidden border-2 border-[#d4ff33]/50 hover:border-[#d4ff33] p-[1px] transition-all hover:scale-105 cursor-pointer shadow-lg shadow-[#d4ff33]/15 group shrink-0"
+            >
+              <div className="relative w-full h-full rounded-full overflow-hidden bg-black">
+                <Image
+                  src="/assets/img/headshot.jpg"
+                  alt="Zasim Uddin"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </button>
+          </div>
         </div>
       </header>
 
       {/* Spacer for fixed top header */}
-      <div className="h-16 w-full shrink-0" />
+      <div className="h-[96px] md:h-16 w-full shrink-0" />
 
       {/* 1.5 BRAND TICKER & CLIENT RECOMMENDATIONS MARQUEE */}
       <BrandTicker initialBrands={initialBrands} />
@@ -545,7 +674,7 @@ export default function HomeClient({ initialProjects = [], initialBrands = [] }:
       </section>
 
       {/* 4. FILTER & SEARCH BAR (Sticky right below frozen header) */}
-      <section id="feed" className="sticky top-16 z-40 bg-[#08090c]/90 backdrop-blur-xl border-b border-[#1a1e2b] py-2.5 px-3 sm:px-6 shadow-md scroll-mt-16">
+      <section id="feed" className="sticky top-[96px] md:top-16 z-40 bg-[#08090c]/90 backdrop-blur-xl border-b border-[#1a1e2b] py-2.5 px-3 sm:px-6 shadow-md scroll-mt-[96px] md:scroll-mt-16">
         <div className="w-full max-w-full lg:max-w-[88vw] 2xl:max-w-[1440px] mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           {/* Category Filter Pills */}
           <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none font-mono text-[11px]">

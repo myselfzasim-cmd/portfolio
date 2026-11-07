@@ -90,154 +90,260 @@ export default function ProjectDetailView({ project, nextProject }: Props) {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#08090c] text-[#f3f4f8] selection:bg-[#d4ff33] selection:text-black">
-      {/* 1. PERMANENTLY FROZEN TOP BAR (Visual Icons on Mobile, Labels on Desktop) */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#08090c]/90 backdrop-blur-xl border-b border-[#1f2433] px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between shadow-2xl shadow-black/80 no-print">
-        {/* Brand Lockup: Far Left with Home Button & ThirstyPoet Signature */}
-        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
-          <Link
-            href="/"
-            title={lang === "bn" ? "হোম পেজে ফিরুন · ThirstyPoet" : "Return to Home · ThirstyPoet"}
-            className="flex items-center gap-2 sm:gap-2.5 group cursor-pointer shrink-0"
-          >
-            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-tr from-[#111] via-[#1e2333] to-[#d4ff33] p-[1.5px] shadow-lg group-hover:scale-110 transition-transform flex items-center justify-center shrink-0">
-              <div className="w-full h-full rounded-full bg-[#08090c] flex items-center justify-center text-[#d4ff33] group-hover:bg-[#d4ff33] group-hover:text-black transition-colors">
-                <Home className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-              </div>
+      {/* 1. PERMANENTLY FROZEN TOP BAR (Mobile 2-Tier: Profile-First on Top + Balanced 4-Col Navigation Below; Desktop 1-Row) */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#08090c]/95 backdrop-blur-2xl border-b border-[#1f2433] shadow-2xl shadow-black/80 no-print">
+        {/* MOBILE 2-TIER VIEW (< md): Profile-First Hierarchy, 100% Screen Fitted with Zero Overflow */}
+        <div className="flex flex-col md:hidden w-full px-3 pt-2 pb-1.5 gap-1.5">
+          {/* TIER 1: Profile Photo FIRST (as requested), Signature, Theme & Lang toggles */}
+          <div className="flex items-center justify-between w-full">
+            {/* Left: Designer Profile Avatar (FIRST) + Name */}
+            <div className="flex items-center gap-2 min-w-0">
+              <button
+                type="button"
+                onClick={() => setIsProfileOpen(true)}
+                title={lang === "bn" ? "ডিজাইনার প্রোফাইল ও বায়োডাটা" : "Designer Profile & Bio"}
+                aria-label="Designer Profile"
+                className="relative w-9 h-9 rounded-full overflow-hidden border-2 border-[#d4ff33] p-[1px] transition-transform active:scale-95 shadow-md shadow-[#d4ff33]/30 shrink-0 cursor-pointer"
+              >
+                <div className="relative w-full h-full rounded-full overflow-hidden bg-black">
+                  <Image
+                    src="/assets/img/headshot.jpg"
+                    alt="Zasim Uddin"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </button>
+
+              <Link
+                href="/"
+                className="flex flex-col justify-center min-w-0 cursor-pointer"
+              >
+                <span className="font-handwriting text-xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#d4ff33] via-[#f1f5f9] to-[#38bdf8] leading-none">
+                  ThirstyPoet
+                </span>
+                <span className="font-mono text-[9px] text-[#8c93a8] tracking-wider uppercase font-semibold font-kalpurush truncate mt-0.5">
+                  {lang === "bn" ? "জসিম উদ্দিন · প্যাকেজিং প্রজেক্ট" : "Zasim Uddin · Spec Sheet"}
+                </span>
+              </Link>
             </div>
-            <span className="font-handwriting text-lg sm:text-2xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#d4ff33] via-[#f1f5f9] to-[#38bdf8] leading-none">
-              ThirstyPoet
-            </span>
-          </Link>
-        </div>
 
-        {/* Right controls: Visual Icons on Mobile */}
-        <div className="flex items-center gap-1 sm:gap-2.5 font-mono text-xs shrink-0">
-          {/* Brands Tab Link */}
-          <Link
-            href="/brands"
-            title={lang === "bn" ? "৩৩০+ কমার্শিয়াল ব্র্যান্ডস" : "330+ Commercial Brands"}
-            aria-label="Brands"
-            className="p-2 sm:px-3 sm:py-1.5 rounded-xl border border-[#2b3145] bg-[#141724] text-[#f3f4f8] hover:border-[#d4ff33] hover:text-[#d4ff33] transition-all text-[11px] font-mono font-bold shadow-md cursor-pointer flex items-center gap-1.5"
-          >
-            <Layers className="w-4 h-4 text-[#d4ff33]" />
-            <span className="hidden md:inline">{lang === "bn" ? "ব্র্যান্ডসমূহ" : "Brands"}</span>
-          </Link>
+            {/* Right: Theme Toggle & Language Toggle */}
+            <div className="flex items-center gap-1.5 shrink-0">
+              <button
+                type="button"
+                onClick={toggleTheme}
+                title={
+                  theme === "dark"
+                    ? (lang === "bn" ? "লাইট / ডে মোড" : "Day Mode")
+                    : (lang === "bn" ? "ডার্ক / নাইট মোড" : "Night Mode")
+                }
+                aria-label="Toggle Theme"
+                className="p-2 border border-[#222634] active:border-[#d4ff33] bg-[#0e1017] text-[#8c93a8] active:text-[#d4ff33] rounded-xl transition-all cursor-pointer shadow-inner flex items-center justify-center shrink-0"
+              >
+                {theme === "dark" ? (
+                  <Sun className="w-4 h-4 text-[#fbbf24]" />
+                ) : (
+                  <Moon className="w-4 h-4 text-[#38bdf8]" />
+                )}
+              </button>
 
-          {/* Photo Gallery Tab */}
-          <Link
-            href="/gallery"
-            title={lang === "bn" ? "ফটো গ্যালারি ও কাজের মুহূর্ত" : "View Photo Gallery & Archive"}
-            aria-label="Photo Gallery"
-            className="p-2 sm:px-3 sm:py-1.5 rounded-xl border border-[#2b3145] bg-[#141724] text-[#f3f4f8] hover:border-[#38bdf8] hover:text-[#38bdf8] transition-all text-[11px] font-mono font-bold shadow-md cursor-pointer flex items-center gap-1.5"
-          >
-            <Camera className="w-4 h-4 text-[#38bdf8]" />
-            <span className="hidden md:inline">{lang === "bn" ? "ফটো গ্যালারি" : "Photo Gallery"}</span>
-          </Link>
-
-          {/* Print PDF Spec Sheet (Icon on Mobile, Label on Desktop) */}
-          <button
-            type="button"
-            onClick={() => window.print()}
-            className="p-2 sm:px-3 sm:py-1.5 rounded-xl border border-[#2b3145] bg-[#141724] text-[#f3f4f8] hover:border-white transition-all text-[11px] font-mono font-bold font-kalpurush shadow-md cursor-pointer flex items-center gap-1.5"
-            title={lang === "bn" ? "প্রিন্ট বা PDF হিসেবে সংরক্ষণ" : "Print or save as PDF"}
-            aria-label="Print PDF"
-          >
-            <Printer className="w-4 h-4 text-[#38bdf8]" />
-            <span className="hidden sm:inline">{lang === "bn" ? "PDF স্পেক" : "PDF Spec"}</span>
-          </button>
-
-          {/* Quick Quote Button */}
-          <button
-            type="button"
-            onClick={() => setIsEstimatorOpen(true)}
-            className="p-2 sm:px-3 sm:py-1.5 rounded-xl bg-[#1d2232] text-[#d4ff33] border border-[#d4ff33]/30 hover:border-[#d4ff33] transition-all text-[11px] font-mono font-bold font-kalpurush cursor-pointer flex items-center gap-1.5"
-            title={lang === "bn" ? "প্রজেক্ট কোটেশন" : "Quote"}
-            aria-label="Quote"
-          >
-            <Sparkles className="w-4 h-4 text-[#d4ff33]" />
-            <span className="hidden md:inline">{lang === "bn" ? "কোটেশন" : "Quote"}</span>
-          </button>
-
-          {/* Day / Night Theme Toggle */}
-          <button
-            type="button"
-            onClick={toggleTheme}
-            title={
-              theme === "dark"
-                ? (lang === "bn" ? "লাইট / ডে মোড" : "Day Mode")
-                : (lang === "bn" ? "ডার্ক / নাইট মোড" : "Night Mode")
-            }
-            aria-label="Toggle Theme"
-            className="p-2 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] text-[#8c93a8] hover:text-[#d4ff33] rounded-xl transition-all cursor-pointer shadow-inner flex items-center justify-center shrink-0"
-          >
-            {theme === "dark" ? (
-              <Sun className="w-4 h-4 text-[#fbbf24] hover:rotate-45 transition-transform" />
-            ) : (
-              <Moon className="w-4 h-4 text-[#38bdf8] hover:-rotate-45 transition-transform" />
-            )}
-          </button>
-
-          {/* Language Switcher: Mobile Single Tap, Desktop Segmented */}
-          <button
-            type="button"
-            onClick={() => setLang(lang === "bn" ? "en" : "bn")}
-            title={lang === "bn" ? "Switch to English" : "বাংলা ভাষায় পরিবর্তন করুন"}
-            aria-label="Toggle Language"
-            className="sm:hidden p-1.5 px-2 rounded-xl border border-[#222634] bg-[#0e1017] hover:border-[#d4ff33] text-[#d4ff33] font-bold text-[10px] flex items-center gap-1 cursor-pointer font-mono shadow-inner shrink-0"
-          >
-            <Languages className="w-3.5 h-3.5" />
-            <span>{lang === "bn" ? "বাং" : "EN"}</span>
-          </button>
-
-          <div className="hidden sm:flex items-center bg-[#0e1017] border border-[#222634] rounded-xl p-0.5 font-mono text-xs shadow-inner shrink-0">
-            <button
-              type="button"
-              onClick={() => setLang("en")}
-              aria-label="Switch to English"
-              className={`px-2.5 sm:px-3 py-1 font-bold rounded-lg transition-all cursor-pointer ${
-                lang === "en"
-                  ? "bg-[#d4ff33] text-black shadow-md font-black"
-                  : "text-[#8c93a8] hover:text-white"
-              }`}
-            >
-              EN
-            </button>
-            <button
-              type="button"
-              onClick={() => setLang("bn")}
-              aria-label="বাংলা ভাষায় রূপান্তর করুন"
-              className={`px-2.5 sm:px-3 py-1 font-bold rounded-lg transition-all font-kalpurush cursor-pointer ${
-                lang === "bn"
-                  ? "bg-[#d4ff33] text-black shadow-md font-black"
-                  : "text-[#8c93a8] hover:text-white"
-              }`}
-            >
-              বাং
-            </button>
+              <button
+                type="button"
+                onClick={() => setLang(lang === "bn" ? "en" : "bn")}
+                title={lang === "bn" ? "Switch to English" : "বাংলা ভাষায় পরিবর্তন করুন"}
+                aria-label="Toggle Language"
+                className="p-1.5 px-2.5 rounded-xl border border-[#222634] bg-[#0e1017] active:border-[#d4ff33] text-[#d4ff33] font-bold text-[11px] flex items-center gap-1 cursor-pointer font-mono shadow-inner shrink-0"
+              >
+                <Languages className="w-3.5 h-3.5" />
+                <span>{lang === "bn" ? "বাং" : "EN"}</span>
+              </button>
+            </div>
           </div>
 
-          {/* Designer Profile Avatar Trigger */}
-          <button
-            type="button"
-            onClick={() => setIsProfileOpen(true)}
-            title={lang === "bn" ? "ডিজাইনার প্রোফাইল ও বায়োডাটা" : "Designer Profile & Bio-Data"}
-            aria-label="Designer Profile"
-            className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border-2 border-[#d4ff33]/50 hover:border-[#d4ff33] p-[1px] transition-all hover:scale-105 cursor-pointer shadow-lg shadow-[#d4ff33]/15 group shrink-0"
-          >
-            <div className="relative w-full h-full rounded-full overflow-hidden bg-black">
-              <Image
-                src="/assets/img/headshot.jpg"
-                alt="Zasim Uddin"
-                fill
-                className="object-cover"
-              />
+          {/* TIER 2: 4-Column Balanced Navigation Bar (100% Mobile Screen Width, Zero Overflow) */}
+          <div className="grid grid-cols-4 gap-1.5 w-full pt-0.5">
+            {/* 1. Back to Home */}
+            <Link
+              href="/"
+              title={lang === "bn" ? "হোম পেজে ফিরুন" : "Home"}
+              className="py-1.5 px-1 border border-[#222634] active:border-[#d4ff33] bg-[#0e1017] active:bg-[#141724] text-[#f3f4f8] rounded-xl transition-all flex items-center justify-center gap-1 text-[11px] font-bold font-kalpurush shadow-md cursor-pointer"
+            >
+              <Home className="w-3.5 h-3.5 text-[#d4ff33] shrink-0" />
+              <span className="truncate">{lang === "bn" ? "হোম" : "Home"}</span>
+            </Link>
+
+            {/* 2. Brands Tab */}
+            <Link
+              href="/brands"
+              title={lang === "bn" ? "৩৩০+ ব্র্যান্ডস" : "330+ Brands"}
+              className="py-1.5 px-1 border border-[#222634] active:border-[#d4ff33] bg-[#0e1017] active:bg-[#141724] text-[#f3f4f8] rounded-xl transition-all flex items-center justify-center gap-1 text-[11px] font-bold font-kalpurush shadow-md cursor-pointer"
+            >
+              <Layers className="w-3.5 h-3.5 text-[#d4ff33] shrink-0" />
+              <span className="truncate">{lang === "bn" ? "ব্র্যান্ডস" : "Brands"}</span>
+            </Link>
+
+            {/* 3. Photo Gallery Tab */}
+            <Link
+              href="/gallery"
+              title={lang === "bn" ? "ফটো গ্যালারি" : "Photo Gallery"}
+              className="py-1.5 px-1 border border-[#222634] active:border-[#38bdf8] bg-[#0e1017] active:bg-[#141724] text-[#f3f4f8] rounded-xl transition-all flex items-center justify-center gap-1 text-[11px] font-bold font-kalpurush shadow-md cursor-pointer"
+            >
+              <Camera className="w-3.5 h-3.5 text-[#38bdf8] shrink-0" />
+              <span className="truncate">{lang === "bn" ? "গ্যালারি" : "Gallery"}</span>
+            </Link>
+
+            {/* 4. Print / PDF Button */}
+            <button
+              type="button"
+              onClick={() => window.print()}
+              title={lang === "bn" ? "PDF স্পেক প্রিন্ট করুন" : "Print PDF Spec"}
+              className="py-1.5 px-1 bg-[#171a25] active:bg-white text-[#38bdf8] active:text-black border border-[#2b3145] text-[11px] font-bold rounded-xl transition-all shadow-md font-kalpurush cursor-pointer flex items-center justify-center gap-1"
+            >
+              <Printer className="w-3.5 h-3.5 text-[#38bdf8] shrink-0" />
+              <span className="truncate">{lang === "bn" ? "PDF" : "PDF"}</span>
+            </button>
+          </div>
+        </div>
+
+        {/* DESKTOP SINGLE ROW VIEW (>= md) */}
+        <div className="hidden md:flex items-center justify-between h-16 px-6 lg:px-8 w-full">
+          {/* Brand Lockup: Far Left with Home Button & ThirstyPoet Signature */}
+          <div className="flex items-center gap-3 min-w-0">
+            <Link
+              href="/"
+              title={lang === "bn" ? "হোম পেজে ফিরুন · ThirstyPoet" : "Return to Home · ThirstyPoet"}
+              className="flex items-center gap-2.5 group cursor-pointer shrink-0"
+            >
+              <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#111] via-[#1e2333] to-[#d4ff33] p-[1.5px] shadow-lg group-hover:scale-110 transition-transform flex items-center justify-center shrink-0">
+                <div className="w-full h-full rounded-full bg-[#08090c] flex items-center justify-center text-[#d4ff33] group-hover:bg-[#d4ff33] group-hover:text-black transition-colors">
+                  <Home className="w-4 h-4" />
+                </div>
+              </div>
+              <span className="font-handwriting text-2xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#d4ff33] via-[#f1f5f9] to-[#38bdf8] leading-none">
+                ThirstyPoet
+              </span>
+            </Link>
+          </div>
+
+          {/* Right controls */}
+          <div className="flex items-center gap-2.5 font-mono text-xs shrink-0">
+            {/* Brands Tab Link */}
+            <Link
+              href="/brands"
+              title={lang === "bn" ? "৩৩০+ কমার্শিয়াল ব্র্যান্ডস" : "330+ Commercial Brands"}
+              aria-label="Brands"
+              className="px-3 py-1.5 rounded-xl border border-[#2b3145] bg-[#141724] text-[#f3f4f8] hover:border-[#d4ff33] hover:text-[#d4ff33] transition-all text-[11px] font-mono font-bold shadow-md cursor-pointer flex items-center gap-1.5"
+            >
+              <Layers className="w-4 h-4 text-[#d4ff33]" />
+              <span>{lang === "bn" ? "ব্র্যান্ডসমূহ" : "Brands"}</span>
+            </Link>
+
+            {/* Photo Gallery Tab */}
+            <Link
+              href="/gallery"
+              title={lang === "bn" ? "ফটো গ্যালারি ও কাজের মুহূর্ত" : "View Photo Gallery & Archive"}
+              aria-label="Photo Gallery"
+              className="px-3 py-1.5 rounded-xl border border-[#2b3145] bg-[#141724] text-[#f3f4f8] hover:border-[#38bdf8] hover:text-[#38bdf8] transition-all text-[11px] font-mono font-bold shadow-md cursor-pointer flex items-center gap-1.5"
+            >
+              <Camera className="w-4 h-4 text-[#38bdf8]" />
+              <span>{lang === "bn" ? "ফটো গ্যালারি" : "Photo Gallery"}</span>
+            </Link>
+
+            {/* Print PDF Spec Sheet */}
+            <button
+              type="button"
+              onClick={() => window.print()}
+              className="px-3 py-1.5 rounded-xl border border-[#2b3145] bg-[#141724] text-[#f3f4f8] hover:border-white transition-all text-[11px] font-mono font-bold font-kalpurush shadow-md cursor-pointer flex items-center gap-1.5"
+              title={lang === "bn" ? "প্রিন্ট বা PDF হিসেবে সংরক্ষণ" : "Print or save as PDF"}
+              aria-label="Print PDF"
+            >
+              <Printer className="w-4 h-4 text-[#38bdf8]" />
+              <span>{lang === "bn" ? "PDF স্পেক" : "PDF Spec"}</span>
+            </button>
+
+            {/* Quick Quote Button */}
+            <button
+              type="button"
+              onClick={() => setIsEstimatorOpen(true)}
+              className="px-3 py-1.5 rounded-xl bg-[#1d2232] text-[#d4ff33] border border-[#d4ff33]/30 hover:border-[#d4ff33] transition-all text-[11px] font-mono font-bold font-kalpurush cursor-pointer flex items-center gap-1.5"
+              title={lang === "bn" ? "প্রজেক্ট কোটেশন" : "Quote"}
+              aria-label="Quote"
+            >
+              <Sparkles className="w-4 h-4 text-[#d4ff33]" />
+              <span className="hidden md:inline">{lang === "bn" ? "কোটেশন" : "Quote"}</span>
+            </button>
+
+            {/* Day / Night Theme Toggle */}
+            <button
+              type="button"
+              onClick={toggleTheme}
+              title={
+                theme === "dark"
+                  ? (lang === "bn" ? "লাইট / ডে মোড" : "Day Mode")
+                  : (lang === "bn" ? "ডার্ক / নাইট মোড" : "Night Mode")
+              }
+              aria-label="Toggle Theme"
+              className="p-2 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] text-[#8c93a8] hover:text-[#d4ff33] rounded-xl transition-all cursor-pointer shadow-inner flex items-center justify-center shrink-0"
+            >
+              {theme === "dark" ? (
+                <Sun className="w-4 h-4 text-[#fbbf24] hover:rotate-45 transition-transform" />
+              ) : (
+                <Moon className="w-4 h-4 text-[#38bdf8] hover:-rotate-45 transition-transform" />
+              )}
+            </button>
+
+            {/* Desktop Segmented Language Switcher */}
+            <div className="flex items-center bg-[#0e1017] border border-[#222634] rounded-xl p-0.5 font-mono text-xs shadow-inner shrink-0">
+              <button
+                type="button"
+                onClick={() => setLang("en")}
+                aria-label="Switch to English"
+                className={`px-2.5 sm:px-3 py-1 font-bold rounded-lg transition-all cursor-pointer ${
+                  lang === "en"
+                    ? "bg-[#d4ff33] text-black shadow-md font-black"
+                    : "text-[#8c93a8] hover:text-white"
+                }`}
+              >
+                EN
+              </button>
+              <button
+                type="button"
+                onClick={() => setLang("bn")}
+                aria-label="বাংলা ভাষায় রূপান্তর করুন"
+                className={`px-2.5 sm:px-3 py-1 font-bold rounded-lg transition-all font-kalpurush cursor-pointer ${
+                  lang === "bn"
+                    ? "bg-[#d4ff33] text-black shadow-md font-black"
+                    : "text-[#8c93a8] hover:text-white"
+                }`}
+              >
+                বাং
+              </button>
             </div>
-          </button>
+
+            {/* Designer Profile Avatar Trigger */}
+            <button
+              type="button"
+              onClick={() => setIsProfileOpen(true)}
+              title={lang === "bn" ? "ডিজাইনার প্রোফাইল ও বায়োডাটা" : "Designer Profile & Bio-Data"}
+              aria-label="Designer Profile"
+              className="relative w-9 h-9 rounded-full overflow-hidden border-2 border-[#d4ff33]/50 hover:border-[#d4ff33] p-[1px] transition-all hover:scale-105 cursor-pointer shadow-lg shadow-[#d4ff33]/15 group shrink-0"
+            >
+              <div className="relative w-full h-full rounded-full overflow-hidden bg-black">
+                <Image
+                  src="/assets/img/headshot.jpg"
+                  alt="Zasim Uddin"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </button>
+          </div>
         </div>
       </header>
 
       {/* Spacer for fixed top header */}
-      <div className="h-16 w-full shrink-0 no-print" />
+      <div className="h-[96px] md:h-16 w-full shrink-0 no-print" />
 
       {/* 2. MAIN CONTENT BODY */}
       <main className="max-w-5xl mx-auto w-full px-4 sm:px-8 py-8 flex-grow">
