@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Project } from "@/lib/types";
+import { Project, BrandRecommendation } from "@/lib/types";
 import { useLanguage } from "@/lib/LanguageContext";
 import ProjectSplitCard from "@/components/ProjectSplitCard";
 import ProjectGridTile from "@/components/ProjectGridTile";
@@ -27,13 +27,18 @@ import {
   Globe2,
   CheckCircle2,
   ArrowUpRight,
+  Layers,
+  LayoutGrid,
+  Languages,
+  ChevronDown,
 } from "lucide-react";
 
 interface Props {
   initialProjects?: Project[];
+  initialBrands?: BrandRecommendation[];
 }
 
-export default function HomeClient({ initialProjects = [] }: Props) {
+export default function HomeClient({ initialProjects = [], initialBrands = [] }: Props) {
   const { lang, setLang } = useLanguage();
   const { theme, toggleTheme } = useTheme();
   const [projects, setProjects] = useState<Project[]>(initialProjects);
@@ -48,6 +53,7 @@ export default function HomeClient({ initialProjects = [] }: Props) {
   const [activeBeforeAfter, setActiveBeforeAfter] = useState<Project | null>(null);
   const [isEstimatorOpen, setIsEstimatorOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [expandedManifesto, setExpandedManifesto] = useState<number | null>(null);
 
   useEffect(() => {
     fetch("/api/projects")
@@ -140,10 +146,10 @@ export default function HomeClient({ initialProjects = [] }: Props) {
       {/* Ambient Top Glow */}
       <div className="ambient-glow-top" />
 
-      {/* 1. PERMANENTLY FROZEN TOP HEADER BAR */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#08090c]/90 backdrop-blur-xl border-b border-[#1f2433] px-4 sm:px-8 h-16 flex items-center justify-between shadow-2xl shadow-black/80">
+      {/* 1. PERMANENTLY FROZEN TOP HEADER BAR (Visual Icons on Mobile, Full Labels on Desktop) */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#08090c]/90 backdrop-blur-xl border-b border-[#1f2433] px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between shadow-2xl shadow-black/80">
         {/* Brand Lockup: Far Left with Home Icon */}
-        <div className="flex items-center gap-3 min-w-0">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
           <Link
             href="/"
             onClick={(e) => {
@@ -154,18 +160,18 @@ export default function HomeClient({ initialProjects = [] }: Props) {
               }
             }}
             title={lang === "bn" ? "হোম পেজে যান" : "Go to Home"}
-            className="flex items-center gap-2.5 group shrink-0 cursor-pointer"
+            className="flex items-center gap-2 group shrink-0 cursor-pointer"
           >
-            <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#111] via-[#1e2333] to-[#d4ff33] p-[1.5px] shadow-lg group-hover:scale-110 transition-transform flex items-center justify-center">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-tr from-[#111] via-[#1e2333] to-[#d4ff33] p-[1.5px] shadow-lg group-hover:scale-110 transition-transform flex items-center justify-center shrink-0">
               <div className="w-full h-full rounded-full bg-[#08090c] flex items-center justify-center text-[#d4ff33] group-hover:bg-[#d4ff33] group-hover:text-black transition-colors">
-                <Home className="w-4 h-4" />
+                <Home className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
             </div>
             <div className="flex flex-col justify-center min-w-0">
-              <span className="font-handwriting text-xl sm:text-2xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#d4ff33] via-[#f1f5f9] to-[#38bdf8] group-hover:drop-shadow-[0_2px_12px_rgba(212,255,51,0.5)] transition-all leading-none">
+              <span className="font-handwriting text-lg sm:text-2xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#d4ff33] via-[#f1f5f9] to-[#38bdf8] group-hover:drop-shadow-[0_2px_12px_rgba(212,255,51,0.5)] transition-all leading-none">
                 ThirstyPoet
               </span>
-              <span className="font-mono text-[9px] text-[#8c93a8] tracking-wider uppercase font-semibold font-kalpurush hidden xs:block truncate mt-0.5">
+              <span className="font-mono text-[9px] text-[#8c93a8] tracking-wider uppercase font-semibold font-kalpurush hidden md:block truncate mt-0.5">
                 {lang === "bn"
                   ? "প্যাকেজিং ডিজাইনার · প্রাণ-আরএফএল গ্রুপ"
                   : "PACKAGING DESIGNER · PRAN-RFL GROUP"}
@@ -174,107 +180,106 @@ export default function HomeClient({ initialProjects = [] }: Props) {
           </Link>
         </div>
 
-        {/* Center / Right controls */}
-        <div className="flex items-center gap-2 sm:gap-3 font-mono text-xs shrink-0">
-          {/* Action: All Projects (Auto-scroll to Grid View) */}
+        {/* Center / Right controls: Pure Visual Icons on Mobile */}
+        <div className="flex items-center gap-1 sm:gap-2 font-mono text-xs shrink-0">
+          {/* Action: All Projects / View Toggle (Grid / Split) */}
           <button
             type="button"
             onClick={viewMode === "split" ? handleAllProjectsClick : handleShowcaseClick}
             title={
               viewMode === "split"
-                ? (lang === "bn" ? "সকল প্রজেক্টের গ্রিড ভিউতে যান" : "Go to All Projects Grid View")
-                : (lang === "bn" ? "বিস্তারিত শোকেস ভিউতে পরিবর্তন করুন" : "Switch to Detailed Showcase View")
+                ? (lang === "bn" ? "সকল প্রজেক্ট গ্রিড ভিউ" : "All Projects Grid View")
+                : (lang === "bn" ? "বিস্তারিত শোকেস ভিউ" : "Detailed Showcase View")
             }
-            className="px-3 py-1.5 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] hover:bg-[#141724] text-[#f3f4f8] hover:text-[#d4ff33] rounded-xl transition-all flex items-center gap-2 text-[11px] font-bold font-kalpurush shadow-md cursor-pointer group"
+            aria-label={viewMode === "split" ? "All Projects" : "Showcase"}
+            className="p-2 sm:px-3 sm:py-1.5 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] hover:bg-[#141724] text-[#f3f4f8] hover:text-[#d4ff33] rounded-xl transition-all flex items-center gap-1.5 text-[11px] font-bold font-kalpurush shadow-md cursor-pointer group"
           >
             {viewMode === "split" ? (
               <>
-                {/* 4 Boxes Grid Icon (Matching Image 2) */}
-                <svg
-                  className="w-4 h-4 shrink-0 text-[#d4ff33] group-hover:scale-110 transition-transform"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <rect x="3" y="3" width="7" height="7" rx="2" />
-                  <rect x="14" y="3" width="7" height="7" rx="2" />
-                  <rect x="3" y="14" width="7" height="7" rx="2" />
-                  <rect x="14" y="14" width="7" height="7" rx="2" />
-                </svg>
-                <span>{lang === "bn" ? "অল প্রজেক্ট" : "All Projects"}</span>
+                <LayoutGrid className="w-4 h-4 shrink-0 text-[#d4ff33] group-hover:scale-110 transition-transform" />
+                <span className="hidden md:inline">{lang === "bn" ? "অল প্রজেক্ট" : "All Projects"}</span>
               </>
             ) : (
               <>
-                {/* Detailed Showcase Icon */}
-                <svg
-                  className="w-4 h-4 shrink-0 text-[#38bdf8] group-hover:text-[#d4ff33] transition-colors"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <rect x="3" y="4" width="4.5" height="4" rx="1.5" />
-                  <line x1="10.5" y1="6" x2="21" y2="6" />
-                  <rect x="3" y="10" width="4.5" height="4" rx="1.5" />
-                  <line x1="10.5" y1="12" x2="21" y2="12" />
-                  <rect x="3" y="16" width="4.5" height="4" rx="1.5" />
-                  <line x1="10.5" y1="18" x2="21" y2="18" />
-                </svg>
-                <span>{lang === "bn" ? "বিস্তারিত শোকেস" : "Showcase"}</span>
+                <Layers className="w-4 h-4 shrink-0 text-[#38bdf8] group-hover:scale-110 transition-transform" />
+                <span className="hidden md:inline">{lang === "bn" ? "শোকেস" : "Showcase"}</span>
               </>
             )}
           </button>
 
-          {/* Photo Gallery Tab */}
+          {/* Brands Tab (Icon on Mobile) */}
           <Link
-            href="/gallery"
-            title={lang === "bn" ? "ফটো গ্যালারি ও কাজের মুহূর্ত" : "View Photo Gallery & Archive"}
-            className="px-3 py-1.5 border border-[#222634] hover:border-[#38bdf8] bg-[#0e1017] hover:bg-[#141724] text-[#f3f4f8] hover:text-[#38bdf8] rounded-xl transition-all flex items-center gap-1.5 text-[11px] font-bold shadow-md cursor-pointer group"
+            href="/brands"
+            title={lang === "bn" ? "ব্র্যান্ডসমূহ (৩৩০+ কমার্শিয়াল ব্র্যান্ড)" : "330+ Commercial Brands"}
+            aria-label="Brands"
+            className="p-2 sm:px-3 sm:py-1.5 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] hover:bg-[#141724] text-[#f3f4f8] hover:text-[#d4ff33] rounded-xl transition-all flex items-center gap-1.5 text-[11px] font-bold shadow-md cursor-pointer group"
           >
-            <Camera className="w-3.5 h-3.5 text-[#38bdf8] group-hover:scale-110 transition-transform" />
-            <span>{lang === "bn" ? "ফটো গ্যালারি" : "Photo Gallery"}</span>
+            <Layers className="w-4 h-4 text-[#d4ff33] group-hover:scale-110 transition-transform" />
+            <span className="hidden md:inline">{lang === "bn" ? "ব্র্যান্ডসমূহ" : "Brands"}</span>
           </Link>
 
-          {/* Quick Estimator Trigger */}
+          {/* Photo Gallery Tab (Camera Icon on Mobile) */}
+          <Link
+            href="/gallery"
+            title={lang === "bn" ? "ফটো গ্যালারি ও কাজের মুহূর্ত" : "Photo Gallery & Archives"}
+            aria-label="Photo Gallery"
+            className="p-2 sm:px-3 sm:py-1.5 border border-[#222634] hover:border-[#38bdf8] bg-[#0e1017] hover:bg-[#141724] text-[#f3f4f8] hover:text-[#38bdf8] rounded-xl transition-all flex items-center gap-1.5 text-[11px] font-bold shadow-md cursor-pointer group"
+          >
+            <Camera className="w-4 h-4 text-[#38bdf8] group-hover:scale-110 transition-transform" />
+            <span className="hidden md:inline">{lang === "bn" ? "ফটো গ্যালারি" : "Photo Gallery"}</span>
+          </Link>
+
+          {/* Quick Estimator Trigger (Calculator Icon on Mobile) */}
           <button
             type="button"
             onClick={() => setIsEstimatorOpen(true)}
-            className="hidden md:flex items-center gap-1.5 px-3.5 py-1.5 bg-[#171a25] hover:bg-[#d4ff33] text-[#f3f4f8] hover:text-black border border-[#2b3145] hover:border-[#d4ff33] text-[11px] font-bold uppercase tracking-wider rounded-xl transition-all shadow-md font-kalpurush cursor-pointer"
+            title={lang === "bn" ? "প্রজেক্ট কোটেশন ও এস্টিমেটর" : "Packaging Cost Estimator"}
+            aria-label="Packaging Estimator"
+            className="p-2 sm:px-3 sm:py-1.5 bg-[#171a25] hover:bg-[#d4ff33] text-[#f3f4f8] hover:text-black border border-[#2b3145] hover:border-[#d4ff33] text-[11px] font-bold uppercase tracking-wider rounded-xl transition-all shadow-md font-kalpurush cursor-pointer flex items-center gap-1.5"
           >
-            <Calculator className="w-3.5 h-3.5 text-[#3b82f6]" />
-            <span>{lang === "bn" ? "প্রজেক্ট এস্টিমেটর" : "Estimator"}</span>
+            <Calculator className="w-4 h-4 text-[#fbbf24] group-hover:text-black shrink-0" />
+            <span className="hidden lg:inline">{lang === "bn" ? "এস্টিমেটর" : "Estimator"}</span>
           </button>
 
-          {/* Day / Night Theme Toggle */}
+          {/* Day / Night Theme Toggle (Pure Icon) */}
           <button
             type="button"
             onClick={toggleTheme}
             title={
               theme === "dark"
-                ? (lang === "bn" ? "লাইট / ডে মোড" : "Day Mode")
-                : (lang === "bn" ? "ডার্ক / নাইট মোড" : "Night Mode")
+                ? (lang === "bn" ? "লাইট / ডে মোড" : "Switch to Day Mode")
+                : (lang === "bn" ? "ডার্ক / নাইট মোড" : "Switch to Night Mode")
             }
-            className="p-2 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] text-[#8c93a8] hover:text-[#d4ff33] rounded-xl transition-all cursor-pointer shadow-inner flex items-center justify-center"
+            aria-label="Toggle Theme"
+            className="p-2 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] text-[#8c93a8] hover:text-[#d4ff33] rounded-xl transition-all cursor-pointer shadow-inner flex items-center justify-center shrink-0"
           >
             {theme === "dark" ? (
-              <Sun className="w-4 h-4 text-[#fbbf24]" />
+              <Sun className="w-4 h-4 text-[#fbbf24] hover:rotate-45 transition-transform" />
             ) : (
-              <Moon className="w-4 h-4 text-[#38bdf8]" />
+              <Moon className="w-4 h-4 text-[#38bdf8] hover:-rotate-45 transition-transform" />
             )}
           </button>
 
-          {/* Language Toggle */}
-          <div className="flex border border-[#222634] rounded-xl overflow-hidden p-0.5 bg-[#0e1017] text-xs font-mono shadow-inner">
+          {/* Language Toggle: Mobile Icon Badge, Desktop Segmented */}
+          {/* Mobile Single Tap Language Toggle */}
+          <button
+            type="button"
+            onClick={() => setLang(lang === "bn" ? "en" : "bn")}
+            title={lang === "bn" ? "Switch to English" : "বাংলা ভাষায় পরিবর্তন করুন"}
+            aria-label="Toggle Language"
+            className="sm:hidden p-1.5 px-2 rounded-xl border border-[#222634] bg-[#0e1017] hover:border-[#d4ff33] text-[#d4ff33] font-bold text-[10px] flex items-center gap-1 cursor-pointer font-mono shadow-inner shrink-0"
+          >
+            <Languages className="w-3.5 h-3.5" />
+            <span>{lang === "bn" ? "বাং" : "EN"}</span>
+          </button>
+
+          {/* Desktop Dual Segmented Toggle */}
+          <div className="hidden sm:flex border border-[#222634] rounded-xl overflow-hidden p-0.5 bg-[#0e1017] text-xs font-mono shadow-inner shrink-0">
             <button
               type="button"
               onClick={() => setLang("en")}
               aria-label="Switch to English"
-              className={`px-2.5 sm:px-3 py-1 font-bold rounded-lg transition-all cursor-pointer ${
+              className={`px-2.5 py-1 font-bold rounded-lg transition-all cursor-pointer ${
                 lang === "en"
                   ? "bg-[#d4ff33] text-black font-black shadow-md"
                   : "text-[#8c93a8] hover:text-white"
@@ -286,7 +291,7 @@ export default function HomeClient({ initialProjects = [] }: Props) {
               type="button"
               onClick={() => setLang("bn")}
               aria-label="বাংলা ভাষায় রূপান্তর করুন"
-              className={`px-2.5 sm:px-3 py-1 font-bold rounded-lg transition-all font-kalpurush cursor-pointer ${
+              className={`px-2.5 py-1 font-bold rounded-lg transition-all font-kalpurush cursor-pointer ${
                 lang === "bn"
                   ? "bg-[#d4ff33] text-black font-black shadow-md"
                   : "text-[#8c93a8] hover:text-white"
@@ -296,12 +301,13 @@ export default function HomeClient({ initialProjects = [] }: Props) {
             </button>
           </div>
 
-          {/* Designer Profile Avatar Trigger (Replaces the lock icon) */}
+          {/* Designer Profile Avatar Trigger */}
           <button
             type="button"
             onClick={() => setIsProfileOpen(true)}
             title={lang === "bn" ? "ডিজাইনার প্রোফাইল ও বায়োডাটা" : "Designer Profile & Bio-Data"}
-            className="relative w-9 h-9 rounded-full overflow-hidden border-2 border-[#d4ff33]/50 hover:border-[#d4ff33] p-[1px] transition-all hover:scale-105 cursor-pointer shadow-lg shadow-[#d4ff33]/15 group shrink-0"
+            aria-label="Designer Profile"
+            className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border-2 border-[#d4ff33]/50 hover:border-[#d4ff33] p-[1px] transition-all hover:scale-105 cursor-pointer shadow-lg shadow-[#d4ff33]/15 group shrink-0"
           >
             <div className="relative w-full h-full rounded-full overflow-hidden bg-black">
               <Image
@@ -319,7 +325,7 @@ export default function HomeClient({ initialProjects = [] }: Props) {
       <div className="h-16 w-full shrink-0" />
 
       {/* 1.5 BRAND TICKER & CLIENT RECOMMENDATIONS MARQUEE */}
-      <BrandTicker />
+      <BrandTicker initialBrands={initialBrands} />
 
       {/* 2. CINEMATIC HERO SECTION */}
       <section className="relative z-10 py-10 sm:py-16 px-4 sm:px-8 border-b border-[#1a1e2b]">
@@ -422,6 +428,14 @@ export default function HomeClient({ initialProjects = [] }: Props) {
                   <span>{lang === "bn" ? "প্রজেক্ট কোটেশন নিন" : "Request Project Quote"}</span>
                   <ArrowUpRight className="w-4 h-4 text-[#38bdf8]" />
                 </button>
+
+                <Link
+                  href="/brands"
+                  className="px-5 py-3 bg-[#131622] hover:bg-[#1c2030] hover:border-[#d4ff33] text-[#f3f4f8] border border-[#2b3145] font-mono text-xs font-bold uppercase tracking-wider rounded-xl transition-all flex items-center gap-2 font-kalpurush text-sm cursor-pointer group"
+                >
+                  <Layers className="w-4 h-4 text-[#d4ff33] group-hover:scale-110 transition-transform" />
+                  <span>{lang === "bn" ? "৩৫০+ ব্র্যান্ডস" : "350+ Brands"}</span>
+                </Link>
               </div>
             </div>
 
@@ -465,36 +479,63 @@ export default function HomeClient({ initialProjects = [] }: Props) {
         </div>
       </section>
 
-      {/* 3. DESIGN PHILOSOPHY & MANIFESTO STRIP */}
-      <section className="bg-[#0b0d13] border-b border-[#1a1e2b] py-8 px-4 sm:px-8">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
-          <div className="p-4 bg-[#10121a] border border-[#1e2230] rounded-xl space-y-2">
-            <span className="text-[#d4ff33] text-[11px] font-black uppercase tracking-wider block font-subheading">
-              {lang === "bn" ? "০১ · ৩-সেকেন্ডের সেলফ বাস্তবতা" : "01 · The 3-Second Shelf Reality"}
-            </span>
-            <p className="text-[#a4acc4] text-sm leading-relaxed font-kalpurush">
+      {/* 3. DESIGN PHILOSOPHY & MANIFESTO STRIP (Expandable on Mobile) */}
+      <section className="bg-[#0b0d13] border-b border-[#1a1e2b] py-6 sm:py-8 px-3 sm:px-8">
+        <div className="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3 sm:gap-6 font-mono text-xs">
+          {/* Card 1 */}
+          <div
+            onClick={() => setExpandedManifesto(expandedManifesto === 1 ? null : 1)}
+            className="p-3.5 sm:p-4 bg-[#10121a] border border-[#1e2230] hover:border-[#d4ff33]/50 rounded-xl space-y-1.5 transition-all cursor-pointer md:cursor-default"
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-[#d4ff33] text-[11px] font-black uppercase tracking-wider block font-subheading">
+                {lang === "bn" ? "০১ · ৩-সেকেন্ডের সেলফ বাস্তবতা" : "01 · The 3-Second Shelf Reality"}
+              </span>
+              <span className="md:hidden text-[#d4ff33]">
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${expandedManifesto === 1 ? "rotate-180" : ""}`} />
+              </span>
+            </div>
+            <p className={`text-[#a4acc4] text-xs sm:text-sm leading-relaxed font-kalpurush transition-all ${expandedManifesto === 1 ? "block" : "hidden md:block line-clamp-2 md:line-clamp-none"}`}>
               {lang === "bn"
                 ? "সুপারশপের তাকে একজন ক্রেতা মিনিটে প্রায় ৩০০ পণ্য অতিক্রম করেন। কালার কনট্রাস্ট ও টাইপোগ্রাফির সঠিক বিন্যাস ৩ সেকেন্ডের মধ্যে ক্রেতার দৃষ্টি আটকে দেয়।"
                 : "In modern supermarkets, shoppers glance past 300 products a minute. Typography hierarchy, appetite appeal, and color contrast must halt their cart in 3 seconds."}
             </p>
           </div>
 
-          <div className="p-4 bg-[#10121a] border border-[#1e2230] rounded-xl space-y-2">
-            <span className="text-[#38bdf8] text-[11px] font-black uppercase tracking-wider block font-subheading">
-              {lang === "bn" ? "০২ · প্রি-প্রেস ইঞ্জিনিয়ারিং" : "02 · Pre-Press Engineering"}
-            </span>
-            <p className="text-[#a4acc4] text-sm leading-relaxed font-kalpurush">
+          {/* Card 2 */}
+          <div
+            onClick={() => setExpandedManifesto(expandedManifesto === 2 ? null : 2)}
+            className="p-3.5 sm:p-4 bg-[#10121a] border border-[#1e2230] hover:border-[#38bdf8]/50 rounded-xl space-y-1.5 transition-all cursor-pointer md:cursor-default"
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-[#38bdf8] text-[11px] font-black uppercase tracking-wider block font-subheading">
+                {lang === "bn" ? "০২ · প্রি-প্রেস ইঞ্জিনিয়ারিং" : "02 · Pre-Press Engineering"}
+              </span>
+              <span className="md:hidden text-[#38bdf8]">
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${expandedManifesto === 2 ? "rotate-180" : ""}`} />
+              </span>
+            </div>
+            <p className={`text-[#a4acc4] text-xs sm:text-sm leading-relaxed font-kalpurush transition-all ${expandedManifesto === 2 ? "block" : "hidden md:block line-clamp-2 md:line-clamp-none"}`}>
               {lang === "bn"
                 ? "যে ডিজাইন প্রতি মিনিটে ১৬০ মিটার গতির রোটোগ্র্যাভিউর প্রেসে নির্ভুলভাবে প্রিন্ট হতে পারে না, তা শুধুই ডিজিটাল আর্ট। প্রতিটি ডাইলাইন প্রোডাকশন-রেডি হতে হবে।"
                 : "A design that cannot run on a 160m/min rotogravure press with zero register error is not packaging—it is merely digital art. Every dieline line must be production-locked."}
             </p>
           </div>
 
-          <div className="p-4 bg-[#10121a] border border-[#1e2230] rounded-xl space-y-2">
-            <span className="text-[#f472b6] text-[11px] font-black uppercase tracking-wider block font-subheading">
-              {lang === "bn" ? "০৩ · ১৪০+ দেশের এক্সপোর্ট রেগুলেশন" : "03 · 140+ Export Compliance"}
-            </span>
-            <p className="text-[#a4acc4] text-sm leading-relaxed font-kalpurush">
+          {/* Card 3 */}
+          <div
+            onClick={() => setExpandedManifesto(expandedManifesto === 3 ? null : 3)}
+            className="p-3.5 sm:p-4 bg-[#10121a] border border-[#1e2230] hover:border-[#f472b6]/50 rounded-xl space-y-1.5 transition-all cursor-pointer md:cursor-default"
+          >
+            <div className="flex items-center justify-between">
+              <span className="text-[#f472b6] text-[11px] font-black uppercase tracking-wider block font-subheading">
+                {lang === "bn" ? "০৩ · ১৪০+ দেশের এক্সপোর্ট রেগুলেশন" : "03 · 140+ Export Compliance"}
+              </span>
+              <span className="md:hidden text-[#f472b6]">
+                <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${expandedManifesto === 3 ? "rotate-180" : ""}`} />
+              </span>
+            </div>
+            <p className={`text-[#a4acc4] text-xs sm:text-sm leading-relaxed font-kalpurush transition-all ${expandedManifesto === 3 ? "block" : "hidden md:block line-clamp-2 md:line-clamp-none"}`}>
               {lang === "bn"
                 ? "আন্তর্জাতিক বাজারে প্যাকেজিং হলো সর্বপ্রথম লিগ্যাল আর্কিটেকচার। ইউএস এফডিএ, বিএসটিআই ও জিসিসি অ্যারাবিক কমপ্লায়েন্স পণ্যকে কাস্টমসে আটকে যাওয়া থেকে রক্ষা করে।"
                 : "Export packaging is legal architecture first and aesthetics second. Meeting strict US FDA, BSTI, and GCC Arabic regulations protects multi-container shipments from customs seizure."}
@@ -505,7 +546,7 @@ export default function HomeClient({ initialProjects = [] }: Props) {
 
       {/* 4. FILTER & SEARCH BAR (Sticky right below frozen header) */}
       <section id="feed" className="sticky top-16 z-40 bg-[#08090c]/90 backdrop-blur-xl border-b border-[#1a1e2b] py-2.5 px-3 sm:px-6 shadow-md scroll-mt-16">
-        <div className="max-w-[80vw] 2xl:max-w-[1440px] mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+        <div className="w-full max-w-full lg:max-w-[88vw] 2xl:max-w-[1440px] mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           {/* Category Filter Pills */}
           <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none font-mono text-[11px]">
             {categories.map((cat) => (
@@ -525,7 +566,7 @@ export default function HomeClient({ initialProjects = [] }: Props) {
           </div>
 
           {/* Search box */}
-          <div className="relative min-w-[220px]">
+          <div className="relative min-w-[200px] sm:min-w-[240px]">
             <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-[#8c93a8]" />
             <input
               type="text"
@@ -538,8 +579,8 @@ export default function HomeClient({ initialProjects = [] }: Props) {
         </div>
       </section>
 
-      {/* 5. MAIN PACKAGING STREAM (80% Viewport Width, Compact Screen View) */}
-      <main className="max-w-[80vw] 2xl:max-w-[1440px] mx-auto w-full px-2 sm:px-4 py-3 sm:py-4 flex-grow">
+      {/* 5. MAIN PACKAGING STREAM (Responsive Full-Width on Mobile, Centered on Large) */}
+      <main className="w-full max-w-full lg:max-w-[88vw] 2xl:max-w-[1440px] mx-auto px-3 sm:px-6 py-4 flex-grow">
         {loading ? (
           <div className="py-24 text-center font-mono text-xs text-[#8c93a8] font-kalpurush">
             {lang === "bn" ? "প্যাকেজিং প্রজেক্ট লোড হচ্ছে..." : "Loading commercial packaging portfolio..."}
@@ -582,7 +623,7 @@ export default function HomeClient({ initialProjects = [] }: Props) {
 
       {/* 6. SLIM COMPACT FOOTER */}
       <footer className="bg-[#08090c] border-t border-[#1a1e2b] py-6 px-4 sm:px-8 font-mono text-xs text-[#8c93a8]">
-        <div className="max-w-[80vw] 2xl:max-w-[1440px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 font-kalpurush">
+        <div className="w-full max-w-full lg:max-w-[88vw] 2xl:max-w-[1440px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-3 font-kalpurush">
           <span>
             {lang === "bn"
               ? `© ${new Date().getFullYear()} জসিম উদ্দিন · সিনিয়র প্যাকেজিং ডিজাইনার · এসসিটি ডিজাইন হাউস · প্রাণ-আরএফএল গ্রুপ`

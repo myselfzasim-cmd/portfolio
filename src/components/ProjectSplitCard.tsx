@@ -12,6 +12,7 @@ import {
   SlidersHorizontal,
   Sparkles,
   Layers,
+  ChevronDown,
 } from "lucide-react";
 
 interface Props {
@@ -28,6 +29,8 @@ export default function ProjectSplitCard({
   onOpenEstimator,
 }: Props) {
   const { lang } = useLanguage();
+  const [isSpecsExpanded, setIsSpecsExpanded] = useState(false);
+  const [isSummaryExpanded, setIsSummaryExpanded] = useState(false);
 
   const title = lang === "bn" && project.bn?.title ? project.bn.title : project.en.title;
   const summary = lang === "bn" && project.bn?.summary ? project.bn.summary : project.en.summary;
@@ -224,29 +227,70 @@ export default function ProjectSplitCard({
               </span>
             </div>
 
-            <p className="font-kalpurush text-xs sm:text-[13px] text-[#cbd5e1] leading-relaxed line-clamp-2 pt-0.5">
-              {summary}
-            </p>
+            <div className="space-y-1">
+              <p
+                className={`font-kalpurush text-xs sm:text-[13px] text-[#cbd5e1] leading-relaxed pt-0.5 ${
+                  isSummaryExpanded ? "" : "line-clamp-2 sm:line-clamp-none"
+                }`}
+              >
+                {summary}
+              </p>
+              {summary && summary.length > 90 && (
+                <button
+                  type="button"
+                  onClick={() => setIsSummaryExpanded(!isSummaryExpanded)}
+                  className="sm:hidden text-[10.5px] font-mono text-[#d4ff33] font-bold hover:underline font-kalpurush inline-block cursor-pointer"
+                >
+                  {isSummaryExpanded
+                    ? (lang === "bn" ? "সংক্ষেপ করুন ▲" : "Show less ▲")
+                    : (lang === "bn" ? "আরও পড়ুন ▼" : "Read more ▼")}
+                </button>
+              )}
+            </div>
           </div>
 
-          {/* 3. Detailed Pre-Press Dieline & Factory Technical Specifications Matrix */}
+          {/* 3. Detailed Pre-Press Dieline & Factory Technical Specifications Matrix (Expandable on Mobile) */}
           {project.dielineSpecs && (
-            <div className="p-2.5 sm:p-3 bg-[#0b0d13] border border-[#1e2333] rounded-xl space-y-2 font-kalpurush">
-              <div className="flex items-center justify-between border-b border-[#1c202c] pb-1.5 font-mono text-[10px]">
+            <div className="p-2 sm:p-3 bg-[#0b0d13] border border-[#1e2333] rounded-xl space-y-2 font-kalpurush transition-all">
+              {/* Header / Expand Button */}
+              <div
+                onClick={() => setIsSpecsExpanded(!isSpecsExpanded)}
+                className="flex items-center justify-between border-b border-[#1c202c] pb-1.5 font-mono text-[10px] cursor-pointer sm:cursor-default"
+              >
                 <span className="text-[#38bdf8] font-bold uppercase tracking-wider flex items-center gap-1.5 font-subheading">
                   <Layers className="w-3.5 h-3.5" />
                   <span>
                     {lang === "bn"
-                      ? "প্রি-প্রেস ডাইলাইন ও প্রিন্টিং স্পেসিফিকেশন"
+                      ? "প্রি-প্রেস ডাইলাইন ও টেকনিক্যাল স্পেক্স"
                       : "Dieline & Pre-Press Technical Specifications"}
                   </span>
                 </span>
+
+                {/* Mobile Expand / Collapse indicator */}
+                <span className="sm:hidden flex items-center gap-1 text-[10px] text-[#d4ff33] font-bold">
+                  <span>
+                    {isSpecsExpanded
+                      ? (lang === "bn" ? "সংক্ষেপ করুন" : "Hide")
+                      : (lang === "bn" ? "স্পেক্স দেখুন" : "View")}
+                  </span>
+                  <ChevronDown
+                    className={`w-3.5 h-3.5 transition-transform duration-300 ${
+                      isSpecsExpanded ? "rotate-180" : ""
+                    }`}
+                  />
+                </span>
+
                 <span className="text-[#8c93a8] hidden sm:inline text-[9.5px]">
                   {lang === "bn" ? "প্রোডাকশন-রেডি" : "Production Locked"}
                 </span>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+              {/* Grid: Expandable on mobile, always grid on tablet/desktop */}
+              <div
+                className={`grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs transition-all duration-300 ${
+                  isSpecsExpanded ? "grid" : "hidden sm:grid"
+                }`}
+              >
                 {/* 1. Format & Structure (Sky / Blue) */}
                 <div className="p-2 sm:p-2.5 bg-blue-500/[0.14] hover:bg-blue-500/[0.20] border border-blue-500/30 rounded-lg space-y-0.5 transition-colors">
                   <span className="text-blue-500 block text-[9px] sm:text-[9.5px] font-mono uppercase font-bold flex items-center gap-1.5">

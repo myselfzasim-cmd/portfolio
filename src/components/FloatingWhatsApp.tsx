@@ -1,13 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLanguage } from "@/lib/LanguageContext";
+import { X, MessageCircle } from "lucide-react";
 
 // Client's verified WhatsApp number: 01723005886 -> 8801723005886
 const DEFAULT_WHATSAPP_NUMBER = "8801723005886";
 
 export default function FloatingWhatsApp() {
   const { lang } = useLanguage();
+  const [isDismissed, setIsDismissed] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
 
   const rawNumber =
@@ -26,41 +28,82 @@ export default function FloatingWhatsApp() {
   return (
     <aside
       aria-label="WhatsApp Contact"
-      className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-50 flex items-center no-print select-none"
+      className="fixed z-[99999] flex flex-col items-end pointer-events-auto no-print select-none transition-all duration-300"
+      style={{
+        bottom: "calc(1.25rem + env(safe-area-inset-bottom, 0px))",
+        right: "calc(1rem + env(safe-area-inset-right, 0px))",
+      }}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
+      {/* Floating Popup Speech Bubble (Always visible on mobile, expandable on desktop) */}
+      {!isDismissed && (
+        <div className="mb-2.5 flex items-center shadow-2xl animate-bounce-subtle">
+          <div className="relative flex items-center gap-2 pl-3.5 pr-2 py-1.5 rounded-full bg-[#0a0c12]/95 border border-[#25D366]/60 text-[#f3f4f8] backdrop-blur-xl shadow-[0_8px_30px_rgba(37,211,102,0.35)]">
+            <a
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 font-kalpurush font-bold text-xs tracking-wide group cursor-pointer"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#25D366]" />
+              </span>
+              <span className="text-white group-hover:text-[#25D366] transition-colors whitespace-nowrap">
+                {lang === "bn" ? "হোয়াটসঅ্যাপে কথা বলুন" : "Chat on WhatsApp"}
+              </span>
+            </a>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsDismissed(true);
+              }}
+              title={lang === "bn" ? "বন্ধ করুন" : "Dismiss"}
+              className="p-1 rounded-full text-[#8c93a8] hover:text-white hover:bg-white/10 transition-colors ml-0.5"
+            >
+              <X className="w-3 h-3" />
+            </button>
+
+            {/* Downward tiny speech bubble tail */}
+            <div className="absolute -bottom-1.5 right-6 w-3 h-3 bg-[#0a0c12]/95 border-r border-b border-[#25D366]/60 rotate-45 pointer-events-none" />
+          </div>
+        </div>
+      )}
+
+      {/* Main WhatsApp Floating Action Button */}
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        title={lang === "bn" ? "WhatsApp এ কথা বলুন" : "Chat on WhatsApp"}
-        aria-label={lang === "bn" ? "কন্টাক্ট উইথ মি" : "Contact With Me"}
+        title={lang === "bn" ? "WhatsApp এ কথা বলুন (+880 1723-005886)" : "Chat on WhatsApp (+880 1723-005886)"}
+        aria-label={lang === "bn" ? "হোয়াটসঅ্যাপে যোগাযোগ করুন" : "Contact on WhatsApp"}
         className="flex items-center group cursor-pointer"
       >
-        {/* Sliding Pill: Hidden by default, smoothly expands to the LEFT only when hovered */}
+        {/* Desktop Slide-out text label when hovering the circle */}
         <div
-          className={`overflow-hidden transition-all duration-300 ease-out flex items-center ${
+          className={`hidden md:flex overflow-hidden transition-all duration-300 ease-out items-center ${
             isHovered
-              ? "max-w-[200px] opacity-100 mr-2.5 translate-x-0"
+              ? "max-w-[220px] opacity-100 mr-2.5 translate-x-0"
               : "max-w-0 opacity-0 mr-0 translate-x-3 pointer-events-none"
           }`}
         >
-          <span className="whitespace-nowrap px-4 py-2 rounded-full bg-[#0e1017]/95 border border-[#25D366]/60 text-[#f3f4f8] shadow-2xl font-kalpurush font-bold text-xs tracking-wide shadow-[0_4px_20px_rgba(37,211,102,0.3)] flex items-center gap-2 backdrop-blur-md">
+          <span className="whitespace-nowrap px-3.5 py-1.5 rounded-full bg-[#0a0c12]/95 border border-[#25D366]/60 text-[#f3f4f8] shadow-2xl font-kalpurush font-bold text-xs tracking-wide shadow-[0_4px_20px_rgba(37,211,102,0.3)] flex items-center gap-2 backdrop-blur-md">
             <span className="w-1.5 h-1.5 rounded-full bg-[#25D366] shrink-0" />
             <span className="group-hover:text-[#25D366] transition-colors">
-              {lang === "bn" ? "কন্টাক্ট উইথ মি" : "Contact With Me"}
+              {lang === "bn" ? "+880 1723-005886 (সরাসরি)" : "Direct WhatsApp"}
             </span>
           </span>
         </div>
 
-        {/* Circular WhatsApp Button */}
-        <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center bg-gradient-to-tr from-[#128C7E] to-[#25D366] text-white shadow-[0_6px_25px_rgba(37,211,102,0.35)] hover:shadow-[0_10px_35px_rgba(37,211,102,0.6)] hover:scale-105 active:scale-95 transition-all duration-300 shrink-0">
-          {/* Subtle slow breathing halo animation (very gentle, low opacity) */}
+        {/* Circular WhatsApp Button with Pulse Wave */}
+        <div className="relative w-13 h-13 sm:w-15 sm:h-15 rounded-full flex items-center justify-center bg-gradient-to-tr from-[#128C7E] to-[#25D366] text-white shadow-[0_6px_25px_rgba(37,211,102,0.4)] hover:shadow-[0_10px_35px_rgba(37,211,102,0.7)] hover:scale-105 active:scale-95 transition-all duration-300 shrink-0 border border-white/25">
+          {/* Breathing halo animation */}
           <span className="absolute -inset-1.5 rounded-full bg-[#25D366] animate-gentle-breathe pointer-events-none" />
 
-          {/* Ambient inner soft ring */}
-          <span className="absolute inset-0 rounded-full border border-white/20 pointer-events-none" />
+          {/* Glowing Ping Ring */}
+          <span className="absolute inset-0 rounded-full bg-[#25D366] animate-ping opacity-25 pointer-events-none" />
 
           {/* Official WhatsApp SVG Icon */}
           <svg

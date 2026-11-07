@@ -47,6 +47,19 @@
   animation: gentleBreathe 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+@keyframes bounceSubtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bounce-subtle {
+  animation: bounceSubtle 2.5s ease-in-out infinite;
+}
+
 :root {
   --bg-dark: #08090c;
   --bg-card: #10121a;

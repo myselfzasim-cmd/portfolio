@@ -25,6 +25,8 @@ import {
   Sun,
   Layers,
   ChevronRight,
+  ChevronDown,
+  Languages,
 } from "lucide-react";
 
 interface Props {
@@ -37,6 +39,7 @@ export default function ProjectDetailView({ project, nextProject }: Props) {
   const { theme, toggleTheme } = useTheme();
   const [isEstimatorOpen, setIsEstimatorOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const [expandedSection, setExpandedSection] = useState<number | null>(null);
 
   // Auto trigger print if ?print=true in query
   useEffect(() => {
@@ -87,57 +90,72 @@ export default function ProjectDetailView({ project, nextProject }: Props) {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#08090c] text-[#f3f4f8] selection:bg-[#d4ff33] selection:text-black">
-      {/* 1. PERMANENTLY FROZEN TOP BAR */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-[#08090c]/90 backdrop-blur-xl border-b border-[#1f2433] px-4 sm:px-8 h-16 flex items-center justify-between shadow-2xl shadow-black/80 no-print">
+      {/* 1. PERMANENTLY FROZEN TOP BAR (Visual Icons on Mobile, Labels on Desktop) */}
+      <header className="fixed top-0 left-0 right-0 z-50 bg-[#08090c]/90 backdrop-blur-xl border-b border-[#1f2433] px-3 sm:px-6 lg:px-8 h-16 flex items-center justify-between shadow-2xl shadow-black/80 no-print">
         {/* Brand Lockup: Far Left with Home Button & ThirstyPoet Signature */}
-        <div className="flex items-center gap-3 min-w-0">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
           <Link
             href="/"
             title={lang === "bn" ? "হোম পেজে ফিরুন · ThirstyPoet" : "Return to Home · ThirstyPoet"}
-            className="flex items-center gap-2.5 group cursor-pointer shrink-0"
+            className="flex items-center gap-2 sm:gap-2.5 group cursor-pointer shrink-0"
           >
-            <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#111] via-[#1e2333] to-[#d4ff33] p-[1.5px] shadow-lg group-hover:scale-110 transition-transform flex items-center justify-center shrink-0">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-tr from-[#111] via-[#1e2333] to-[#d4ff33] p-[1.5px] shadow-lg group-hover:scale-110 transition-transform flex items-center justify-center shrink-0">
               <div className="w-full h-full rounded-full bg-[#08090c] flex items-center justify-center text-[#d4ff33] group-hover:bg-[#d4ff33] group-hover:text-black transition-colors">
-                <Home className="w-4 h-4" />
+                <Home className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
             </div>
-            <span className="font-handwriting text-lg font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#d4ff33] via-[#f1f5f9] to-[#38bdf8] hidden md:inline">
+            <span className="font-handwriting text-lg sm:text-2xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#d4ff33] via-[#f1f5f9] to-[#38bdf8] leading-none">
               ThirstyPoet
             </span>
           </Link>
         </div>
 
-        {/* Right controls */}
-        <div className="flex items-center gap-2 sm:gap-3 font-mono text-xs shrink-0">
+        {/* Right controls: Visual Icons on Mobile */}
+        <div className="flex items-center gap-1 sm:gap-2.5 font-mono text-xs shrink-0">
+          {/* Brands Tab Link */}
+          <Link
+            href="/brands"
+            title={lang === "bn" ? "৩৩০+ কমার্শিয়াল ব্র্যান্ডস" : "330+ Commercial Brands"}
+            aria-label="Brands"
+            className="p-2 sm:px-3 sm:py-1.5 rounded-xl border border-[#2b3145] bg-[#141724] text-[#f3f4f8] hover:border-[#d4ff33] hover:text-[#d4ff33] transition-all text-[11px] font-mono font-bold shadow-md cursor-pointer flex items-center gap-1.5"
+          >
+            <Layers className="w-4 h-4 text-[#d4ff33]" />
+            <span className="hidden md:inline">{lang === "bn" ? "ব্র্যান্ডসমূহ" : "Brands"}</span>
+          </Link>
+
           {/* Photo Gallery Tab */}
           <Link
             href="/gallery"
             title={lang === "bn" ? "ফটো গ্যালারি ও কাজের মুহূর্ত" : "View Photo Gallery & Archive"}
-            className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#2b3145] bg-[#141724] text-[#f3f4f8] hover:border-[#38bdf8] hover:text-[#38bdf8] transition-all text-[11px] font-mono font-bold shadow-md cursor-pointer"
+            aria-label="Photo Gallery"
+            className="p-2 sm:px-3 sm:py-1.5 rounded-xl border border-[#2b3145] bg-[#141724] text-[#f3f4f8] hover:border-[#38bdf8] hover:text-[#38bdf8] transition-all text-[11px] font-mono font-bold shadow-md cursor-pointer flex items-center gap-1.5"
           >
-            <Camera className="w-3.5 h-3.5 text-[#38bdf8]" />
-            <span>{lang === "bn" ? "ফটো গ্যালারি" : "Photo Gallery"}</span>
+            <Camera className="w-4 h-4 text-[#38bdf8]" />
+            <span className="hidden md:inline">{lang === "bn" ? "ফটো গ্যালারি" : "Photo Gallery"}</span>
           </Link>
 
-          {/* Print PDF Spec Sheet */}
+          {/* Print PDF Spec Sheet (Icon on Mobile, Label on Desktop) */}
           <button
             type="button"
             onClick={() => window.print()}
-            className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-[#2b3145] bg-[#141724] text-[#f3f4f8] hover:border-white transition-all text-[11px] font-mono font-bold font-kalpurush shadow-md cursor-pointer"
+            className="p-2 sm:px-3 sm:py-1.5 rounded-xl border border-[#2b3145] bg-[#141724] text-[#f3f4f8] hover:border-white transition-all text-[11px] font-mono font-bold font-kalpurush shadow-md cursor-pointer flex items-center gap-1.5"
             title={lang === "bn" ? "প্রিন্ট বা PDF হিসেবে সংরক্ষণ" : "Print or save as PDF"}
+            aria-label="Print PDF"
           >
-            <Printer className="w-3.5 h-3.5 text-[#38bdf8]" />
-            <span>{lang === "bn" ? "PDF স্পেক শিট" : "PDF Spec"}</span>
+            <Printer className="w-4 h-4 text-[#38bdf8]" />
+            <span className="hidden sm:inline">{lang === "bn" ? "PDF স্পেক" : "PDF Spec"}</span>
           </button>
 
           {/* Quick Quote Button */}
           <button
             type="button"
             onClick={() => setIsEstimatorOpen(true)}
-            className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#1d2232] text-[#d4ff33] border border-[#d4ff33]/30 hover:border-[#d4ff33] transition-all text-[11px] font-mono font-bold font-kalpurush cursor-pointer"
+            className="p-2 sm:px-3 sm:py-1.5 rounded-xl bg-[#1d2232] text-[#d4ff33] border border-[#d4ff33]/30 hover:border-[#d4ff33] transition-all text-[11px] font-mono font-bold font-kalpurush cursor-pointer flex items-center gap-1.5"
+            title={lang === "bn" ? "প্রজেক্ট কোটেশন" : "Quote"}
+            aria-label="Quote"
           >
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>{lang === "bn" ? "কোটেশন" : "Quote"}</span>
+            <Sparkles className="w-4 h-4 text-[#d4ff33]" />
+            <span className="hidden md:inline">{lang === "bn" ? "কোটেশন" : "Quote"}</span>
           </button>
 
           {/* Day / Night Theme Toggle */}
@@ -149,17 +167,29 @@ export default function ProjectDetailView({ project, nextProject }: Props) {
                 ? (lang === "bn" ? "লাইট / ডে মোড" : "Day Mode")
                 : (lang === "bn" ? "ডার্ক / নাইট মোড" : "Night Mode")
             }
-            className="p-2 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] text-[#8c93a8] hover:text-[#d4ff33] rounded-xl transition-all cursor-pointer shadow-inner flex items-center justify-center"
+            aria-label="Toggle Theme"
+            className="p-2 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] text-[#8c93a8] hover:text-[#d4ff33] rounded-xl transition-all cursor-pointer shadow-inner flex items-center justify-center shrink-0"
           >
             {theme === "dark" ? (
-              <Sun className="w-4 h-4 text-[#fbbf24]" />
+              <Sun className="w-4 h-4 text-[#fbbf24] hover:rotate-45 transition-transform" />
             ) : (
-              <Moon className="w-4 h-4 text-[#38bdf8]" />
+              <Moon className="w-4 h-4 text-[#38bdf8] hover:-rotate-45 transition-transform" />
             )}
           </button>
 
-          {/* Language Switcher */}
-          <div className="flex items-center bg-[#0e1017] border border-[#222634] rounded-xl p-0.5 font-mono text-xs shadow-inner">
+          {/* Language Switcher: Mobile Single Tap, Desktop Segmented */}
+          <button
+            type="button"
+            onClick={() => setLang(lang === "bn" ? "en" : "bn")}
+            title={lang === "bn" ? "Switch to English" : "বাংলা ভাষায় পরিবর্তন করুন"}
+            aria-label="Toggle Language"
+            className="sm:hidden p-1.5 px-2 rounded-xl border border-[#222634] bg-[#0e1017] hover:border-[#d4ff33] text-[#d4ff33] font-bold text-[10px] flex items-center gap-1 cursor-pointer font-mono shadow-inner shrink-0"
+          >
+            <Languages className="w-3.5 h-3.5" />
+            <span>{lang === "bn" ? "বাং" : "EN"}</span>
+          </button>
+
+          <div className="hidden sm:flex items-center bg-[#0e1017] border border-[#222634] rounded-xl p-0.5 font-mono text-xs shadow-inner shrink-0">
             <button
               type="button"
               onClick={() => setLang("en")}
@@ -191,7 +221,8 @@ export default function ProjectDetailView({ project, nextProject }: Props) {
             type="button"
             onClick={() => setIsProfileOpen(true)}
             title={lang === "bn" ? "ডিজাইনার প্রোফাইল ও বায়োডাটা" : "Designer Profile & Bio-Data"}
-            className="relative w-9 h-9 rounded-full overflow-hidden border-2 border-[#d4ff33]/50 hover:border-[#d4ff33] p-[1px] transition-all hover:scale-105 cursor-pointer shadow-lg shadow-[#d4ff33]/15 group shrink-0"
+            aria-label="Designer Profile"
+            className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border-2 border-[#d4ff33]/50 hover:border-[#d4ff33] p-[1px] transition-all hover:scale-105 cursor-pointer shadow-lg shadow-[#d4ff33]/15 group shrink-0"
           >
             <div className="relative w-full h-full rounded-full overflow-hidden bg-black">
               <Image
@@ -327,15 +358,23 @@ export default function ProjectDetailView({ project, nextProject }: Props) {
             </span>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
             {/* 01 Brief */}
             {brief && (
-              <div className="p-5 bg-[#0b0d13] border border-[#1e2333] rounded-xl space-y-2">
-                <div className="flex items-center gap-2 font-mono text-[11px] font-black text-[#38bdf8] uppercase tracking-wider font-subheading">
-                  <span className="w-2 h-2 rounded-full bg-[#38bdf8]" />
-                  <span>{lang === "bn" ? "০১ · ক্লায়েন্ট ব্রিফ ও লক্ষ্য" : "01 · The Client Brief"}</span>
+              <div
+                onClick={() => setExpandedSection(expandedSection === 1 ? null : 1)}
+                className="p-4 sm:p-5 bg-[#0b0d13] border border-[#1e2333] hover:border-[#38bdf8]/50 rounded-xl space-y-2 cursor-pointer md:cursor-default transition-all"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 font-mono text-[11px] font-black text-[#38bdf8] uppercase tracking-wider font-subheading">
+                    <span className="w-2 h-2 rounded-full bg-[#38bdf8]" />
+                    <span>{lang === "bn" ? "০১ · ক্লায়েন্ট ব্রিফ ও লক্ষ্য" : "01 · The Client Brief"}</span>
+                  </div>
+                  <span className="md:hidden text-[#38bdf8]">
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${expandedSection === 1 ? "rotate-180" : ""}`} />
+                  </span>
                 </div>
-                <p className="font-kalpurush text-[#cbd5e1] text-sm sm:text-base leading-relaxed">
+                <p className={`font-kalpurush text-[#cbd5e1] text-sm sm:text-base leading-relaxed ${expandedSection === 1 ? "block" : "hidden md:block line-clamp-2 md:line-clamp-none"}`}>
                   {brief}
                 </p>
               </div>
@@ -343,12 +382,20 @@ export default function ProjectDetailView({ project, nextProject }: Props) {
 
             {/* 02 Problem */}
             {problem && (
-              <div className="p-5 bg-[#0b0d13] border border-[#1e2333] rounded-xl space-y-2">
-                <div className="flex items-center gap-2 font-mono text-[11px] font-black text-[#f87171] uppercase tracking-wider font-subheading">
-                  <span className="w-2 h-2 rounded-full bg-[#f87171]" />
-                  <span>{lang === "bn" ? "০২ · সুপারমার্কেট চ্যালেঞ্জ ও প্রতিযোগিতা" : "02 · Shelf Challenge"}</span>
+              <div
+                onClick={() => setExpandedSection(expandedSection === 2 ? null : 2)}
+                className="p-4 sm:p-5 bg-[#0b0d13] border border-[#1e2333] hover:border-[#f87171]/50 rounded-xl space-y-2 cursor-pointer md:cursor-default transition-all"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 font-mono text-[11px] font-black text-[#f87171] uppercase tracking-wider font-subheading">
+                    <span className="w-2 h-2 rounded-full bg-[#f87171]" />
+                    <span>{lang === "bn" ? "০২ · সুপারমার্কেট চ্যালেঞ্জ ও প্রতিযোগিতা" : "02 · Shelf Challenge"}</span>
+                  </div>
+                  <span className="md:hidden text-[#f87171]">
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${expandedSection === 2 ? "rotate-180" : ""}`} />
+                  </span>
                 </div>
-                <p className="font-kalpurush text-[#cbd5e1] text-sm sm:text-base leading-relaxed">
+                <p className={`font-kalpurush text-[#cbd5e1] text-sm sm:text-base leading-relaxed ${expandedSection === 2 ? "block" : "hidden md:block line-clamp-2 md:line-clamp-none"}`}>
                   {problem}
                 </p>
               </div>
@@ -356,12 +403,20 @@ export default function ProjectDetailView({ project, nextProject }: Props) {
 
             {/* 03 Production */}
             {production && (
-              <div className="p-5 bg-[#0b0d13] border border-[#1e2333] rounded-xl space-y-2">
-                <div className="flex items-center gap-2 font-mono text-[11px] font-black text-[#fbbf24] uppercase tracking-wider font-subheading">
-                  <span className="w-2 h-2 rounded-full bg-[#fbbf24]" />
-                  <span>{lang === "bn" ? "০৩ · ডাই-লাইন ও প্রি-প্রেস বাস্তবায়ন" : "03 · Dieline & Pre-Press"}</span>
+              <div
+                onClick={() => setExpandedSection(expandedSection === 3 ? null : 3)}
+                className="p-4 sm:p-5 bg-[#0b0d13] border border-[#1e2333] hover:border-[#fbbf24]/50 rounded-xl space-y-2 cursor-pointer md:cursor-default transition-all"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 font-mono text-[11px] font-black text-[#fbbf24] uppercase tracking-wider font-subheading">
+                    <span className="w-2 h-2 rounded-full bg-[#fbbf24]" />
+                    <span>{lang === "bn" ? "০৩ · ডাই-লাইন ও প্রি-প্রেস বাস্তবায়ন" : "03 · Dieline & Pre-Press"}</span>
+                  </div>
+                  <span className="md:hidden text-[#fbbf24]">
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${expandedSection === 3 ? "rotate-180" : ""}`} />
+                  </span>
                 </div>
-                <p className="font-kalpurush text-[#cbd5e1] text-sm sm:text-base leading-relaxed">
+                <p className={`font-kalpurush text-[#cbd5e1] text-sm sm:text-base leading-relaxed ${expandedSection === 3 ? "block" : "hidden md:block line-clamp-2 md:line-clamp-none"}`}>
                   {production}
                 </p>
               </div>
@@ -369,12 +424,20 @@ export default function ProjectDetailView({ project, nextProject }: Props) {
 
             {/* 04 Result */}
             {result && (
-              <div className="p-5 bg-[#0b0d13] border border-[#1e2333] rounded-xl space-y-2">
-                <div className="flex items-center gap-2 font-mono text-[11px] font-black text-[#4ade80] uppercase tracking-wider font-subheading">
-                  <span className="w-2 h-2 rounded-full bg-[#4ade80]" />
-                  <span>{lang === "bn" ? "০৪ · বাণিজ্যিক ফলাফল ও সেলস গ্রোথ" : "04 · Commercial Market Result"}</span>
+              <div
+                onClick={() => setExpandedSection(expandedSection === 4 ? null : 4)}
+                className="p-4 sm:p-5 bg-[#0b0d13] border border-[#1e2333] hover:border-[#4ade80]/50 rounded-xl space-y-2 cursor-pointer md:cursor-default transition-all"
+              >
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2 font-mono text-[11px] font-black text-[#4ade80] uppercase tracking-wider font-subheading">
+                    <span className="w-2 h-2 rounded-full bg-[#4ade80]" />
+                    <span>{lang === "bn" ? "০৪ · বাণিজ্যিক ফলাফল ও সেলস গ্রোথ" : "04 · Commercial Market Result"}</span>
+                  </div>
+                  <span className="md:hidden text-[#4ade80]">
+                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-300 ${expandedSection === 4 ? "rotate-180" : ""}`} />
+                  </span>
                 </div>
-                <p className="font-kalpurush text-[#cbd5e1] text-sm sm:text-base leading-relaxed">
+                <p className={`font-kalpurush text-[#cbd5e1] text-sm sm:text-base leading-relaxed ${expandedSection === 4 ? "block" : "hidden md:block line-clamp-2 md:line-clamp-none"}`}>
                   {result}
                 </p>
               </div>

@@ -27,6 +27,8 @@ import {
   Calculator,
   ArrowLeft,
   ChevronRight,
+  Languages,
+  LayoutGrid,
 } from "lucide-react";
 
 interface Props {
@@ -111,24 +113,24 @@ export default function GalleryClient({ initialItems }: Props) {
 
   return (
     <div className="min-h-screen bg-[#08090c] text-[#f3f4f8] flex flex-col selection:bg-[#d4ff33] selection:text-black font-sans">
-      {/* 1. TOP FROZEN NAVIGATION BAR */}
+      {/* 1. TOP FROZEN NAVIGATION BAR (Visual Icons on Mobile, Labels on Desktop) */}
       <header className="sticky top-0 z-50 bg-[#08090c]/90 backdrop-blur-xl border-b border-[#1f2433] px-3 sm:px-6 h-16 flex items-center justify-between shadow-2xl shadow-black/80">
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3 min-w-0">
           <Link
             href="/"
             title={lang === "bn" ? "হোম পেজে যান" : "Go to Home"}
-            className="flex items-center gap-2.5 group shrink-0 cursor-pointer"
+            className="flex items-center gap-2 sm:gap-2.5 group shrink-0 cursor-pointer"
           >
-            <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-[#111] via-[#1e2333] to-[#d4ff33] p-[1.5px] shadow-lg group-hover:scale-110 transition-transform flex items-center justify-center">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-gradient-to-tr from-[#111] via-[#1e2333] to-[#d4ff33] p-[1.5px] shadow-lg group-hover:scale-110 transition-transform flex items-center justify-center shrink-0">
               <div className="w-full h-full rounded-full bg-[#08090c] flex items-center justify-center text-[#d4ff33] group-hover:bg-[#d4ff33] group-hover:text-black transition-colors">
-                <Home className="w-4 h-4" />
+                <Home className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
             </div>
             <div className="flex flex-col justify-center min-w-0">
-              <span className="font-handwriting text-xl sm:text-2xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#d4ff33] via-[#f1f5f9] to-[#38bdf8] group-hover:drop-shadow-[0_2px_12px_rgba(212,255,51,0.5)] transition-all leading-none">
+              <span className="font-handwriting text-lg sm:text-2xl font-bold tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-[#d4ff33] via-[#f1f5f9] to-[#38bdf8] group-hover:drop-shadow-[0_2px_12px_rgba(212,255,51,0.5)] transition-all leading-none">
                 ThirstyPoet
               </span>
-              <span className="font-mono text-[9px] text-[#8c93a8] tracking-wider uppercase font-semibold hidden xs:block truncate mt-0.5">
+              <span className="font-mono text-[9px] text-[#8c93a8] tracking-wider uppercase font-semibold hidden md:block truncate mt-0.5">
                 {lang === "bn"
                   ? "প্যাকেজিং ডিজাইনার · প্রাণ-আরএফএল গ্রুপ"
                   : "PACKAGING DESIGNER · PRAN-RFL GROUP"}
@@ -137,51 +139,88 @@ export default function GalleryClient({ initialItems }: Props) {
           </Link>
         </div>
 
-        {/* Center / Right controls */}
-        <div className="flex items-center gap-2 sm:gap-3 font-mono text-xs shrink-0">
+        {/* Center / Right controls: Visual Icons on Mobile */}
+        <div className="flex items-center gap-1 sm:gap-2.5 font-mono text-xs shrink-0">
           {/* Back to Work / Home */}
           <Link
             href="/"
-            className="px-3 py-1.5 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] hover:bg-[#141724] text-[#f3f4f8] hover:text-[#d4ff33] rounded-xl transition-all flex items-center gap-1.5 text-[11px] font-bold shadow-md cursor-pointer group"
+            title={lang === "bn" ? "সকল প্রজেক্ট শোকেস" : "All Projects Showcase"}
+            aria-label="All Projects"
+            className="p-2 sm:px-3 sm:py-1.5 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] hover:bg-[#141724] text-[#f3f4f8] hover:text-[#d4ff33] rounded-xl transition-all flex items-center gap-1.5 text-[11px] font-bold shadow-md cursor-pointer group"
           >
-            <ArrowLeft className="w-3.5 h-3.5 text-[#d4ff33] group-hover:-translate-x-0.5 transition-transform" />
-            <span>{lang === "bn" ? "প্রজেক্ট শোকেস" : "All Projects"}</span>
+            <ArrowLeft className="w-4 h-4 text-[#d4ff33] group-hover:-translate-x-0.5 transition-transform" />
+            <span className="hidden md:inline">{lang === "bn" ? "প্রজেক্ট শোকেস" : "All Projects"}</span>
+          </Link>
+
+          {/* Brands Tab Link */}
+          <Link
+            href="/brands"
+            title={lang === "bn" ? "৩৩০+ ব্র্যান্ডস শোকেস" : "330+ Commercial Brands"}
+            aria-label="Brands"
+            className="p-2 sm:px-3 sm:py-1.5 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] hover:bg-[#141724] text-[#f3f4f8] hover:text-[#d4ff33] rounded-xl transition-all flex items-center gap-1.5 text-[11px] font-bold shadow-md cursor-pointer group"
+          >
+            <Layers className="w-4 h-4 text-[#d4ff33] group-hover:scale-110 transition-transform" />
+            <span className="hidden md:inline">{lang === "bn" ? "ব্র্যান্ডসমূহ" : "Brands"}</span>
           </Link>
 
           {/* Active Gallery Indicator Pill */}
-          <div className="px-3 py-1.5 rounded-xl bg-[#d4ff33] text-black font-extrabold flex items-center gap-1.5 text-[11px] shadow-md shadow-[#d4ff33]/20">
-            <Camera className="w-3.5 h-3.5" />
-            <span>{lang === "bn" ? "ফটো গ্যালারি" : "Photo Gallery"}</span>
+          <div
+            title={lang === "bn" ? "ফটো গ্যালারি (সক্রিয়)" : "Photo Gallery (Active)"}
+            aria-label="Photo Gallery"
+            className="p-2 sm:px-3 sm:py-1.5 rounded-xl bg-[#38bdf8] text-black font-extrabold flex items-center gap-1.5 text-[11px] shadow-md shadow-[#38bdf8]/20"
+          >
+            <Camera className="w-4 h-4" />
+            <span className="hidden md:inline">{lang === "bn" ? "ফটো গ্যালারি" : "Photo Gallery"}</span>
           </div>
 
-          {/* Estimator Trigger */}
+          {/* Estimator Trigger (Icon on Mobile) */}
           <button
             type="button"
             onClick={() => setIsEstimatorOpen(true)}
-            className="hidden md:flex items-center gap-1.5 px-3 py-1.5 bg-[#171a25] hover:bg-[#d4ff33] text-[#f3f4f8] hover:text-black border border-[#2b3145] hover:border-[#d4ff33] text-[11px] font-bold uppercase tracking-wider rounded-xl transition-all shadow-md cursor-pointer"
+            title={lang === "bn" ? "প্রজেক্ট এস্টিমেটর" : "Cost Estimator"}
+            aria-label="Estimator"
+            className="p-2 sm:px-3.5 sm:py-1.5 bg-[#171a25] hover:bg-[#d4ff33] text-[#f3f4f8] hover:text-black border border-[#2b3145] hover:border-[#d4ff33] text-[11px] font-bold uppercase tracking-wider rounded-xl transition-all shadow-md cursor-pointer flex items-center gap-1.5"
           >
-            <Calculator className="w-3.5 h-3.5 text-[#3b82f6]" />
-            <span>{lang === "bn" ? "এস্টিমেটর" : "Estimator"}</span>
+            <Calculator className="w-4 h-4 text-[#fbbf24] group-hover:text-black shrink-0" />
+            <span className="hidden lg:inline">{lang === "bn" ? "এস্টিমেটর" : "Estimator"}</span>
           </button>
 
-          {/* Day / Night Theme Toggle */}
+          {/* Day / Night Theme Toggle (Pure Icon) */}
           <button
             type="button"
             onClick={toggleTheme}
-            className="p-2 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] text-[#8c93a8] hover:text-[#d4ff33] rounded-xl transition-all cursor-pointer shadow-inner flex items-center justify-center"
+            title={
+              theme === "dark"
+                ? (lang === "bn" ? "লাইট / ডে মোড" : "Day Mode")
+                : (lang === "bn" ? "ডার্ক / নাইট মোড" : "Night Mode")
+            }
+            aria-label="Toggle Theme"
+            className="p-2 border border-[#222634] hover:border-[#d4ff33] bg-[#0e1017] text-[#8c93a8] hover:text-[#d4ff33] rounded-xl transition-all cursor-pointer shadow-inner flex items-center justify-center shrink-0"
           >
             {theme === "dark" ? (
-              <Sun className="w-4 h-4 text-[#fbbf24]" />
+              <Sun className="w-4 h-4 text-[#fbbf24] hover:rotate-45 transition-transform" />
             ) : (
-              <Moon className="w-4 h-4 text-[#38bdf8]" />
+              <Moon className="w-4 h-4 text-[#38bdf8] hover:-rotate-45 transition-transform" />
             )}
           </button>
 
-          {/* Language Toggle */}
-          <div className="flex border border-[#222634] rounded-xl overflow-hidden p-0.5 bg-[#0e1017] text-xs font-mono shadow-inner">
+          {/* Language Toggle: Mobile Single Tap, Desktop Segmented */}
+          <button
+            type="button"
+            onClick={() => setLang(lang === "bn" ? "en" : "bn")}
+            title={lang === "bn" ? "Switch to English" : "বাংলা ভাষায় পরিবর্তন করুন"}
+            aria-label="Toggle Language"
+            className="sm:hidden p-1.5 px-2 rounded-xl border border-[#222634] bg-[#0e1017] hover:border-[#d4ff33] text-[#d4ff33] font-bold text-[10px] flex items-center gap-1 cursor-pointer font-mono shadow-inner shrink-0"
+          >
+            <Languages className="w-3.5 h-3.5" />
+            <span>{lang === "bn" ? "বাং" : "EN"}</span>
+          </button>
+
+          <div className="hidden sm:flex border border-[#222634] rounded-xl overflow-hidden p-0.5 bg-[#0e1017] text-xs font-mono shadow-inner shrink-0">
             <button
               type="button"
               onClick={() => setLang("en")}
+              aria-label="Switch to English"
               className={`px-2.5 sm:px-3 py-1 font-bold rounded-lg transition-all cursor-pointer ${
                 lang === "en"
                   ? "bg-[#d4ff33] text-black font-black shadow-md"
@@ -193,6 +232,7 @@ export default function GalleryClient({ initialItems }: Props) {
             <button
               type="button"
               onClick={() => setLang("bn")}
+              aria-label="বাংলা ভাষায় রূপান্তর করুন"
               className={`px-2.5 sm:px-3 py-1 font-bold rounded-lg transition-all cursor-pointer ${
                 lang === "bn"
                   ? "bg-[#d4ff33] text-black font-black shadow-md"
@@ -208,7 +248,8 @@ export default function GalleryClient({ initialItems }: Props) {
             type="button"
             onClick={() => setIsProfileOpen(true)}
             title={lang === "bn" ? "ডিজাইনার প্রোফাইল" : "Designer Profile"}
-            className="relative w-9 h-9 rounded-full overflow-hidden border-2 border-[#d4ff33]/50 hover:border-[#d4ff33] p-[1px] transition-all hover:scale-105 cursor-pointer shadow-lg shadow-[#d4ff33]/15 shrink-0"
+            aria-label="Designer Profile"
+            className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border-2 border-[#d4ff33]/50 hover:border-[#d4ff33] p-[1px] transition-all hover:scale-105 cursor-pointer shadow-lg shadow-[#d4ff33]/15 shrink-0"
           >
             <div className="relative w-full h-full rounded-full overflow-hidden bg-black">
               <Image
